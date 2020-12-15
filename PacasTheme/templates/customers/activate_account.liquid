@@ -1,0 +1,17 @@
+
+<main id="activate" class="customer"> 
+  <div class="double-padding-to">
+    <section class="tac fw">
+      <h3 class="">Activate Account</h3>
+      <p class="nmt"><img src="{{'paca-icon.png' | asset_url}}" class="account-icon"/>Create your password to activate your account</p>
+    </section>    
+    <section class="accent-padding">
+      {% form 'activate_customer_password' %}
+        {{ form.errors | default_errors }}
+        <input type="password" value="" name="customer[password]" size="16" placeholder="Password">
+        <input type="password" value="" name="customer[password_confirmation]" placeholder="Confirm Password">
+        <input type="submit" value="Activate Account">
+      {% endform %}
+    </section> 
+        <img src="{{'account-paca.png' | asset_url}}" class="account-paca"/>
+</main>

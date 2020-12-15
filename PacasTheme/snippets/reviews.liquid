@@ -1,0 +1,59 @@
+<section class=" accent-padding tac clickable" id="review-snippet">
+  {% if product.title contains  "Women's Crew Pacas Socks" %}
+  <img src="{{'4.5starsgrey-01.png' | asset_url}}" class="ib review-stars" /><span class="review-span">325</span>
+  {% elsif product.title contains "Women's Low Cut Pacas Socks" %}
+  <img src="{{'4.5starsgrey-01.png' | asset_url}}" class="ib review-stars" /><span class="review-span">325</span>
+  {% elsif product.title contains "Men's Crew Pacas Socks" %}
+  <img src="{{'4.5starsgrey-01.png' | asset_url}}" class="ib review-stars" /><span class="review-span">325</span>
+  {% elsif product.title contains "Men's Low Cut Pacas Socks" %}
+  <img src="{{'4.5starsgrey-01.png' | asset_url}}" class="ib review-stars" /><span class="review-span">325</span>
+  {% elsif product.title contains "Kid's Crew" %}
+  <img src="{{'4.5starsgrey-01.png' | asset_url}}" class="ib review-stars" /><span class="review-span">325</span>
+  {% elsif product.title contains "Kid's Low" %}
+  <img src="{{'4.5starsgrey-01.png' | asset_url}}" class="ib review-stars" /><span class="review-span">325</span>
+  {% elsif product.title contains "Toddler" %}
+  <img src="{{'4.5starsgrey-01.png' | asset_url}}" class="ib review-stars" /><span class="review-span">325</span>
+  {% else %}
+  <img src="{{'4.5starsgrey-01.png' | asset_url}}" class="ib review-stars" /><span class="review-span">325</span>
+  {% endif %}
+  <p class="read-reviews">Read Reviews</p>
+</section>
+<div class="modal" id="all-reviews-modal" style="display: none;">
+    <p class="klaviyo_header_close clickable" style="font-size: 20pt;position: absolute;right: 20pt;"><span>✕</span></p>
+
+    <iframe src="https://pacas-reviews.herokuapp.com/reviews" /> </iframe>
+
+</div>
+<style>
+  #all-reviews-modal {
+    height: 90%; 
+    width: 90%; 
+    z-index: 999; 
+    background-color: white; 
+  }
+  iframe { 
+    height: calc(100% - 10px);
+    width: calc(100% - 10px); 
+  	border: none;
+  }
+  .review-stars {
+    max-width: 150px; 
+    vertical-align: middle; 
+  }
+  .review-span {
+    vertical-align: middle;
+    font-weight: bold; 
+    margin-left: 15px;
+  }
+  .read-reviews {
+    text-decoration: underline; 
+  }
+</style>
+<script>
+  $('#review-snippet').click(function() {
+    $('#all-reviews-modal').show(); 
+  $('main, header, footer, #banner-cta, nav').addClass('darken')
+
+  });
+  
+</script>

@@ -1,0 +1,522 @@
+<main id="{{collection.title | handleize}}"> 
+
+
+  <section class="page-title accent-padding" id="{{collection.title | handleize}}-wrapper">
+    <div class="atf-float tar">
+      <h1 class="nm accent" style="font-weight:lighter;">{{collection.title}}</h1>
+    </div>
+  </section>
+
+
+  <section class="row">
+    {% assign products = collection.products  %}
+
+    {% for product in products | limit: 2 %}
+    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="">
+      <section class="card">
+        <a href="{{product.url}}">
+          <div class="product-collection-wrapper">
+            <div class="accent-padding">
+              <div class="slvr-col-img-wrapper">
+                {% if product.title == "3 Pack - Women's Crew Pacas Socks" %}
+               {% for variant in product.variants | limit: 1 %}
+                <img src="{{ variant.image.src | product_img_url: '2000x2000'  }}" />
+                {% endfor %}
+                {% else %}
+           			{% for variant in product.variants %}
+                		{% if variant.available %}
+           <img src="{{ variant.featured_image.src | product_img_url: '2000x2000' }}" alt="{{product.title}}"/> 
+                		{% break %}
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+              </div> 
+              <h3 class=" nmb">{{product.title}}</h3>
+              <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
+              {% if product.price >= 4000 %}
+              <p class="subscript">Qualifies for Free Shipping!</p>
+              {% else %}
+              <p class="subscript vis-hid">Qualifies for Free Shipping!</p>
+
+              {% endif %}
+              <div class="acfe">
+                <!--            store variant as data attr on circle  -->
+
+
+             {% capture limit_color %}
+                {% if product.tags contains "Kids" %}
+                {{ product.variants.size | divided_by: 1}}
+                {% else %}
+                {{ product.variants.size | divided_by: 2}}
+                {% endif %}
+                {% endcapture %}
+                {% if product.tags contains 'Men' or product.tags contains 'Women' %}
+                {% for variant in product.variants | limit: limit_color%}
+                {% if variant.available %}
+                  {% if variant.option2 %} 
+                  {% for option in variant.option2 %}
+                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle" style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;" ></div>
+                  {% endfor %}
+                  {% else %}
+                  {% for option in variant.option1 %}
+                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle"style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;"></div>
+                  {% endfor %}
+                  {% endif %} 
+                {% endif %}
+                {% endfor %}
+               {% else %}
+                {% for variant in product.variants | limit: limit_color%}
+                {% if variant.available %}
+                  {% if variant.option2 %} 
+                  {% for option in variant.option2 %}
+                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle" style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;" ></div>
+                  {% endfor %}
+                  {% else %}
+                  {% for option in variant.option1 %}
+                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle"style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;"></div>
+                  {% endfor %}
+                  {% endif %} 
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                
+              </div>
+            </div>
+          </div>
+        </a>
+      </section>
+    </section>
+
+    {% endfor%}
+
+
+    {% if collection.title == "Women's Low Cut" %}
+    <section class="col gif-insert">
+      <section class="card" style="border: none">
+        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      </section>
+    </section>
+    {% elsif collection.title == "Men's Low Cut"  or collection.title == "Men's Crew"%}
+    <section class="col gif-insert">
+      <section class="card" style="border: none">
+        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      </section>
+
+    </section>
+    {% elsif collection.title == "Women's Crew" %}
+        <section class="col gif-insert">
+      <section class="card" style="border: none">
+        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      </section>
+    </section>
+    {% elsif collection.title == "Youth Crew" %}
+      <section class="col gif-insert">
+      <section class="card" style="border: none">
+        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      </section>
+
+    </section>
+    {% elsif collection.title == "Youth Low Cut" %}
+       <section class="col gif-insert">
+      <section class="card" style="border: none">
+        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      </section>
+
+    </section>
+    {% elsif collection.title == "Toddler" %}
+            <section class="col gif-insert">
+      <section class="card" style="border: none">
+        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      </section>
+    </section>
+    {% endif %}
+
+
+
+
+
+
+
+
+    {% for product in products | offset: 2 %}
+    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="">
+      <section class="card">
+        <a href="{{product.url}}">
+          <div class="product-collection-wrapper">
+            <div class="accent-padding">
+                 <div class="slvr-col-img-wrapper">
+           			{% for variant in product.variants %}
+                		{% if variant.available %}
+           <img src="{{ variant.featured_image.src | product_img_url: '2000x2000' }}" alt="{{product.title}}"/> 
+                		{% break %}
+                {% endif %}
+                {% endfor %}
+              </div>  
+              <h3 class=" nmb">{{product.title}}</h3>
+              <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
+              {% if product.price >= 4000 %}
+              <p class="subscript">Qualifies for Free Shipping!</p>
+              {% else %}
+              <p class="subscript vis-hid">Qualifies for Free Shipping!</p>
+
+              {% endif %}
+              <div class="acfe">
+                <!--            store variant as data attr on circle  -->
+
+ {% capture limit_color %}
+                {% if product.tags contains "Kids" %}
+                {{ product.variants.size | divided_by: 1}}
+                {% else %}
+                {{ product.variants.size | divided_by: 2}}
+                {% endif %}
+                {% endcapture %}
+                {% if product.tags contains 'Men' or product.tags contains 'Women' %}
+                {% for variant in product.variants  | limit: limit_color%}
+                {% if variant.available %}
+                  {% if variant.option2 %} 
+                  {% for option in variant.option2 %}
+                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle" style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;" ></div>
+                  {% endfor %}
+                  {% else %}
+                  {% for option in variant.option1 %}
+                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle"style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;"></div>
+                  {% endfor %}
+                  {% endif %} 
+                {% endif %}
+                {% endfor %}
+               {% else %}
+                {% for variant in product.variants | limit: limit_color%}
+                {% if variant.available %}
+                  {% if variant.option2 %} 
+                  {% for option in variant.option2 %}
+                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle" style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;" ></div>
+                  {% endfor %}
+                  {% else %}
+                  {% for option in variant.option1 %}
+                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle"style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;"></div>
+                  {% endfor %}
+                  {% endif %} 
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </a>
+      </section>
+    </section>
+
+    {% endfor%}
+    <script>
+      $('.color-preview-circle').click(function() {
+        event.preventDefault(); 
+        console.log('hit here')
+        var imageDisplay = $(this).parent().siblings('.slvr-col-img-wrapper').find('img')
+        var newImage = $(this).data("image-src")
+        console.log(newImage)
+        $(imageDisplay).attr("src", newImage); 
+
+      }); 
+    </script> 
+    {% if collection.title == "Women's Low Cut" %}
+    <section class="col placeholder" style="flex: 1 1 25% !important;" >
+      <section class="card" id="womens-placeholder">
+        <div>
+        </div>
+      </section>
+    </section>
+    {% elsif collection.title == "Men's Low Cut" %}
+    <section class="col placeholder" style="flex: 1 1 25% !important;" >
+      <section class="card" id="mens-placeholder">
+        <div>
+        </div>
+      </section>
+    </section>
+    {% elsif collection.title == "Women's Crew" %}
+    <section class="col placeholder" style="flex: 1 1 25% !important;" >
+      <section class="card" id="womens-crew-placeholder">
+        <div>
+        </div>
+      </section>
+    </section>
+    {% elsif collection.title == "Men's Crew" %}
+    <section class="col placeholder" style="flex: 1 1 25% !important;" >
+      <section class="card" id="mens-crew-placeholder">
+        <div>
+        </div>
+      </section>
+    </section>
+   {% elsif collection.title == "Youth Crew" %}
+    <section class="col placeholder" style="flex: 1 1 25% !important;" >
+      <section class="card" id="kids-crew-placeholder" style="border: none;">
+        <div>
+        </div>
+      </section>
+    </section>
+      {% elsif collection.title == "Youth Low Cut" %}
+    <section class="col placeholder" style="flex: 1 1 25% !important;" >
+      <section class="card" id="kids-low-placeholder" style="border: none;">
+        <div>
+        </div>
+      </section>
+    </section>
+        {% elsif collection.title == "Toddler" %}
+    <section class="col placeholder" style="flex: 1 1 25% !important;" >
+      <section class="card" id="toddler-placeholder" style="border: none;">
+        <div>
+        </div>
+      </section>
+    </section>
+  {% endif %}  
+  </section>
+</main>
+<style>
+   #toddler-placeholder {
+/*     background-color:#C8D2D3;  */
+    background-image: url("{{'KidsLifestyleShoot_Toddler3.png' | asset_url}}"); 
+      background-position: bottom center; 
+      background-size: contain;
+      background-repeat: no-repeat; 
+      }
+    #kids-crew-placeholder {
+/*     background-color:#C8D2D3;  */
+    background-image: url("{{'KidsLifestyleShoot_Crew5.png' | asset_url}}"); 
+      background-position: bottom center; 
+      background-size: contain;
+      background-repeat: no-repeat; 
+      }
+      #kids-low-placeholder {
+/*     background-color:#C8D2D3;  */
+    background-image: url("{{'KidsLifestyleShoot_Low3.png' | asset_url}}"); 
+      background-position: bottom center; 
+      background-size: contain;
+      background-repeat: no-repeat; 
+      }
+  #mens-placeholder {
+    background-color:#C8D2D3; 
+    background-image: url("{{'CatalogPageImages-Mens.jpg' | asset_url}}"); 
+      background-position: top center; 
+      background-size: contain;
+      background-repeat: no-repeat; 
+      }
+  #mens-crew-placeholder {
+    background-color:#CCECD4; 
+    background-image: url("{{'CatalogPageImages_MensCrew.jpg' | asset_url}}"); 
+      background-position: top center; 
+      background-size: contain;
+      background-repeat: no-repeat; 
+      }
+  #womens-placeholder {
+    background-color: #D98F76 ; 
+    background-image: url("{{'CatalogPageImages_Women.jpg' | asset_url}}"); 
+      background-position: top center; 
+      background-size: contain;
+      background-repeat: no-repeat; 
+      }
+  #womens-crew-placeholder {
+    background-color: #FDC2F0 ; 
+    background-image: url("{{'CatalogPageImages_WomensCrew.jpg' | asset_url}}"); 
+      background-position: top center; 
+      background-size: contain;
+      background-repeat: no-repeat; 
+      }
+
+  @media only screen and (min-width: 800px) {
+    #womens-low-cut-wrapper {
+      background-image: url("{{'AlpacaCatalogHeaders_DesktopWomensLow.jpg' | asset_url }}"); 
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        background-position: bottom left; 
+        background-color: #F4D9D9; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 300px;
+        }
+    #toddler-wrapper {
+      background-image: url("{{'KidsToddlerATF_Desktop.png' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-color: #C6D6E1;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white; 
+        }
+    #womens-crew-wrapper {
+      background-image: url("{{'AlpacaCatalogHeaders_DesktopWomenCrew.jpg' | asset_url }}"); 
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        background-position: bottom left; 
+        background-color: #47609D; 
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        }
+    #mens-low-cut-wrapper, #mens-crew-wrapper {
+      background-image: url("{{'AlpacaCatalogHeaders_DesktopMen.jpg' | asset_url }}"); 
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        background-position: bottom left; 
+        background-color: #7DA7D4; 
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white; 
+        }
+    #youth-crew-wrapper {
+      background-image: url("{{'KidsCrewATF_Mobile.png' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-color: #C8EDEA;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        }
+    #youth-low-cut-wrapper {
+      background-image: url("{{'KidsLowATF_Desktop.png' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-color: #E4EBCA; 
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white; 
+        }
+  }
+  @media only screen and (max-width: 799px) {
+    #womens-low-cut-wrapper {
+      background-image: url("{{'AlpacaCatalogHeaders_MobileWomenLow.jpg' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: #F4D9D9;
+        height: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        }
+    #youth-low-cut-wrapper {
+      background-image: url("{{'KidsLowATF_Mobile.png' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: #E4EBCA;
+        height: 50vw; 
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        }
+    #toddler-wrapper {
+      background-image: url("{{'KidsToddlerATF_Mobile.png' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: #C6D6E1;
+        height: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        }
+    #youth-crew-wrapper {
+      background-image: url("{{'KidsCrewATF_Mobile.png' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: #C8EDEA;
+        height: 50vw; 
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        }
+    #womens-crew-wrapper {
+      background-image: url("{{'AlpacaCatalogHeaders_MobileWomensCrew.jpg' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: #47609D; 
+        height: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        }
+    #mens-low-cut-wrapper, #mens-crew-wrapper {
+      background-image: url("{{'AlpacaCatalogHeaders_MobileMens.jpg' | asset_url }}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: #7DA7D4; 
+        height: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        }
+  }
+  .row {
+    display: flex; 
+    flex-flow: row wrap; 
+    margin-top: 5px;
+  }
+
+  .col { 
+    display: flex; 
+    flex-flow: column; 
+  }
+
+  .strikethrough { text-decoration: line-through; font-size: 10pt; }
+  .card {
+    display: flex;
+    margin: 5px;
+    align-items: stretch;
+    flex-direction: column;
+    height: 100%;
+  }
+  .color-preview-circle { height: 20px; width: 20px; display: inline-block; } 
+  .col h3 {line-height: 1; } 
+  @media only screen and (max-width: 588px) {
+    .col { flex: 0 0 50% !important; }
+  }
+  @media only screen and (min-width: 1100px) {
+    .col h3 { height: 100px; font-size: 20pt; }
+  }
+  @media only screen and (min-width: 589px) and (max-width: 1099px) {
+    .col h3 { height: 69px; font-size: 14pt; }
+  }
+  @media only screen and (min-width: 450px) and (max-width: 588px) {
+    .col h3 { height: 69px; }
+  }
+  @media only screen and (max-width: 449px) {
+    .col h3 { height: 76px; font-size: 12pt; }
+  }
+
+  @media only screen and (min-width: 589px) and (max-width: 799px) {
+    .col { flex: 0 0 33% !important; }
+
+  }
+  @media only screen and (min-width: 800px) {
+    .col { flex: 0 0 25% !important; }
+  }
+
+  .card {
+    border: 2px solid whitesmoke;
+    height: 100%;
+  }
+
+</style>

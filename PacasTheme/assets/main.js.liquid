@@ -1,0 +1,12 @@
+window.timber = window.timber || {}, timber.productPage = function(a) {
+    var b = a.money_format,
+        c = a.variant,
+        e = (a.selector, a.translations),
+        f = a.product_id,
+        g = $("#add-to-cart-" + f),
+        h = $("#product-price-" + f),
+        i = $("#compare-price-" + f),
+        j = $(".quantity-selector, label + .js-qty"),
+        k = $("#add-to-cart-" + f + " span");
+    c ? (c.available ? (g.removeClass("disabled").prop("disabled", !1), k.html(e.add_to_cart), j.show()) : (g.addClass("disabled").prop("disabled", !0), k.html(e.sold_out), j.hide()), h.html(Shopify.formatMoney(c.price, b)), c.compare_at_price > c.price ? (h.parent().addClass("sale"), i.html(Shopify.formatMoney(c.compare_at_price, b)).show()) : (i.hide(), h.parent().removeClass("sale"))) : (g.addClass("disabled").prop("disabled", !0), k.html(e.unavailable), j.hide())
+}

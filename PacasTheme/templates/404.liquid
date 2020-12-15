@@ -1,0 +1,54 @@
+<main id="not-found-page">	     
+  <section class="flex-container-no jcc" id="four-flex">
+    <div class="tac">
+      <img src="{{'ohjasper.png' | asset_url}}" alt="You Guessed It!" style="display: none;" id="culprit" class="dog-portrait" />
+      <h1 class="text-green tac nm">Uh-oh!</h1>
+      <p class="tac">It looks like someone lost a <br>page... Who do you think did it?</p>
+      <section class="flex-container-no jcc" id="inner-wrap">
+        <div id="opal" class="accent-padding">
+          <img src="{{'opal_guilty.png' | asset_url}}"  class="dog-portrait" />
+          <div class="btn background-green clickable" onClick="ga('send', 'event', '404', 'Guess', 'Opal');"><h3 class="text-white tac">Opal</h3></div>
+        </div>
+        <div id="jasper"class="accent-padding">
+          <img src="{{'jasper_guilty.png' | asset_url}}"  class="dog-portrait" />
+          <div class="btn background-green clickable"  onClick="ga('send', 'event', '404', 'Guess', 'Jasper');"><h3 class="text-white tac">Jasper</h3></div>
+        </div>
+        <div id="picci" class="accent-padding">
+          <img src="{{'picci_guilty.png' | asset_url}}" class="dog-portrait"  />
+          <div class="btn background-green clickable"  onClick="ga('send', 'event', '404', 'Guess', 'Picci');"><h3 class="text-white tac">Picci</h3></div>
+        </div>
+        <div id="red" class="accent-padding">
+          <img src="{{'red_guilty.png' | asset_url}}" class="dog-portrait" />
+          <div class="btn background-green clickable"  onClick="ga('send', 'event', '404', 'Guess', 'Red');"><h3 class="text-white tac">Red</h3></div>
+        </div>
+      </section>
+      <a href="/"><h5 class="text-green tac">or go back</h5></a>
+    </div>
+  </section>
+</main>
+<script>
+  $('.btn').click(function() {
+      $(this).removeClass('background-green').addClass('background-lightgray')
+    switch ($(this).parent().attr("id")) {
+      case "opal":
+        $('#not-found-page h1').text('Guess again...'); 
+        $('#not-found-page p').html('Sweet, sweet Opal…she’s 60lbs of<br> pure love and kisses. Not guilty.')
+        break;
+      case "jasper":
+        $('#not-found-page h1').text('Oh, Jasper!'); 
+        $('#not-found-page p').html("He's a little new to the rules around<br> here. We apologize on his behalf, but<br> only until he's out of his pupply phase.")
+        $('#jasper img').hide()
+        $('#culprit').show();
+        $(this).hide().parent().siblings().hide()
+          break;
+      case "picci":
+        $('#not-found-page h1').text('Guess again...'); 
+        $('#not-found-page p').html('Yeah…Picci’s kinda crazy but definitely<br> not crazy enough to steal a whole website page!')
+        break;
+      case "red":
+        $('#not-found-page h1').text('Guess again...'); 
+        $('#not-found-page p').html('Red’s size may be intimidating but<br> he only ever has big intentions to cuddle.')
+        break;
+    }
+  });
+</script>

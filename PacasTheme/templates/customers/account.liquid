@@ -1,0 +1,47 @@
+ 
+<main id="account" class="customer">	     
+	<section class="index-padding flex-container-do aifs">
+    <div class="third accent-padding">
+        <h3 class="accent nmt">Your Account</h3>
+        <ul>
+          <li><h4><a href="/account" class="current">Your Orders</a></h4></li>
+          <li><h4><a href="/account/addresses">View Addresses</a></h4></li>
+          <li><h4><a href="/pages/contact-us">Contact Pacas</a></h4></li>
+          <li><h4><a href="/account/logout" id="customer_logout_link">Logout</a></h4></li>
+        </ul>
+      </div>
+      <div class="two-thirds accent-padding border-lightgray" id="order-history">
+        <h4 class="nmt tac">Order History</h4>
+        {% if customer.orders.size !=0 %}
+          <table class="order-history">
+            <thead>
+              <tr>
+                <th class="order-number">Order</th>
+                <th class="date">Date</th>
+                <th class="fulfillment-status">Status</th>
+                <th class="total">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for order in customer.orders %}
+                <tr>
+                    <td class="order-number">{{ order.name | link_to: order.customer_url }}</td>
+                    <td class="date"><span class="note">{{ order.created_at | date: "%b %d, %Y" }}</span></td>
+                    <td class="fulfillment-status"><span class="status_{{ order.fulfillment_status }}">
+                     {% if order.cancelled %}
+                      cancelled
+                    {% else %}
+                      {{ order.fulfillment_status }}</span></td>
+                    {% endif %}
+                     
+                    <td class="total"><strong class="total money">{{ order.total_price | money }}</strong></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p class="nmb">You haven't placed any orders yet.</p>
+        {% endif%}
+      </div>
+   </section>
+</main>

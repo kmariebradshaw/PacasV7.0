@@ -1,0 +1,67 @@
+
+<main id="blog-template" class="blog"> 
+  <section class="background-green tac index-padding page-header">
+    <h2 class="text-white nm">Welcome to</h2>
+    <h1 class="nm text-white">The Gekks Blog</h1>
+  </section>
+    {% for article in blog.articles %}
+      {% assign highlight = article.content | split: '.'%} 
+      {% assign even_or_odd = forloop.index | modulo:2 %} 
+      {% if even_or_odd == 0 %}
+        <section class="flex-container-no fw background-beige index-padding blog-snippet" data-date="{{ article.published_at | date: '%B'}}">
+          <div class="half blog-description">
+            <div class="title-border"></div>
+            <h2 class="nmb"><a href="{{ article.url }}" title="{{ article.title | escape }}" class="text-green">{{ article.title }} </a></h2>
+            <p class="nm"><span>{{ article.author }}</span></p>
+            <p class="nmt">{{ article.published_at | date: "%B %d, %Y" }}</p>
+            <p class="do">{{ article.excerpt }}</p>
+            <h3 class="text-green do">"{{ highlight | first | strip_html }}"</h3>
+            <div class="blog-btn background-darkgray accent-padding tac"><a href="{{ article.url }}" class="text-green"><h3 class="nm">read more</h3></a></div>
+          </div>
+          <div class="half tac">
+            <img src="{{ article.image.src | img_url: '300x' }}" alt="{{article.title}}" />
+          </div>
+        </section>
+      {% else %}
+      <section class="flex-container-no fw index-padding blog-snippet" data-date="{{ article.published_at | date: '%B'}}">
+        <div class="half tac">
+            <img src="{{ article.image.src | img_url: '300x' }}" alt="{{article.title}}" />
+          </div>
+        <div class="half blog-description">
+          <div class="title-border"></div>
+           <h2 class="nmb"><a href="{{ article.url }}" title="{{ article.title | escape }}" class="text-green">{{ article.title }}</a></h2>
+           <p class="nm"><span>{{ article.author }}</span></p>
+           <p class="nmt">{{ article.published_at | date: "%B %d, %Y" }}</p>
+           <p class="do">{{ article.excerpt }}</p>
+            <h3 class="text-green do">"{{ highlight | first | strip_html }}."</h3>
+
+            <div class="blog-btn background-darkgray accent-padding tac"><a href="{{ article.url }}" class="text-green"><h3 class="nm">read more</h3></a></div>
+        </div>
+      </section>
+      {% endif %}
+      {% endfor %}
+  <section id="archive" class="background-beige accent-padding">
+    <h2 class="text-green nmb">Archives</h2>
+    <h2 class="nmt">
+      <span class="clickable text-green" data-date="June">June.</span>
+      <span class="clickable text-green" data-date="July">Jul.</span>
+      <span class="clickable text-green" data-date="August">Aug.</span>
+      <span class="clickable text-green" data-date="September">Sept.</span>
+      <span class="clickable text-green" data-date="October">Oct.</a></span>
+    </h2>
+</main>
+<script>
+  $('#archive span').click(function() {
+    var dateRange = $(this).attr('data-date');
+    $(this).addClass('current').siblings().removeClass('current')
+    $('.blog-snippet').each(function () {
+      if ($(this).attr('data-date') != dateRange) {
+        $(this).hide()
+      }
+      else {
+        $(this).show();
+      }
+    })
+  })
+  </script>
+

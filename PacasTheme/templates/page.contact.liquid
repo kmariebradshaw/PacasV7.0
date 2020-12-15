@@ -1,0 +1,39 @@
+
+    <main id="page" class="contact-us">	     
+      <section class="flex-container index-padding aifs">
+        <div class="half double-padding">
+          <h3 class="nm">Contact Us</h3>
+          <p>Our customer service goal is simple:</p>
+          <p>We are committed to responding to your inquiries in a timely fashion and providing a positive customer service experience.</p>
+          <p>Questions, comments or suggestions, we would be delighted to hear from you!</p>
+          <p>drop us a note: <br> <a href="mailto:support@pacas.us">support@pacas.us</a></p>
+       		<img src="{{'contact-paca.png' | asset_url}}" class="fw" />
+        </div>
+        <div class="half double-padding" id="contact-form-half">
+          {% form 'contact' %}
+          {% if form.posted_successfully? %}
+            <p class="subscript tac">Thank you for contacting us! We will get back to you as soon as possible.</p>
+          {% endif %}
+          {% if form.errors %}
+            <p class="subscript errors tac">An error occurred, please try again.</p>
+          {% endif %}
+          <p>
+            <input type="text" id="contact_form_name" class="contact_input fw border-lightgray" name="contact[name]" value="{{ form.name }}" placeholder="Name" />
+          </p>
+          <p>
+            <input type="text" id="contact_form_email" class="contact_input fw border-lightgray" name="contact[email]" value="{{ form.email }}" placeholder="Email"/>
+          </p>
+          <p>
+
+            <input type="text" id="contact_form_subject" class="contact_input fw border-lightgray" name="contact[topic]" value="{{ form.subject }}" placeholder="Subject"/>
+          </p>
+          <p>
+            <textarea id="contact_message" placeholder="Message" class='border-lightgray fw contact_input' name="contact[body]" rows="5">{{ form.body }}</textarea>
+          </p>
+          <div class="tac" id="contact-submit-wrapper">
+          	<input type="submit" value="Send Email">
+          </div>
+          {% endform %}
+        </div>
+      </section>
+    </main>

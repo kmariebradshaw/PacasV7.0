@@ -1,0 +1,58 @@
+
+    <main id="page" class="corporate-gifting">	     
+      <section class="flex-container index-padding aifs jcc" id="{{page.title | handleize}}-wrapper">
+        <div class="half"> 
+        </div>
+        <div class="half tac do">
+          <h2 class="accent">{{page.title}}</h2>
+        </div>
+      </section>
+      <section class="accent-padding background-lightgray"> 
+        <h3 class="tac ttu nmb">{{page.title}}</h3>
+        <p class="tac nmt">Do you want to give the gift of Pacas™ to your office?<br class="do"> Fill out the form below and a team member will be in touch!</p>
+        <div id="bulk-buying-form">
+          {% form 'contact' %}
+          {% if form.posted_successfully? %}
+            <p class="subscript tac">Thank you for contacting us! We will get back to you as soon as possible.</p>
+          {% endif %}
+          {% if form.errors %}
+            <p class="subscript errors tac">An error occurred, please try again.</p>
+          {% endif %}
+          <p>
+            <input type="text" id="contact_form_name" class="contact_input fw border-lightgray" name="contact[name]" value="{{ form.name }}" placeholder="Name*" />
+          </p>
+                <p>
+
+            <input type="text" id="contact_form_company" class="contact_input fw border-lightgray" name="contact[company]" value="{{ form.company }}" placeholder="Company*"/>
+          </p>
+          <p>
+            <input type="text" id="contact_form_email" class="contact_input fw border-lightgray" name="contact[email]" value="{{ form.email }}" placeholder="Email*"/>
+          </p>
+    
+          <p>
+            <textarea id="contact_message" placeholder="Message" class='border-lightgray fw contact_input' name="contact[body]" rows="5">{{ form.body }}</textarea>
+          </p>
+          <div class="tac" id="contact-submit-wrapper">
+          	<input type="submit" value="Send Email">
+          </div>
+          {% endform %}
+        </div>
+      </section>
+    </main>
+
+<style>
+  @media only screen and (max-width: 799px) {
+    #corporate-gifting-wrapper { height: 33vw; background-position: center !important;}
+  }
+  .background-lightgray {
+    background-color: whitesmoke; 
+  }
+  #corporate-gifting-wrapper {
+    background-color: #DEF5F5; 
+    background-image: url("{{'CorporateHeader_Mobile.png' | asset_url}}"); 
+    background-position: left; 
+    background-size: contain; 
+     background-repeat: no-repeat; 
+      }
+  #bulk-buying-form { max-width: 800px; margin: 0 auto; }
+</style>

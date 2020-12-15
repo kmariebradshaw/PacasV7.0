@@ -1,0 +1,62 @@
+
+<main id="login" class="customer"> 
+  <div class="double-padding-to">
+
+  {% if customer %}
+    <script type="text/javascript">
+    window.location = '/account/'; 
+    </script>
+  {% else %}
+  <div class="login">     
+    <section class="tac fw">
+      <h3 class="">Log In to Your Account</h3>
+      <p class="tac nmt"><img src="{{'paca-icon.png' | asset_url}}" class="account-icon"/> Don't have an account? <a href="/account/register" class="border-bottom-gray" >Sign up here</a></p>
+    </section>    
+    <section class="accent-padding">
+      {% form 'customer_login' %}
+        {{ form.errors | default_errors }}
+        <input type="email" value="" name="customer[email]" class="" placeholder="Email"><br>
+        <input type="password" value="" name="customer[password]" size="16" class="" placeholder="Password"><br>
+        <input type="submit" value="Sign In">
+        <p class="forgot-password tac"><a href="#recover" onclick="showRecoverPasswordForm()">Forgot your password?</a></p>
+      {% endform %}
+    </section>
+  </div>
+  <div class="recover-password">
+    <section class="tac fw">
+      <h3 class="">Reset Password</h3>
+      <p class="tac nmt"><img src="{{'paca-icon.png' | asset_url}}" class="account-icon"/>We will send you an email to reset your password</p>
+    </section>    
+    <section class="accent-padding">
+      {% form 'recover_customer_password' %}
+        {{ form.errors | default_errors }}
+        <input type="email" value="" size="30" name="email" class="" placeholder="Email"> 
+        <input type="submit" value="Submit">
+        <p class="forgot-password tac"> <span>back to <a href="javascript:void(0)" onclick="hideRecoverPasswordForm()">login</a></span></p>
+      {% endform %}
+    </section>
+  </div>
+  {% endif %}
+  <img src="{{'account-paca.png' | asset_url}}" class="account-paca"/>
+</div>
+</main>
+
+<script type="text/javascript">
+    if (window.location.hash == '#recover') { 
+        showRecoverPasswordForm();
+    } else {
+        hideRecoverPasswordForm();
+    }
+    function showRecoverPasswordForm() {
+        $('.recover-password').show();
+        $('.login').hide();
+        window.location.hash = '#recover';
+        return false;
+    }
+    function hideRecoverPasswordForm() {
+        $('.recover-password').hide();
+        $('.login').show();
+        window.location.hash = '';
+        return false;
+    }
+  </script>

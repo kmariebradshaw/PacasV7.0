@@ -1,0 +1,73 @@
+ 
+<main id="page" class="cart-page">          
+  <section class="index-padding">
+    <h3 class="accent">Your Cart</h3>
+    {% if cart.item_count == 0 %}
+      <h5>Your cart is empty.</h5>
+            <p id="continue" style="text-decoration: underline"><a href="/">Continue shopping</a></p>
+
+    {% else %}
+        <p id="continue" style="text-decoration: underline"><a href="/">Continue shopping</a></p>
+
+    {% endif %}
+    {% if cart.item_count > 0 %}
+      <form action="/cart" method="post">
+        <div class="flex-container-do">
+          <div class="two-thirds">
+            {% for item in cart.items %}
+              <div class="border-bottom-gray">
+                <div class="flex-container-no">
+                  <div class="quarter accent-padding">
+                    <a href="{{ item.url}}">
+                      <img src="{{ item.variant.featured_image | product_img_url: 'large' }}"  alt="{{ item.product.title }}" class="fw">
+                    </a>
+                  </div>
+                  <div class="line-item-details  half asfs accent-padding">
+                    <h5 class="nmb">{{item.product.title}}</h5>
+                    <p class="nm">
+                      {{ item.variant.title }} <br>
+                      <span>Qty:</span> <input type="text" size="4" id="updates_{{ item.id }}" name="updates[{{ item.id }}]" value="{{ item.quantity }}"> @ {{ item.line_price | divided_by: item.quantity | money }}</p>
+                    </p>
+                  </div>
+                  <div class="price-details quarter asfs">
+                    <h5 class="tar">{{ item.line_price | money}} </h5>
+                  </div>
+                </div>
+                <div class="tar" id="cart-update-wrapper">
+                  <input type="submit" name="update" value="update" class="cart-update">
+                  <a href="/cart/change?id={{ item.id }}&quantity=0" class="cart-update">remove</a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="third" id="cart-order-summary">
+            <h3 class="tac accent">order summary</h3>
+            <div class="accent-padding background-yellow">
+              <b><p class="flex-container-no jsb"><span>Items</span><span>{{cart.item_count}}</span></p>
+              <p class="flex-container-no jsb"><span>Subtotal</span><span>{{ cart.total_price | money }}</span></p></b>
+              <input type="submit" id="checkout" name="checkout" value="Checkout" class="clickable">
+              {% if additional_checkout_buttons %}
+                <p class="subscript tac">other payment options</p>
+<div class="additional-checkout-buttons additional-checkout-buttons--vertical">
+                {{ content_for_additional_checkout_buttons }}
+  <style>
+    [data-shopify-buttoncontainer] {
+  justify-content: flex-end;
+    }</style>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% if settings.allow_note == 'yes' %}
+          <div class="note tac">
+            <p><a class="show-note" href="#">{{ settings.note_label }}</a></p>
+              <div class="note-for-seller hidden">
+                <textarea id="note" name="note" placeholder="Write your note">{{ cart.note }}</textarea>
+              </div>
+            </div>
+        {% endif %}
+      </form> 
+    {% endif %}
+  </section>
+</main>

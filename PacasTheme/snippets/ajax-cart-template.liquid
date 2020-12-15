@@ -1,0 +1,76 @@
+ 
+
+ <script id="CartTemplate" type="text/template">
+{% raw %}
+<section class="accent-padding">
+  {% endraw %}
+  <img src="{{'close-arrow.png' | asset_url}}" class="icon" id="close-cart" onclick="cartClose();">
+  <h3 class="tac accent">Your Cart</h3>
+  <a href="/cart"><img src="{{'cart.png' | asset_url}}" class="icon" id="go-to-cart"/></a>
+  {% raw %}
+  <form action="/cart" method="post" novalidate class="ajaxcart">
+    <div id="product-wrap">
+      {{#items}}
+      <div class="flex-container-no border-bottom-gray">
+        <div class="">
+          <a href="{{url}}" class="ajaxcart__product-image">
+            <img src="{{img}}" alt="">
+          </a>
+        </div>
+        <div class="accent-padding fw">
+          <p class="nmb"><a href="{{url}}"class="ajaxcart__product-name">{{name}}</a></p>
+          {{#if variation}}
+          <p class="ajaxcart__product-meta subscript">{{{ variation}}}</p>
+          <div class="flex-container-no jsb">
+            <div class="ajaxcart__qty">
+              <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}">
+                <span class="icon icon-minus" aria-hidden="true">−</span>                  
+              </button>
+              <input type="text" name="updates[]" class=" tac ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
+              <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}">
+                <span class="icon icon-plus" aria-hidden="true">+</span>
+              </button>
+            </div>
+            <p class="nm"><span>{{{linePrice}}}</span></p>
+          </div>
+        </div>
+      </div>
+            {{/if}}
+            {{#properties}}
+              {{#each this}}
+                {{#if this}}
+                  <span class="ajaxcart__product-meta">{{@key}}: {{this}}</span>
+                {{/if}}
+              {{/each}}
+            {{/properties}}
+
+            {{/items}}
+        </div>
+   
+      <div class="ajaxcart__footer">
+        <h4 class="flex-container-no jsb">Subtotal: <span class="tar">{{{totalPrice}}}</span></h4>
+
+      
+        <button type="submit" class="add-to-cart btn btn--secondary btn--full cart__checkout btn clickable" name="checkout" style="margin-top: 0.5em;">
+          <span>Checkout</span>
+        </button>
+          {%endraw%}
+        {% if additional_checkout_buttons %}
+                <p class="subscript tac">other payment options</p>
+
+          <div class="additional-checkout-buttons additional-checkout-buttons--vertical">{{ content_for_additional_checkout_buttons }}</div>
+        {% endif %}
+        {% raw %}
+      </div>
+    </form>
+  </section>
+  {% endraw %}
+
+  </script>
+
+<script>
+  Handlebars.registerHelper('splitTitle', function(title) {
+    var t = title.split(" / ");
+    return "Color: " + t[0] + "<br>Size: " + t[1] ;
+  });
+</script>

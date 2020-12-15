@@ -1,0 +1,38 @@
+<main>
+  <div class="flex-container collections-grid clickable">
+    <div class="half" id="shop-flats"><h2><a href="/products/flats-version" class="text-white">Shop Flats</a></h2></div>
+    <div class="half" id="shop-sneakers"><h2><a href="/products/womens-sneaker-version" class="text-white">Shop Sneakers</a></h2></div>
+  </div>
+  <div class="flex-container collections-grid clickable">
+    <div class="half" id="shop-loafers"><a href="/products/womens-loafer-version" class="text-white"><h2>Shop Loafers</h2></a></div>
+    <div class="half" id="shop-heels"><a href="/products/heels" class="text-white"><h2>Shop Heels</h2></a></div>
+  </div>
+   <section class="fw endorsements-features" id="featured">   
+    <ul class="background-beige">
+      <li><p>endorsed by</p></li>
+      {% if collection.title == "Men" %}
+        {% include 'endorsed_by_m' %}
+      {% else %}
+        {% include 'endorsed_by_w' %} 
+      {% endif %} 
+    </ul>
+  </section>
+  <section id="key-features" class="index-padding">
+    <div class="title-border"></div>
+    <h2>Give Gekks a Go</h2>
+    <ul class="icon-display">
+      <li><img src="{{'sweat.svg' | asset_url}}" alt="Sweat Reducing"/><br><span class="text-green">stench control</span><br><p class="subscript">antimicrobial yarn eliminates the sockless stench</p></li> 
+      <li class="do"><img src="{{'comfortable.svg' | asset_url}}" alt="Comfortable" /><br><span class="text-green">comfortable</span><br><p class="subscript">55% polyester, 39% nylon, 6% silver coated nylon</p></li> 
+      <li><img src="{{'longlasting.svg' | asset_url}}" alt="Long Lasting" /><br><span class="text-green">long lasting</span><p class="subscript">adhesive pads come with two layers to make your Gekks and your soles last longer</p></li> 
+    </ul>
+    <ul class="icon-display">
+      <li><img src="{{'convenient.svg' | asset_url}}" alt="Convenient"/><br><span class="text-green">convenient</span><p class="subscript">slip in and out barefoot using our patented fastening system</p></li> 
+      <li class="do"><img src="{{'ecofriendly.svg' | asset_url}}" alt="Eco-Friendly"/><br><span class="text-green">eco-friendly</span><p class="subscript">REPREVE yarn to help you reduce your carbon footprint</p></li> 
+      <li><img src="{{'fashionforward.svg' | asset_url}}" alt="Fashion Forward"/><br><span class="text-green">fashion forward</span><p class="subscript">rock that sockless style with all your shoe choices</p></li> 
+    </ul>
+    <ul class="icon-display mo">
+      <li><img src="{{'ecofriendly.svg' | asset_url}}" alt="Eco-Friendly"/><br><span class="text-green">eco-friendly</span><p class="subscript">REPREVE yarn, made from recycled bottles, to help you reduce your carbon footprint</p></li> 
+      <li><img src="{{'comfortable.svg' | asset_url}}" alt="Comfortable" /><br><span class="text-green">comfortable</span><br><p class="subscript">55% polyester, 39% nylon, 6% silver coated nylon</p></li> 
+    </ul>
+  </section>
+</main>

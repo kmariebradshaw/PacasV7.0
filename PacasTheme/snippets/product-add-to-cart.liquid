@@ -1,0 +1,287 @@
+<form action="/cart/add" method="post" id="product-form-{{ product.id }} t" class="checkout" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+
+ 
+ <section id="product-details">
+    {% if product.type == "Closet Pack" or product.type == "Gift Card" %}
+      <h3>{{product.title}}</h3>
+    {% else %}
+      <h3>{{ product.collections.first.title }}'s {{product.title}}</h3>
+    {% endif %}
+    <p class="subscript">{{ product.description}}</p>
+    {% if product.available %} 
+    <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}">
+      {% if product.title == "Women's Closet Pack" or product.title == "Men's Closet Pack" %}
+      <div class="closetpackprice ib">
+        <p id="product-price-{{ product.id }}">{{ product.price | money }}</p>
+        {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<p style="display: inline-block;" class="subscript" id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</p>{% endif %}
+      </div>
+      {% else %}
+        <p id="product-price-{{ product.id }}">{{ product.price | money }}</p>
+      {% endif %}
+      {% unless product.title == "Select" or product.title == "Gift Cards" %} 
+      <div id="review-details" class="ib">
+      <a href="/pages/reviews">
+        <div class="prodrating">
+          {% if product.title == "Ballet Flats" or product.type == "Closet Pack" or product.title == "Heels & Wedges" %}
+          <img src="{{'475stars.png' | asset_url}}" alt="4.75" />
+          {% else %}
+          <img src="{{'4stars.png' | asset_url}}" alt="4" />         
+          {% endif%}
+        </div>
+
+
+
+
+
+
+        <span class="text-green vam">
+        {% case product.title %}
+          {% when "Ballet Flats" %}
+            1224
+          {% when "Women's Closet Pack" %}
+            540
+          {% when "Heels & Wedges" %}
+            87
+          {% when "Men's Closet Pack" %}
+            109
+          {% when "Loafers & Slip-Ons" %}
+            {% if product.collections.first.title == "Women" %}
+              323
+            {% else %}
+              124
+            {% endif %}
+          {% when "Sneakers & Lace-Ups" %}
+            {% if product.collections.first.title == "Women" %}
+              219
+            {% else %}
+              76
+            {% endif %}
+        {% endcase %}
+        </span>
+       </div>
+     </a>
+    </div>  
+
+      {% endunless %}
+                 <div class=" fw ndo-plus">
+        <div class="priceu" style="display: none;">
+                    <img src="{{'winterspecial.png' | asset_url}}" style="width: 300px; display: block;" />
+
+        {% if product.title == "Women's Closet Pack" %}
+          <h3 class="tac nmb">$36.00 <span style="text-decoration: line-through; color: gray;">{% if product.price < product.compare_at_price_max %}$49.00{% endif %}</span></h3>
+        {% else %}
+          <div class="flex-container-no">
+          <h3 class="" style=" margin-right: 10px">$18 <span class="subscript" style="font-weight: 300; margin: 0 5px;">or</span> $12 </h3><span class="subscript" style="font-weight: 300;">when you buy 3 <br>or more pairs</span>
+        </div>
+          {% endif %}
+        </div>
+      </div>
+      {% else %}
+        <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
+        <link itemprop="availability" href="http://schema.org/OutOfStock">
+        <p><span>Sold Out</span></p>
+      {% endif %}
+  </section>
+  
+  {% if product.available and product.variants.size > 1 and product.type != "Gift Card"%}
+    {% include 'swatch' with 'Color' %}
+  {% endif %} 
+  {% if product.available %}
+    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+    <link itemprop="availability" href="http://schema.org/InStock">
+    
+   <select name="id" id="productSelect-{{ product.id }}" class="product-single__variants" style="display: none;">
+      {% for variant in product.variants %}
+     	{% if product.collection.first.title == "Men" %}
+           {% if product.title != "Men's Closet Pack" %}
+           	<option {% if forloop.index == 4 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+           {% else %}
+           	<option {% if forloop.index == 2 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+           {% endif %}
+        {% else %} 
+           {% if product.title != "Ballet Flats" %}
+           	<option {% if forloop.index == 2 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+           {% else %}
+           	<option {% if forloop.index == 3 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+           {% endif %}
+        <option data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+        {% else %}
+        <option disabled="disabled" style="display: none;">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+        {% endif %}
+      {% endfor %}
+   </select>
+   <select name="quantity" id="quantity">
+     {% for i in (1..10) %}
+     <option value="{{ i }}">{{ i }}</option>
+     {% endfor %}         
+  </select>  
+  {% if product.title == "Gift Cards" %}
+    <div class="spacer"></div>
+  {% else %}
+    <p class="subscript clickable" id="size-chart"><img src="{{'ruler.png' | asset_url}}" class="ruler-icon"/>sizing chart</p>
+  {% endif %}
+  <p class="priceu subscript" id="discount-at-checkout" style="display: none;"><span>*discount applied at checkout</span></p>
+  <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="background-green text-white"><span>add to cart</span></button>
+  {% unless product.title == "Select" or product.title == "Gift Cards" %}
+    {% assign select = collections.all.products[6]%}
+    <div class="example-shoes border-beige">
+      <p class="tac nm">Examples Of Shoes These Work In</p>
+      <div class="scrollp leftp clickable invis">➤</div>
+      <div class="shoe-wrapper">
+         {% case product.title %}
+          {% when "Ballet Flats" %}
+            {% for image in select.images offset: 103 limit: 15 %}
+             <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
+            {% endfor %}
+          {% when "Loafers & Slip-Ons" %}
+           {% if product.collections.first.title ==  "Women" %} 
+            {% for image in select.images offset: 118 limit: 6 %}
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
+            {% endfor %}
+            {% else %}
+               {% for image in select.images offset: 95 limit: 7 %}
+               <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload"/></div>
+               {% endfor %}
+            {% endif %}
+          {% when "Sneakers & Lace-Ups" %}
+           {% if product.collections.first.title == "Women" %}
+            {% for image in select.images offset: 125 limit: 7%}
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
+            {% endfor %}
+          {% else %}
+            {% for image in select.images offset: 87 limit: 8 %}
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
+            {% endfor %}             
+          {% endif %}
+          {% when "Women's Closet Pack" %}
+            {% for image in select.images offset: 132 limit: 9 %}
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload"/></div>
+            {% endfor %}  
+            {% when "Men's Closet Pack" %}
+            {% for image in select.images offset: 141 limit: 8 %}
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
+            {% endfor %}                               
+            {% when "Heels & Wedges" %}
+            {% for image in select.images offset: 174 limit: 9 %}
+              <div class="shoe-count"><img data-src="{{ image | product_img_url: 'compact' }}" class="lazyload" /></div>
+            {% endfor %} 
+          {% endcase %}
+       </div>
+       <div class="scrollp rightp clickable">➤</div>
+    </div>
+  {% endunless %}
+</form>
+
+<div style="display: none;" id="display-size" class="sizing-chart border-lightgray modal">
+  <div class="accent-padding">
+   <p class="nm klaviyo_header_close tar clickable">✕</p>
+  <table>
+    <tr>
+      <th colspan="2" class="blank-row"></th>
+      <th class="t-size table-title">small</th>
+      <th class="t-size table-title">medium</th>
+      <th class="t-size table-title">large</th>
+    </tr>
+    <tr class="lg">
+      <td rowspan="2" class="table-title"><span>mens</span></td>
+      <td class="table-title lg">US</td>
+      <td>6.5-8</td>
+      <td>8.5-11</td>
+      <td>11.5+</td>
+    </tr>
+    <tr class="dg">
+      <td class="table-title">UK</td>
+      <td>39-41</td>
+      <td>42-44</td>
+      <td> 44+ </td>
+    </tr>
+    <tr class="lg">
+      <td rowspan="2" class="table-title"><span>womens</span></td>
+      <td class="table-title lg">US</td>
+      <td>5-6.5</td>
+      <td>7-8.5</td>
+      <td>9-11.5</td>
+    </tr>
+    <tr class="dg">
+      <td class="table-title">UK</td>
+      <td>35-37</td>
+      <td>38-39</td>
+      <td>40-42</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+{% unless product.title == "Select" %} 
+{% if product.available %}
+<script>
+    $('.swatch').prepend("<p id='color-label'>color:</p>")
+   $('.scrollp').on("click", function() { 
+    var wrapper = $('.shoe-wrapper'); 
+    if ($(this).hasClass('rightp')) { 
+      $(wrapper).animate( { scrollLeft: '+=300' })
+    }
+    else {
+      $(wrapper).animate({scrollLeft: '-=300'});  
+    }
+  }); 
+
+$('.shoe-wrapper').scroll(function() {
+    var wrapper = $('.shoe-wrapper'); 
+    var $width = $(wrapper).outerWidth()
+    var $scrollWidth = $(wrapper)[0].scrollWidth; 
+    var $scrollLeft= $(wrapper).scrollLeft() 
+    if ($scrollWidth - $width == $scrollLeft) {
+      $('.rightp').addClass('invis');
+      $('.leftp').removeClass('invis');
+    }
+    else if ($scrollLeft === 0) {
+      $('.leftp').addClass('invis');
+      $('.rightp').removeClass('invis')
+    }
+    else {
+      $('.scrollp').removeClass('invis');
+    }
+}); 
+
+  var selectCallback_{{ product.id }} = function(variant, selector) {
+
+    // BEGIN SWATCHES
+    if (variant) {
+      var form = jQuery('#' + selector.domIdPrefix).closest('form');
+      for (var i=0,length=variant.options.length; i<length; i++) {
+        var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+        if (radioButton.size()) {
+          radioButton.get(0).checked = true;
+        }
+      }
+    }
+    // END SWATCHES
+    timber.productPage({
+      money_format: "{{ shop.money_format }}",
+      variant: variant,
+      selector: selector,
+      product_id: '{{ product.id }}',
+      translations: {
+      add_to_cart : "{{ settings.add_to_cart_text }}",
+      sold_out : "Sold Out",
+      unavailable : "Unavailable"
+    }
+                       });
+  };
+  jQuery(function($) {
+    new Shopify.OptionSelectors('productSelect-{{ product.id }}', {
+                                product: {{ product | json }},
+                                onVariantSelected: selectCallback_{{ product.id }},
+                                enableHistoryState: true
+                                });
+
+
+  });
+</script>
+{% endif %}
+{% endunless %} 
+{% endif %} 
+
+</form>

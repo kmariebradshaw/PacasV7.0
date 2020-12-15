@@ -1,0 +1,454 @@
+<style>
+  nav {
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,.2);
+    background: white;
+  }
+</style>  
+
+<main id="product" itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="name" content="{{ product.title }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}">
+
+  <section class="flex-container-do accent-padding">
+    <div class="half-do accent-padding" id="product-image-wrapper">
+      <div class="flex-container-no jcc">
+        <div class="left-arrow"><p class="large">⌃</p></div>
+        <div class="tac">
+          {% for variant in product.variants %}
+          {% if variant.available %}
+          <img src="{{ variant.featured_image.src | img_url: '2000x2000' }}" class="fw" id="featured_image">
+          {% break %}
+          {% endif %}
+          {% endfor %}
+          {% if product.images.size > 1 %}
+          {% for image in product.images | limit: 1 %}
+          <div class="circle selected" data-image-source="{{image.src | img_url: '2000x2000' }}"></div>
+          {% endfor %}
+          {% for image in product.images | offset: 1 | limit: 3 %}
+          <div class="circle" data-image-source="{{image.src | img_url: '2000x2000' }}"></div>
+          {% endfor %}
+          {% endif %}
+        </div>
+        <div class="right-arrow"><p class="large">⌃</p></div>
+      </div>
+      <p class="tac do">{{ product.description }}</p>
+      {% if product.tags contains "Socks" %}
+      <img src="{{'PacasBug-03.png' | asset_url }}" class="index-guarantee do block ma"/>
+      {% endif %}
+    </div>
+    <div class="half-do tac accent-padding" id="form-wrapper">
+      <h3 class="nmb">{{ product.title }}</h3>
+      {% if product.available %}
+      <form action="/cart/add" method="post" id="product-form-{{ product.id }} t" class="checkout" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <div class="tac fw">
+
+          {% if product.available and product.type != "Gift Card" %}
+          {% include 'swatch' with 'Color' %}
+          {% endif %}
+
+          {% if product.type == "Gift Card" %}
+          <p class="tac">Gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees.
+
+          </p>
+          {% else %}
+          <p class="tac nmb">{{product.price | money }} <span class="strike-through subscript">{{product.compare_at_price | money }}</span></p>
+          {% endif %}
+          {% if product.price >= 4000 %}
+          <p class="tac">Qualifies for Free Shipping!</p>
+          {% endif %}
+          {% if product.tags contains "Socks"  %}
+          {% if product.tags contains "Kids" %}
+          {% else %}
+          <p class="subscript clickable" id="size-chart"><b>See Size Guide</b></p>
+          {% endif %}
+          {% endif %}
+          <div class="flex-container-no jcc">
+            <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+            <link itemprop="availability" href="http://schema.org/InStock">
+            {% if product.tags contains "Socks" or product.type == "Gift Card"%}
+
+            <div class="fw" style="">
+              {% else %}
+              <div class="fw" style="display: none;">
+                {% endif %}
+                {% assign default_index = product.options_by_name['Color'].values.size | plus: 1 %}
+
+                <select name="id" id="productSelect-{{ product.id }}" class="product-single__variants" style="display: none;">
+                  {% for variant in product.variants %}
+                  <option {% if forloop.index == default_index %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+                  {% endfor %}
+                </select>
+              </div>
+
+              <select name="quantity" id="quantity-wrapper" class="tac">
+                {% for i in (1..10) %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}         
+              </select>  
+              <style>
+                #quantity-wrapper { padding-left: 20px; background-color: white;} 
+              </style>
+            </div>
+            {% if product.available %}
+
+            <button type="submit" name="add" id="add-to-cart-{{ product.id }}" class="background-gray text-white add-to-cart clickable"><span>Add to Cart</span></button>
+            <!--          <div class="quick-pay-options flex-container-no jcc">
+<img src="{{'1280px-Amazon_Pay_logo.svg.png' | asset_url }}" alt="Amazon Pay" class="accent-padding" />
+<img src="{{'PayPal-Logo.png' | asset_url }}" alt="Amazon Pay" class="accent-padding"/>
+
+</div> -->
+            <style>
+              .quick-pay-options img { margin: 2.5px; max-width: 50%; width: 100px; }
+            </style>
+            <p class="tac subscript">Your purchase will help donate Pacas socks to a child staying at a local children's hospital. <span id="donation-learn-more" class="tu clickable">Learn more.</span></p>
+
+
+            {% endif %}
+            {% include 'reviews' %}
+
+            {% if product.tags contains "Socks" %}
+
+            <img src="{{'PacasBug-03.png' | asset_url }}" class="product-guarantee mo-plus block ma"/>
+            {% endif %}
+            <p class="tac mo">{{ product.description }}</p>
+
+          </div>
+
+
+          </form>
+        {% else %}
+        <h5 class="tac nmb">I'll be back soon!</h5> 
+        <p class"tac">This item is temporarily out of stock.<br>Enter your email below to be alerted when it's back.</p>
+        <div class="klaviyo-form-XJ2jdA"></div>
+        {% endif %}
+        </div>
+      </section>
+    {% comment %} LEARN MORE MODAL {% endcomment %}
+    <div  id="donation-modal" class="background-pink  border-lightgray modal" style="display: none; width: 80%; min-width: 320px; max-width: 700px; box-sizing: border-box;">
+      <div class="accent-padding tac">
+        <p class="nm klaviyo_header_close tar clickable" style="font-size: 20px;">✕</p>
+        <h3 class="tac accent">Give the Gift of Comfort and Warmth</h3>
+        <p>Our <b>mission</b> is to outfit every child staying at a children's hospital with Pacas gear to make their stay as comfy as possible.</p>
+        <div class="flex-container jcc">
+          <div class="half asfe do">
+            <img src="{{'GivingAlpaca.png' | asset_url}}" style="max-width: 100%; width: 500px;" alt="" id="giving-paca" />
+
+          </div>
+          <div class=" accent-padding half">
+            <p>Each month, a percentage of our profits goes toward donating Pacas socks to local children's hospitals. This month we are donating to Lurie Children's Hospital in Chicago, IL, which has a special place in our hearts.</p>
+            <img src="{{'Lurie_Childrens_Logo.png' | asset_url}}" style="max-width: 100%; width: 500px;" alt="The Brooks Strong Foundation" />
+          </div>
+
+        </div>
+        <img src="{{'GivingAlpaca.png' | asset_url}}" style="max-width: 100%; width: 500px;" alt="" class="mo-plus ma" id="giving-paca" />
+
+      </div>
+    </div>
+    {% comment %} SIZING CHART MODAL {% endcomment %}
+
+    {% if product.tags contains "Women's" %}
+    <div style="display: none;" id="display-size" class="sizing-chart border-lightgray modal">
+      <div class="accent-padding">
+        <p class="nm klaviyo_header_close tar clickable">✕</p>
+        <h3 class="tac">Women's Size Guide</h3>
+        <style>
+          .t-size { padding: 0px 20px }
+        </style>
+        <table class="tac">
+          <tr>
+            <th colspan="1" class="blank-row"></th>
+            <th class="t-size table-title">Small / Medium</th>
+            <th class="t-size table-title">Medium / Large</th>
+          </tr>
+
+          <tr class="pink-row">
+            <td class="table-title">US<br><span class="subscript">shoe size</span></td>
+            <td>5 - 8</td>
+            <td>8.5 - 11.5+</td>
+          </tr>
+          <tr class="dg">
+            <td class="table-title">UK<br><span class="subscript">shoe size</span></td>
+            <td>35 - 39</td>
+            <td>40 - 42+</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    {% else %}
+    <div style="display: none;" id="display-size" class="sizing-chart border-lightgray modal">
+      <div class="accent-padding">
+        <p class="nm klaviyo_header_close tar clickable">✕</p>
+        <h3 class="tac">Men's Size Guide</h3>
+
+        <style>
+          .t-size { padding: 0px 20px }
+        </style>
+        <table class="tac">
+          <tr>
+            <th colspan="1" class="blank-row"></th>
+            <th class="t-size table-title">Medium / Large</th>
+            <th class="t-size table-title">Large / Extra-Large</th>
+          </tr>
+          <tr class="blue-row">
+            <td class="table-title">US<br><span class="subscript">shoe size</span></td>
+            <td>7 - 11</td>
+            <td>11.5 - 14+</td>
+          </tr>
+          <tr class="dg">
+            <td class="table-title">UK<br><span class="subscript">shoe size</span></td>
+            <td>41 - 45</td>
+            <td>46 - 48+</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if product.available %}
+    <script>
+
+      var selectCallback_{{ product.id }} = function(variant, selector) {
+
+        // BEGIN SWATCHES
+        if (variant) {
+          var form = jQuery('#' + selector.domIdPrefix).closest('form');
+          for (var i=0,length=variant.options.length; i<length; i++) {
+            var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+            if (radioButton.size()) {
+              radioButton.get(0).checked = true;
+            }
+          }
+        }
+        // END SWATCHES
+        timber.productPage({
+          money_format: "{{ shop.money_format }}",
+          variant: variant,
+          selector: selector,
+          product_id: '{{ product.id }}',
+          translations: {
+          add_to_cart : "{{ settings.add_to_cart_text }}",
+          sold_out : "Sold Out",
+          unavailable : "Unavailable"
+        }
+                           });
+      };
+      jQuery(function($) {
+        new Shopify.OptionSelectors('productSelect-{{ product.id }}', {
+                                    product: {{ product | json }},
+                                    onVariantSelected: selectCallback_{{ product.id }},
+                                    enableHistoryState: true
+                                    });
+
+
+      });
+    </script>
+    {% endif %}
+    <section class="product-benefits background-blue flex-container double-padding-tbo">
+      <div class="mo fw">
+        <div class="tac accent-padding">
+          <img src="{{'crown.png' | asset_url}}" class="icon" />
+          <h4 class="nm">Soft as Cashmere</h4>
+          <p>Our luxurious and rare alpaca fleece comes<br> straight from their native Incan lands of Peru.</p>
+        </div>
+        <div class="tac accent-padding">
+          <img src="{{'flame.png' | asset_url}}" class="icon" />
+          <h4 class="nm">Warmer than Wool</h4>
+          <p>Alpaca fibers are completely hollow, which<br> enable them to trap  more heat than sheep wool.</p>
+        </div>
+        <div class="tac accent-padding">
+          <img src="{{'water.png' | asset_url}}" class="icon" />
+          <h4 class="nm">Thermoregulating & Waterproof</h4>
+          <p>Alpaca fibers have a hollow core, allowing their<br> fleece to provide insulation and wick moisture.</p>
+        </div>
+        <div class="tac accent-padding" id="no-itch">
+          <img src="{{'poof.png' | asset_url}}" class="icon" />
+          <h4 class="nm">Non-itchy & Hypoallergenic</h4>
+          <p>Alpaca fleece is naturally smooth and short, with<br> no grease, providing the ultimate comfort.</p>
+        </div>
+        <div class="flex-container-no" id="side-paca-text">
+          <div class="half-no">
+          </div>
+          <div class="half-no">
+            <div class="tac accent-padding">
+              <img src="{{'leaf.png' | asset_url}}" class="icon" />
+              <h4 class="nm">Eco-friendly & Sustainable</h4>
+              <p>Alpacas step lightly on soil and graze on native grasses, which reduces environmental impact.</p>
+            </div>
+            <div class="tac accent-padding">
+              <img src="{{'ribbon.png' | asset_url}}" class="icon" />
+              <h4 class="nm">Gives Back</h4>
+              <p>A percentage of every purchase goes towards dressing pediatric cancer patients in hospitals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="third do">
+      </div>
+      <div class="two-thirds do">
+        <div class="flex-container product-benefits-wrapper">
+          <div class="tac half">
+            <img src="{{'crown.png' | asset_url}}" class="icon" />
+            <h4 class="nmt">Soft as Cashmere</h4>
+            <p>Our luxurious and rare<br> alpaca fleece comes<br> straight from their native<br> Incan lands of Peru.</p>
+          </div>
+          <div class="tac half">
+            <img src="{{'flame.png' | asset_url}}" class="icon" />
+            <h4 class="nmt">Warmer than Wool</h4>
+            <p>Alpaca fibers are<br> completely hollow, which<br> enable them to trap  more<br> heat than sheep wool.</p>
+          </div>
+        </div>  
+        <div class="flex-container product-benefits-wrapper">
+          <div class="tac half">
+            <img src="{{'water.png' | asset_url}}" class="icon" />
+            <h4 class="nmt">Thermoregulating &<br class="mid-break"> Waterproof</h4>
+            <p>Alpaca fibers have a hollow<br>core, allowing their fleece<br> to provide insulation and<br> wick moisture.</p>
+          </div>
+          <div class="tac half product-benefits-wrapper">
+            <img src="{{'poof.png' | asset_url}}" class="icon" />
+            <h4 class="nmt">Non-itchy & <br class="mid-break"> Hypoallergenic</h4>
+            <p>Alpaca fleece is naturally<br> smooth and short, with<br>no grease, providing the<br> ultimate comfort.</p>
+          </div>
+        </div>
+        <div class="flex-container product-benefits-wrapper">
+          <div class="tac half">
+            <img src="{{'leaf.png' | asset_url}}" class="icon" />
+            <h4 class="nmt">Eco-friendly & Sustainable</h4>
+            <p>Alpacas step lightly on soil<br> and graze on native<br> grasses, which reduces<br> environmental impact.</p>
+          </div>
+          <div class="tac half">
+            <img src="{{'ribbon.png' | asset_url}}" class="icon" />
+            <h4 class="nmt">Gives Back</h4>
+            <p>A percentage of every<br> purchase goes towards<br> dressing pediatric cancer <br>patients in hospitals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include 'live-feed' %}
+    <script>
+      var swipeRight = function() {
+        if ($('.selected').next().length > 0) {
+          $('.selected').removeClass('selected').next().addClass('selected')
+        }
+        else { 
+          $('.selected').removeClass('selected'); 
+          $('.circle').first().addClass('selected')
+        }
+        $('#featured_image').attr("src", $('.selected').attr("data-image-source"))
+      }
+      var swipeLeft = function() {
+        if ($('.selected').prev('.circle').length > 0) {
+          $('.selected').removeClass('selected').prev().addClass('selected')
+        }
+        else { 
+          $('.selected').removeClass('selected'); 
+          $('.circle').last().addClass('selected'); 
+        }
+        $('#featured_image').attr("src", $('.selected').attr("data-image-source"))
+      }
+
+      $('#featured_image').on("swiperight", function() {
+        swipeLeft(); 
+      })
+      $('#featured_image').on("swipeleft", function() {
+        swipeRight(); 
+      })
+      $('.right-arrow').click(function() {
+        swipeRight(); 
+      })
+      $('.left-arrow').click(function() {
+        swipeLeft(); 
+      })
+
+      $('.circle').click(function() {
+        $(this).addClass('selected').siblings().removeClass('selected'); 
+        var imageURL = $(this).attr("data-image-source");
+        $('#featured_image').attr("src", imageURL)
+      })
+      $('form').change(function() {
+        var color = $('.swatch .color input:checked').attr("value")
+        $('#color-selected').text(color); 
+      })
+      $(document).ready(function() {
+        $("[data-value='Small / Medium'] label").click(function () {
+          $('.small-icon').attr("src", "//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/filled-paca.png?1079638347607270882")
+          $('.medium-icon, .large-icon').attr("src", "//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/stroke-paca.png?1079638347607270882" ); 
+        })
+        $("[data-value='Medium / Large'] label").click(function () {
+          $('.medium-icon').attr("src", "//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/filled-paca.png?1079638347607270882")
+          $('.small-icon, .large-icon').attr("src", "//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/stroke-paca.png?1079638347607270882" ); 
+        })
+        $("[data-value='Large / Extra Large'] label").click(function () {
+          $('.large-icon').attr("src", "//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/filled-paca.png?1079638347607270882")
+          $('.medium-icon, .small-icon').attr("src", "//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/stroke-paca.png?1079638347607270882" ); 
+        })
+      }); 
+      $('.small-medium').prepend("<p class='subscript ib nm additional-label'>size</p>"); 
+      $("[data-value='Small / Medium'] label").html("<img src='//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/filled-paca.png?1079638347607270882' class='small-icon' />")
+      $("[data-value='Medium / Large'] label").html("<img src='//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/stroke-paca.png?1079638347607270882' class='medium-icon' />")
+      $("[data-value='Large / Extra Large'] label").html("<img src='//cdn.shopify.com/s/files/1/0117/0597/4884/t/6/assets/stroke-paca.png?1079638347607270882' class='large-icon' />")
+
+    </script>
+    <script text="text/javascript">
+      var _learnq = _learnq || [];
+
+      var item = {
+        Name: {{ product.title|json }},
+        ProductID: {{ product.id|json }},
+        Categories: {{ product.collections|map:'title'|json }},
+        ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+        URL: "{{ shop.secure_url }}{{ product.url }}",
+        Brand: {{ product.vendor|json }},
+        Price: {{ product.price|money|json }},
+        CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+      };
+
+      _learnq.push(['track', 'Viewed Product', item]);
+      _learnq.push(['trackViewedItem', {
+        Title: item.Name,
+        ItemId: item.ProductID,
+        Categories: item.Categories,
+        ImageUrl: item.ImageURL,
+        Url: item.URL,
+        Metadata: {
+          Brand: item.Brand,
+          Price: item.Price,
+          CompareAtPrice: item.CompareAtPrice
+        }
+      }]);
+    </script>
+    <script type="text/javascript">
+      var _learnq = _learnq || [];
+      document.getElementById("add-to-cart-{{ product.id }}").addEventListener('click',function (){
+                              _learnq.push(['track', 'Added to Cart', item]);
+      });
+    </script>
+    {% if product.variants.size > 1 %}
+    <script>
+      var variantImages = [],
+          variant,
+          variantImage
+
+      {% for variant in product.variants %}
+      variant = {{ variant | json }};
+      if ( typeof variant.featured_image !== 'undefined' && variant.featured_image !== null ) {
+        variantImage =  variant.featured_image.src.split('?')[0].replace(/http(s)?:/,'');
+        variantImages.push(variantImage)
+
+      }
+      {% endfor %}
+
+      $('.color').change(function() {
+        var imageIndex = $(this).data("index"); 
+        $('#featured_image').attr("src", variantImages[imageIndex]);
+
+        $('.fake-color-padding').css("border", "none"); 
+
+        //           let url = $('#featured-image').attr("src")
+
+        //         $('.product-image').removeClass('border-lightgray')
+        //         $('.first-thumb:visible').attr("src", variantImages[imageIndex]).addClass('border-lightgray')
+      })
+    </script> 
+    {% endif %}
