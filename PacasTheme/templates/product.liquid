@@ -72,7 +72,7 @@
               {% else %}
               <div class="fw" style="display: none;">
                 {% endif %}
-                {% assign default_index = product.options_by_name['Color'].values.size | plus: 1 %}
+                {% assign default_index = product.options_by_name['Color'].values.size | plus: -1 %}
 
                 <select name="id" id="productSelect-{{ product.id }}" class="product-single__variants" style="display: none;">
                   {% for variant in product.variants %}
