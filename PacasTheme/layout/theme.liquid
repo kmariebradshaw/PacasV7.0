@@ -67,35 +67,11 @@
       var global_money_format = '{{ shop.money_format }}';
     </script>
     {{ content_for_header }}
-    <div class="fw banner tac" id="holiday1"><div><span class="accent clickable">Holiday Deals Live! <span class="tdu accent clickable">Click To See</span></span></div><div style="display: none;"><span style="font-weight: bold;">Use Code "Holiday10" for 10% Off</span></div></div>
-    <style>
-      .banner span { background-color: #FFBCE8 ; }
-      .banner {
-        background-size: cover;
-        background-image: url("{{'holidyheaderpaca-1.png' | asset_url }}"); 
-        position: fixed;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        height: 50px;
-        align-items: center;
-        z-index: 999;
-      } 
-      .tdu { border-bottom: 1px solid gray; }
-      #holiday1 { background-color: #FFBCE8 ; }
-    </style>
-    <script>
-      $('.banner div').click(function() {
-        $('#holiday-modal').show(); 
-            $('header, main, footer, nav, .index-sections, .banner,.mobile-nav1').addClass('darken');
-
-      }); 
-    </script>                    
+             
     {% section 'header' %}
-    <section class="upper-pad">
+    <section class="upper-pad"> 
       {{ content_for_layout }}
-      <!--   holiday modal   -->
-        	{% include 'holiday-modal' %}
+
     </section>
     {% section 'footer' %}
     <script>jQuery(function(){jQuery(".swatch :radio").change(function(){var t=jQuery(this).closest(".swatch").attr("data-option-index"),e=jQuery(this).val();jQuery(this).closest("form").find(".single-option-selector").eq(t).val(e).trigger("change")})});</script>
