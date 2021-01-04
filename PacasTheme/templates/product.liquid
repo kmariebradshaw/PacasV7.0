@@ -72,11 +72,11 @@
               {% else %}
               <div class="fw" style="display: none;">
                 {% endif %}
-                {% assign default_index = product.options_by_name['Color'].values.size | plus: -1 %}
-
+{% comment %}                
+            {% assign default_index = product.options_by_name['Color'].values.size | plus: -1 %}{% endcomment %}
                 <select name="id" id="productSelect-{{ product.id }}" class="product-single__variants" style="display: none;">
                   {% for variant in product.variants %}
-                  <option {% if forloop.index == default_index %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                  <option {% if forloop.index == 0 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
 
                   {% endfor %}
                 </select>
@@ -125,7 +125,7 @@
         {% endif %}
         </div>
       </section>
-    {% comment %} LEARN MORE MODAL {% endcomment %}
+    {% comment %} LEARN MORE MODAL 
     <div  id="donation-modal" class="background-pink  border-lightgray modal" style="display: none; width: 80%; min-width: 320px; max-width: 700px; box-sizing: border-box;">
       <div class="accent-padding tac">
         <p class="nm klaviyo_header_close tar clickable" style="font-size: 20px;">✕</p>
@@ -146,6 +146,7 @@
 
       </div>
     </div>
+    {% endcomment %}
     {% comment %} SIZING CHART MODAL {% endcomment %}
 
     {% if product.tags contains "Women's" %}
