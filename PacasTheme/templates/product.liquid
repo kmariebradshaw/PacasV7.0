@@ -109,7 +109,9 @@
             {% include 'reviews' %}
 
             {% if product.tags contains "Socks" %}
-
+<style>
+  [data-option="option2"] { display: none;  }
+</style>
             <img src="{{'PacasBug-03.png' | asset_url }}" class="product-guarantee mo-plus block ma"/>
             {% endif %}
             <p class="tac mo">{{ product.description }}</p>
