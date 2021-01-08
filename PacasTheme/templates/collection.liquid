@@ -18,18 +18,13 @@
           <div class="product-collection-wrapper">
             <div class="accent-padding">
               <div class="slvr-col-img-wrapper">
-                {% if product.title == "3 Pack - Women's Crew Pacas Socks" %}
-               {% for variant in product.variants | limit: 1 %}
-                <img src="{{ variant.image.src | product_img_url: '2000x2000'  }}" />
-                {% endfor %}
-                {% else %}
+       
            			{% for variant in product.variants %}
                 		{% if variant.available %}
            <img src="{{ variant.featured_image.src | product_img_url: '2000x2000' }}" alt="{{product.title}}"/> 
                 		{% break %}
                 {% endif %}
                 {% endfor %}
-                {% endif %}
               </div> 
               <h3 class=" nmb">{{product.title}}</h3>
               <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
