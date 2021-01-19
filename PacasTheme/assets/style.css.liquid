@@ -1436,9 +1436,20 @@ body .additional-checkout-button {
 .darken {
     position: relative;
 }
+@media only screen and (min-width: 800px) {
 main.darken { 
   height: calc( 100vh - 102px);
   overflow: hidden;
+}
+}
+@media only screen and (max-width: 799px) {
+main.darken { 
+  height: calc( 100vh - 79px);
+  overflow: hidden;
+  touch-action: none;
+  position: fixed;
+  width: 100%;
+}
 }
 .ajaxified-cart-feedback { display: none !important; }
 header.darken, #CartContainer.darken, .mobile-nav1.darken { box-shadow: 1px 1px 1px #696969; }
