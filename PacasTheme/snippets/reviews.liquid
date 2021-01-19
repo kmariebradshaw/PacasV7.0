@@ -21,7 +21,7 @@
 <div class="modal" id="all-reviews-modal" style="display: none;">
     <p class="klaviyo_header_close clickable" style="font-size: 20pt;position: absolute;right: 20pt;"><span>✕</span></p>
 
-    <iframe src="https://pacas-reviews.herokuapp.com/reviews" /> </iframe>
+    <iframe src="https://pacas-reviews.herokuapp.com/reviews" id="pacas-review-iframe"/> </iframe>
 
 </div>
 <style>
@@ -31,7 +31,7 @@
     z-index: 999; 
     background-color: white; 
   }
-  iframe { 
+  #pacas-review-iframe { 
     height: calc(100% - 10px);
     width: calc(100% - 10px); 
   	border: none;
