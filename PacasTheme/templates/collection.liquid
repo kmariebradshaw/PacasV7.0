@@ -27,7 +27,7 @@
               </div> 
               <h3 class=" nmb">{{product.title}}</h3>
               <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
-              {% if product.price >= 4000 %}
+              {% if product.price > 4500 %}
               <p class="subscript">Qualifies for Free Shipping!</p>
               {% else %}
               <p class="subscript vis-hid">Qualifies for Free Shipping!</p>
@@ -190,7 +190,7 @@
               </div>  
               <h3 class=" nmb">{{product.title}}</h3>
               <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
-              {% if product.price >= 4000 %}
+              {% if product.price > 4500 %}
               <p class="subscript">Qualifies for Free Shipping!</p>
               {% else %}
               <p class="subscript vis-hid">Qualifies for Free Shipping!</p>
