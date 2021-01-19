@@ -17,7 +17,7 @@
         {{ form.errors | default_errors }}
         <input type="email" value="" name="customer[email]" class="" placeholder="Email"><br>
         <input type="password" value="" name="customer[password]" size="16" class="" placeholder="Password"><br>
-        <input type="submit" value="Sign In">
+        <input class="clickable" type="submit" value="Sign In">
         <p class="forgot-password tac"><a href="#recover" onclick="showRecoverPasswordForm()">Forgot your password?</a></p>
       {% endform %}
     </section>
