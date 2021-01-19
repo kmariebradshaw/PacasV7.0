@@ -58,7 +58,7 @@ nav {
         {% else %}
         <p class="tac nmb">{{product.price | money }} <span class="strike-through subscript">{{product.compare_at_price | money }}</span></p>
         {% endif %}
-        {% if product.price >= 4000 %}
+        {% if product.price > 4500 %}
         <p class="tac">Qualifies for Free Shipping!</p>
         {% endif %}
         {% if product.tags contains "Socks"  %}
