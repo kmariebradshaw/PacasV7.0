@@ -10,7 +10,7 @@
         {{ form.errors | default_errors }}
         <input type="password" value="" name="customer[password]" size="16" placeholder="Password">
         <input type="password" value="" name="customer[password_confirmation]" placeholder="Confirm Password">
-        <input type="submit" value="Activate Account">
+        <input class="clickable" type="submit" value="Activate Account">
       {% endform %}
     </section> 
         <img src="{{'account-paca.png' | asset_url}}" class="account-paca"/>

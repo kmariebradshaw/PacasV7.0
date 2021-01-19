@@ -17,7 +17,7 @@
         {{ form.errors | default_errors }}
         <input type="email" value="" name="customer[email]" class="" placeholder="Email"><br>
         <input type="password" value="" name="customer[password]" size="16" class="" placeholder="Password"><br>
-        <input type="submit" value="Sign In">
+        <input class="clickable" type="submit" value="Sign In">
         <p class="forgot-password tac"><a href="#recover" onclick="showRecoverPasswordForm()">Forgot your password?</a></p>
       {% endform %}
     </section>
@@ -32,7 +32,7 @@
         {{ form.errors | default_errors }}
         <input type="email" value="" size="30" name="email" class="" placeholder="Email"> 
         <input type="submit" value="Submit">
-        <p class="forgot-password tac"> <span>back to <a href="javascript:void(0)" onclick="hideRecoverPasswordForm()">login</a></span></p>
+        <p class="forgot-password tac"> <span><a href="javascript:void(0)" onclick="hideRecoverPasswordForm()">Back to Login</a></span></p>
       {% endform %}
     </section>
   </div>

@@ -44,7 +44,7 @@
       <p class="tac subscript text-white">Want to stay up to date with events and exclusive offers? Sign up for our newsletters.</p>
       <form action="https://manage.kmail-lists.com/subscriptions/subscribe?g=MdrVKk" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
                   <input type="email" value="" name="EMAIL" class="required email email_update border-white" id="mce-EMAIL" placeholder="Your email address">
-                  <input type="submit" class="submit"value="sign up" name="subscribe" id="mc-embedded-subscribe">
+                  <input class="clickable" type="submit" class="submit"value="sign up" name="subscribe" id="mc-embedded-subscribe">
                   <div id="mce-responses" class="clear">
                     <div class="response" id="mce-error-response"></div>
                     <div class="response" id="mce-success-response"></div>
@@ -54,7 +54,7 @@
   </div>
     <img data-src="{{'Pacas-white.png' | asset_url}}" class="lazyload jlogo" />
 
-  <p class="subscript tac nmt text-white">© 2019 All Rights Reserved</p>
+  <p class="subscript tac nmt text-white">© {{ 'now' | date: "%Y" }} All Rights Reserved</p>
   <div class="jcc flex-container-no fw">
        <img data-src="{{'amazon-pay.png' | asset_url}}" class="payment-icon lazyload" alt="amazon pay"/>
               <img data-src="{{'amex.png' | asset_url}}" class="payment-icon lazyload" alt="amex"/>
