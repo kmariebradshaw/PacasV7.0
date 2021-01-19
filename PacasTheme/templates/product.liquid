@@ -14,7 +14,7 @@ nav {
   <div class="half-do accent-padding" id="product-image-wrapper">
     <div class="flex-container-no jcc">
       {% unless product.type == "Gift Card" %}
-        <div class="left-arrow"><p class="large">⌃</p></div>
+        <div class="left-arrow clickable"><p class="large">⌃</p></div>
       {% endunless %}
       <div class="tac">
         {% for variant in product.variants %}
@@ -33,7 +33,7 @@ nav {
         {% endif %}
       </div>
       {% unless product.type == "Gift Card" %}
-        <div class="right-arrow"><p class="large">⌃</p></div>
+        <div class="right-arrow clickable"><p class="large">⌃</p></div>
       {% endunless %}
     </div>
     <p class="tac do">{{ product.description }}</p>

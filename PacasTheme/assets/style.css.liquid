@@ -960,8 +960,14 @@ body section #shaver.rotate { transform: rotate(-10deg); }
     vertical-align: middle;
 }
 .circle.selected { padding: 1.5px; }
-.left-arrow { transform: rotate(-90deg); }
-.right-arrow { transform: rotate(90deg); }
+.left-arrow { 
+  transform: rotate(-90deg); 
+  cursor: pointer;
+}
+.right-arrow { 
+  transform: rotate(90deg);
+  cursor: pointer;
+}
 .add-to-cart {
     padding: 15px;
     width: 100%;
@@ -1627,11 +1633,15 @@ table .blue-row { background-color: #f5fcfc; }
     position: absolute;
     left: 10px;
     margin-top: 95px;
+    cursor: pointer;
+
 }
 #live-feed-wrapper .right-arrow {
     position: absolute;
     right: 10px;
     margin-top: -150px;
+        cursor: pointer;
+
 }
 /* customer account */
 .customer form input[type=email], .customer select, .customer form input[type=password], .customer form input[type=text]{
