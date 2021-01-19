@@ -1,8 +1,17 @@
 <main id="index">
-  <section class="page-header" id="atf-b">
-    <div class="tac" id="atf-text">
-      <h2 class="nm accent">Shh... Don't Tell Wool!</h2>
-      <h4>Buttery soft products made from luxurious, all natural alpaca fleece.</h4>
+     <video autoplay muted loop playsinline class="atf-video do">
+  <source src="{{'AlpacaVideo1.mov' | asset_url}}" type="video/mp4">
+</video>
+  <video autoplay muted loop playsinline class="atf-video mo-plus">
+  <source src="{{'VideoATF_MobileExported.mov' | asset_url}}" type="video/mp4">
+</video>
+
+    <div id="atf-text-buttons-overlay">
+      <div>
+    <div class="tac" id="atf-text-overlay">
+      <h2 class="accent text-white nm">Warmer than Wool, <br>Softer than Cashmere.</h2>
+      <h4 class="text-white">Buttery soft products made from luxurious, all natural alpaca fleece.</h4>
+      <section class="fw" id="cta-buttons-wrap">
       <div class="connect button ib cta-women cta-bandaid" id="cta">
         <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Women</h4></div>
       </div>
@@ -12,11 +21,44 @@
       <div class="connect button ib cta-kids cta-bandaid" id="cta">
         <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Kids</h4></div>
       </div>
+    </section>
     </div> 
-  </section>
-
+  </div>
+</div>
   <section class="background-blue accent-padding">
     <style>
+      .atf-video {
+        width: 100%;
+      }
+      #atf-text-overlay {
+      
+        width:100%;
+      }
+      @media only screen and (min-width: 800px) {
+        #cta-buttons-wrap {
+          top: calc(100vw * .4 - 122px);
+        }
+      }
+      @media only screen and (min-width: 589px) {
+              #cta-buttons-wrap {position: absolute;}
+            #atf-text-overlay {
+        position: absolute;
+        top: 132px;
+        width:100%;
+      }
+
+      }
+      @media only screen and (max-width: 588px) {
+        #atf-text-buttons-overlay {
+        position: absolute;
+        top: 79.02px;
+        width:100%;
+        height: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center
+        }
+      }
 
       @media screen and (max-width: 799px) {
         /* CREW SOCK ATF */
