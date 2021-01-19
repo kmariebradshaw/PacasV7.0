@@ -10,26 +10,20 @@
 
   <section class="row">
     {% assign products = collection.products  %}
-
     {% for product in products | limit: 2 %}
+      {% assign variantCount = 0 %}
+      {% for variant in product.variants  %}
+        {% if variant.available %}
+          {% if variantCount <= 2 %}
+            {% assign variantCount = variantCount | plus: 1 %}
     <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="">
       <section class="card">
         <a href="{{product.url}}">
           <div class="product-collection-wrapper">
             <div class="accent-padding">
               <div class="slvr-col-img-wrapper">
-                {% if product.title == "3 Pack - Women's Crew Pacas Socks" %}
-               {% for variant in product.variants | limit: 1 %}
-                <img src="{{ variant.image.src | product_img_url: '2000x2000'  }}" />
-                {% endfor %}
-                {% else %}
-           			{% for variant in product.variants %}
-                		{% if variant.available %}
+       
            <img src="{{ variant.featured_image.src | product_img_url: '2000x2000' }}" alt="{{product.title}}"/> 
-                		{% break %}
-                {% endif %}
-                {% endfor %}
-                {% endif %}
               </div> 
               <h3 class=" nmb">{{product.title}}</h3>
               <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
@@ -39,6 +33,7 @@
               <p class="subscript vis-hid">Qualifies for Free Shipping!</p>
 
               {% endif %}
+
               <div class="acfe">
                 <!--            store variant as data attr on circle  -->
 
@@ -86,7 +81,10 @@
         </a>
       </section>
     </section>
+    {% endif %}
+        {% endif %}
 
+    {% endfor %}
     {% endfor%}
 
 
@@ -139,18 +137,20 @@
 
 
     {% for product in products | offset: 2 %}
+     {% assign variantCount = 0 %}
+      {% for variant in product.variants  %}
+        {% if variant.available %}
+          {% if variantCount <= 2 %}
+            {% assign variantCount = variantCount | plus: 1 %}
     <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="">
       <section class="card">
         <a href="{{product.url}}">
           <div class="product-collection-wrapper">
             <div class="accent-padding">
                  <div class="slvr-col-img-wrapper">
-           			{% for variant in product.variants %}
-                		{% if variant.available %}
+         
            <img src="{{ variant.featured_image.src | product_img_url: '2000x2000' }}" alt="{{product.title}}"/> 
-                		{% break %}
-                {% endif %}
-                {% endfor %}
+               
               </div>  
               <h3 class=" nmb">{{product.title}}</h3>
               <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
@@ -205,7 +205,9 @@
         </a>
       </section>
     </section>
-
+    {% endif %}
+    {% endif %}
+    {% endfor %}
     {% endfor%}
     <script>
       $('.color-preview-circle').click(function() {
