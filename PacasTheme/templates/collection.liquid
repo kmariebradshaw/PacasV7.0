@@ -90,48 +90,84 @@
 
     {% if collection.title == "Women's Low Cut" %}
     <section class="col gif-insert">
-      <section class="card" style="border: none">
-        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      <section class="card" style="border: none" id="image-break-womens-low">
       </section>
     </section>
-    {% elsif collection.title == "Men's Low Cut"  or collection.title == "Men's Crew"%}
+    {% elsif collection.title == "Men's Low Cut" %}
     <section class="col gif-insert">
-      <section class="card" style="border: none">
-        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      <section class="card" style="border: none" id="image-break-mens-low">
+      </section>
+
+    </section>
+    {% elsif collection.title == "Men's Crew" %}
+      <section class="col gif-insert">
+      <section class="card" style="border: none" id="image-break-mens-crew">
       </section>
 
     </section>
     {% elsif collection.title == "Women's Crew" %}
         <section class="col gif-insert">
-      <section class="card" style="border: none">
-        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      <section class="card" style="border: none" id="image-break-womens-crew">
       </section>
     </section>
     {% elsif collection.title == "Youth Crew" %}
       <section class="col gif-insert">
-      <section class="card" style="border: none">
-        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      <section class="card" style="border: none" id="image-break-youth-crew">
       </section>
 
     </section>
     {% elsif collection.title == "Youth Low Cut" %}
        <section class="col gif-insert">
-      <section class="card" style="border: none">
-        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
-      </section>
+      <section class="card" style="border: none" id="image-break-youth-low">
+    </section>
 
     </section>
     {% elsif collection.title == "Toddler" %}
-            <section class="col gif-insert">
-      <section class="card" style="border: none">
-        <img src="{{'LoopingGifs_Short-min.gif' | asset_url}}" style="width: 100%; height: 100%;" />
+      <section class="col gif-insert">
+      <section class="card" style="border: none" id="image-break-toddler">
       </section>
     </section>
     {% endif %}
 
 
 
-
+<style>
+  #image-break-youth-low {
+    background-image: url("{{'youth-low-tile.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+    #image-break-toddler {
+    background-image: url("{{'toddler-tile.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+  #image-break-youth-crew {
+    background-image: url("{{'youth-crew-tile.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+    #image-break-mens-crew {
+    background-image: url("{{'mens-crew-tile.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+      #image-break-mens-low {
+    background-image: url("{{'mens-low-tile.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+    #image-break-womens-crew {
+    background-image: url("{{'womens-crew-tile.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+      #image-break-womens-low {
+    background-image: url("{{'womens-low-tile.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
 
 
 
