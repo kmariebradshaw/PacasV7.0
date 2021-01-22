@@ -9,8 +9,8 @@
     <div id="atf-text-buttons-overlay">
       <div>
     <div class="tac" id="atf-text-overlay">
-      <h1 class="accent text-white nmt">Softness with a Soul</h1>
-      <h4 class="text-white">Buttery soft products made from luxurious, all natural alpaca fleece.</h4>
+      <h1 class="accent text-white nm" style="margin-top: 20px !important">Softness with a Soul</h1>
+      <h4 class="text-white nmt">Buttery soft products made from luxurious, all natural alpaca fleece.</h4>
       <section class="fw" id="cta-buttons-wrap">
       <div class="connect button ib cta-women cta-bandaid" id="cta">
         <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Women</h4></div>
@@ -25,58 +25,47 @@
     </div> 
   </div>
 </div>
-  <section class="tac accent-padding background-green" style="margin-top: -4px;">
-    <p class="large">Alpaca Fleece is considered the <b>greenest fiber on earth.</b></p>
-  </section>
+<style>
+  @media only screen and (max-width: 799px) {
+    .index-grid {height:35.55vw; margin: 2.5px;}
+        #index-grid-wrapper { margin: 5px; }
+      .background-green { margin-top: 1px; }
+    #product-highlight-wrapper img { width: 18%; margin: 2.5px; }
+    #product-highlight-wrapper { margin: 5px; }
 
-  <section class="flex-container accent-padding">
-    <div class="half">
-      <h2 class="accent nm">Your purchase helps us save alpaca herders.</h2>
-      <p>90% of the world’s Alpacas are raised in the Peruvian sierra, in harsh conditions at altitudes 13,000 feet above sea level, by thousands of low-income rural families as has been custom for centuries>.</p>
-<p>Infectious respiratory diseases caused by the cold and smokey dwelling conditions is the main cause of death of the alpaca herders. </p><p>Your Pacas purchase helps us ensure the herders have a safe and comfortable place to call home to maintain and cultivate the time-honored relationship between animal and farmer.</p>
+  }
+  @media only screen and (max-width: 588px) {
+    #warmer-than p, #greener-than p, #softer-than p {font-size: 5pt !important;}
+  }
 
-  
-      <p class="tu clickable">Learn More</p>
-    </div>
-    <div class="half tac" >
-      <img src="{{'HutPictureFaded.png' | asset_url}}" style="width: 300px;" /> 
-      <div class="tac">
-        <h2 class="nm accent">$<span class="accent" id="amount-raised">7123</span></h2>
-        <h5 class="">raised towards goal of</h5>
-        <h2 class="nm accent">$16000</h2>
-      </div>
-    </div>
-  </section>
-  <script>
-          setInterval(function(){ 
-            if($("#amount-raised").is(":visible")){
-              var amountRaised = parseInt($('#amount-raised').text(),10)
-              amountRaised += 1
-              $('#amount-raised').text(amountRaised)
-            }
-       }, 5000);
-  </script>
-  <style>
-    .index-grid { height: 36vw; margin: 10px; padding:;}
+    @media only screen and (min-width: 800px) {
+      #atf-text-overlay h1 { font-size: 50pt; }
+      .background-green { margin-top: 16px; }
+          .index-grid { height: 35.55vw; margin: 10px; padding:;}
     #index-grid-wrapper { margin: 10px; }
+        #product-highlight-wrapper img { width: 18%; margin: 10px; }
     #product-highlight-wrapper { margin: 10px; }
-    #product-highlight-wrapper img { width: 18%; margin: 10px; }
+
+
+  }
+</style>
+  <style>
   </style>
 
-  <section class="tac accent-padding background-blue">
-    <h4 class="accent nm">Warmer than wool, softer than cashmere.</h4>
-    <p>Alpacas live in the high altitudes of the Andes Mountains, which is an environment that requires a fiber that can adapt to drastic temperature changes and harsh conditions, making it <em>the superior fiber.</em></p>
+  <section class="tac accent-padding background-green">
+  <p class="large">Warmer than wool, softer than cashmere,<br class="mo"> the greenest fiber on earth</p>
+
   </section>
   <section id="index-grid-wrapper">
-  <section class="flex-container">
+  <section class="flex-container-no">
     <div class="two-thirds index-grid" id="index-photo-break">
            <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
   <source src="{{'SheepVideo_Desktop.mov' | asset_url}}" type="video/mp4">
 </video>
     </div>
-    <div class="third background-beige index-grid flex-container-no jcc clickable" style="background-color: #FFDBCF;">
-      <h2 class="large accent nm tac">Warmer<br> than <br>Wool</h2>
-      <p class="tac" style="display: none; width: 80%; margin: 0 auto;">
+    <div class="third background-beige index-grid flex-container-no jcc clickable" style="background-color: #FFDBCF;" id="warmer-than">
+      <h2 class="large accent nm tac text-white">Warmer<br> than <br>Wool</h2>
+      <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
         Alpacas have adapted to their living
         conditions by having microscopic pockets
         in the core of their fiber that retain heat,
@@ -88,17 +77,14 @@
       </p>
     </div>
   </section>
-  <section class="flex-container">
-     <div class="third background-beige index-grid flex-container-no jcc clickable"  style="background-color: #F8E7FF;" >
-      <h2 class="large accent nm tac">Softer<br> than <br>Cashmere</h2>
-      <p class="tac" style="display: none; width: 80%; margin: 0 auto;">
-        Because of the harsh climate that alpacas
-        live in, their fleece is soft yet durable.<br><br>
-        While cashmere and alpaca are similar
-        to the touch, cashmere is not strong and
-        breaks easily, whereas alpaca fleece can
-        withstand much more, making it the
-        perfect fiber for comfort and athletic gear.
+  <section class="flex-container-no">
+     <div class="third background-beige index-grid flex-container-no jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
+      <h2 class="large accent nm tac text-white">Softer<br> than <br>Cashmere</h2>
+      <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
+
+           Alpaca fleece has a similar micron count to cashmere, making it as soft to the touch.  However, cashmere breaks easily whereas alpaca fleece is very strong, making it the perfect fiber for comfort and athletic gear. 
+
+
       </p>
     </div>
     <div class="two-thirds index-grid" id="index-photo-break">
@@ -107,31 +93,44 @@
 </video>
     </div>
   </section>
-  <section class="flex-container">
+  <section class="flex-container-no">
     <div class="two-thirds index-grid" id="index-photo-break">
                  <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
   <source src="{{'AlpacaVideo_Desktop.mov' | asset_url}}" type="video/mp4">
 </video>
     </div>
-    <div class="third index-grid flex-container-no jcc clickable" style="background-color:#ECF7EA; ">
-      <h2 class="large accent nm tac">The<br> Greenest <br>Fiber</h2>
-      <p class="tac" style="display: none; width: 80%; margin: 0 auto;">
-           Unlike merino sheep and cashmere goats,
-          alpacas are incredibly gentle on the land.
-          Alpacas feed on only the tops of grasses
+    <div class="third index-grid flex-container-no jcc clickable" style="background-color:#ECF7EA; " id="greener-than">
+      <h2 class="large accent nm tac text-white">The<br> Greenest <br>Fiber</h2>
+      <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
+           Alpacas are incredibly gentle on the land.
+          They feed on only the tops of grasses
           and other plants, and have soft padded
-          feet which cause less pasture damage.
+          feet causing less pasture damage.<br><br>
           Alpacas also have over 20 natural coat colors
-          versus only 3 shades for sheep and goats.
-          The result is that less chemicals are required
-          during the fiber’s dying and washing process.
+          versus only 3 shades for sheep and goats resulting in less chemicals in the finishing process.
       </p>
     </div>
   </section>
 </section>
 <script>
-  $('.index-grid').click(function() {
-    $(this).children().toggle();
+
+  $(window).scroll(function() {
+var greenerFlip = $('#greener-than').offset().top - 300;
+var softerFlip = $('#softer-than').offset().top - 300;
+var warmerFlip = $('#warmer-than').offset().top - 300;
+if ($(window).scrollTop() > greenerFlip) {
+  $('#greener-than').children('h2').hide()
+  $('#greener-than').children('p').fadeIn()
+}
+if ($(window).scrollTop() > softerFlip) {
+  $('#softer-than').children('h2').hide()
+  $('#softer-than').children('p').fadeIn()
+}
+if ($(window).scrollTop() > warmerFlip) {
+  $('#warmer-than').children('h2').hide()
+  $('#warmer-than').children('p').fadeIn()
+}
+   
   })
 
 </script>
@@ -146,6 +145,36 @@
   </section>
 </section>
 
+{% comment %}  <section class="tac accent-padding background-green" style="margin-top: 16px;">
+    <p class="large">The greenest fiber on earth</p>
+  </section>{% endcomment %}
+
+<section class="flex-container accent-padding aifs">
+    <div class="half">
+      <h2 class="accent nm">Help us save alpaca herders.</h2>
+      <p>90% of the world’s Alpacas are raised in the Peruvian sierra, in harsh conditions at altitudes 13,000 feet above sea level, by thousands of low-income rural families as has been custom for centuries.</p>
+<p>Infectious respiratory diseases caused by the cold and smokey dwelling conditions is the main cause of death of the alpaca herders. </p><p>Your Pacas purchase helps us ensure the herders have a safe and comfortable place to call home to maintain and cultivate the time-honored relationship between animal and farmer.</p>
+
+   <div class="tac flex-container-no ">
+        <h3 class="nm accent ib" style="margin-right: 20px !important;">$7,<span class="accent" id="amount-raised">123</span></h3>
+        <h5 class="ib"> raised towards goal of </h5>
+        <h3 class="nm accent ib" style="margin: 20px !important;">$16,000</h3>
+      </div>
+      <p class="tu clickable nmt">Learn More</p>
+    </div>
+    <div class="half tac" >
+      <img src="{{'HutPictureFaded.png' | asset_url}}" style="width: 80%;"/> 
+    </div>
+  </section>
+  <script>
+          setInterval(function(){ 
+            if($("#amount-raised").is(":visible")){
+              var amountRaised = parseInt($('#amount-raised').text(),10)
+              amountRaised += 25
+              $('#amount-raised').text(amountRaised)
+            }
+       }, 10000);
+  </script>
 
   <section class="flex-container-no double-padding background-pink-beige" id="shop-all-cta">
       <div class=" tac" id="cta-tagline" style="position: absolute;">
