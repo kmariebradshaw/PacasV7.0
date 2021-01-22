@@ -16,9 +16,9 @@
         {% if variant.available %}
           {% if variantCount <= 2 %}
             {% assign variantCount = variantCount | plus: 1 %}
-    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="">
+    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="{{product.title | handleize}}-{{variantCount}}">
       <section class="card">
-        <a href="{{product.url}}">
+        <a href="{{product.url}}" onclick="ga('send', 'event', 'Collections Page', '{{collection.title}}', '{{product.title | handleize}}-{{variantCount}}');">
           <div class="product-collection-wrapper">
             <div class="accent-padding">
               <div class="slvr-col-img-wrapper">
@@ -178,9 +178,9 @@
         {% if variant.available %}
           {% if variantCount <= 2 %}
             {% assign variantCount = variantCount | plus: 1 %}
-    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="">
+    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="{{product.title | handleize}}-{{variantCount}}">
       <section class="card">
-        <a href="{{product.url}}">
+        <a href="{{product.url}}" onclick="ga('send', 'event', 'Collections Page', '{{collection.title}}', '{{product.title | handleize}}-{{variantCount}}')">
           <div class="product-collection-wrapper">
             <div class="accent-padding">
                  <div class="slvr-col-img-wrapper">
@@ -248,13 +248,12 @@
     <script>
       $('.color-preview-circle').click(function() {
         event.preventDefault(); 
-        console.log('hit here')
         var imageDisplay = $(this).parent().siblings('.slvr-col-img-wrapper').find('img')
         var newImage = $(this).data("image-src")
-        console.log(newImage)
         $(imageDisplay).attr("src", newImage); 
 
       }); 
+
     </script> 
     {% if collection.title == "Women's Low Cut" %}
     <section class="col placeholder" style="flex: 1 1 25% !important;" >
