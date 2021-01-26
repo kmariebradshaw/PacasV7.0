@@ -52,6 +52,32 @@
 </style>
   <style>
   </style>
+<section class="flex-container accent-padding aifs">
+    <div class="half">
+      <h2 class="accent nm">Help us save alpaca herders.</h2>
+      <p>90% of the world’s Alpacas are raised in the Peruvian sierra, in harsh conditions at altitudes 13,000 feet above sea level, by thousands of low-income rural families as has been custom for centuries.</p>
+<p>Infectious respiratory diseases caused by the cold and smokey dwelling conditions is the main cause of death of the alpaca herders. </p><p>Your Pacas purchase helps us ensure the herders have a safe and comfortable place to call home to maintain and cultivate the time-honored relationship between animal and farmer.</p>
+
+   <div class="tac flex-container-no ">
+        <h3 class="nm accent ib" style="margin-right: 20px !important;">$7,<span class="accent" id="amount-raised">123</span></h3>
+        <h5 class="ib"> raised towards goal of </h5>
+        <h3 class="nm accent ib" style="margin: 20px !important;">$16,000</h3>
+      </div>
+      <p class="tu clickable nmt">Learn More</p>
+    </div>
+    <div class="half tac" >
+      <img src="{{'HutPictureFaded.png' | asset_url}}" style="width: 80%;"/> 
+    </div>
+  </section>
+  <script>
+          setInterval(function(){ 
+            if($("#amount-raised").is(":visible")){
+              var amountRaised = parseInt($('#amount-raised').text(),10)
+              amountRaised += 25
+              $('#amount-raised').text(amountRaised)
+            }
+       }, 10000);
+  </script>
 
   <section class="tac accent-padding background-green">
   <p class="large">Warmer than wool, softer than cashmere,<br class="mo"> the greenest fiber on earth</p>
@@ -150,32 +176,6 @@ if ($(window).scrollTop() > warmerFlip) {
     <p class="large">The greenest fiber on earth</p>
   </section>{% endcomment %}
 
-<section class="flex-container accent-padding aifs">
-    <div class="half">
-      <h2 class="accent nm">Help us save alpaca herders.</h2>
-      <p>90% of the world’s Alpacas are raised in the Peruvian sierra, in harsh conditions at altitudes 13,000 feet above sea level, by thousands of low-income rural families as has been custom for centuries.</p>
-<p>Infectious respiratory diseases caused by the cold and smokey dwelling conditions is the main cause of death of the alpaca herders. </p><p>Your Pacas purchase helps us ensure the herders have a safe and comfortable place to call home to maintain and cultivate the time-honored relationship between animal and farmer.</p>
-
-   <div class="tac flex-container-no ">
-        <h3 class="nm accent ib" style="margin-right: 20px !important;">$7,<span class="accent" id="amount-raised">123</span></h3>
-        <h5 class="ib"> raised towards goal of </h5>
-        <h3 class="nm accent ib" style="margin: 20px !important;">$16,000</h3>
-      </div>
-      <p class="tu clickable nmt">Learn More</p>
-    </div>
-    <div class="half tac" >
-      <img src="{{'HutPictureFaded.png' | asset_url}}" style="width: 80%;"/> 
-    </div>
-  </section>
-  <script>
-          setInterval(function(){ 
-            if($("#amount-raised").is(":visible")){
-              var amountRaised = parseInt($('#amount-raised').text(),10)
-              amountRaised += 25
-              $('#amount-raised').text(amountRaised)
-            }
-       }, 10000);
-  </script>
 
   <section class="flex-container-no double-padding background-pink-beige" id="shop-all-cta">
       <div class=" tac" id="cta-tagline" style="position: absolute;">

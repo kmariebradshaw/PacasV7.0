@@ -10,15 +10,15 @@
 
   <section class="row">
     {% assign products = collection.products  %}
-    {% for product in products | limit: 2 %}
+    {% for product in products %}
       {% assign variantCount = 0 %}
       {% for variant in product.variants  %}
         {% if variant.available %}
           {% if variantCount <= 2 %}
             {% assign variantCount = variantCount | plus: 1 %}
-    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="{{product.title | handleize}}-{{variantCount}}">
+    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="{{product.title | truncatewords: 1,''}}-{{variantCount}}">
       <section class="card">
-        <a href="{{product.url}}" onclick="ga('send', 'event', 'Collections Page', '{{collection.title}}', '{{product.title | handleize}}-{{variantCount}}');">
+        <a href="{{product.url}}" onclick="ga('send', 'event', 'Collections Page', '{{collection.title | handleize}}', '{{product.title | handleize}}-{{variantCount}}');">
           <div class="product-collection-wrapper">
             <div class="accent-padding">
               <div class="slvr-col-img-wrapper">
@@ -89,42 +89,106 @@
 
 
     {% if collection.title == "Women's Low Cut" %}
-    <section class="col gif-insert">
+    <section class="col gif-insert" id="image-insert-1">
       <section class="card" style="border: none" id="image-break-womens-low">
       </section>
     </section>
+      <section class="col gif-insert" id="image-insert-2">
+      <section class="card" style="border: none" id="image-break-womens-low-2">
+      </section>
+    </section>
+      <section class="col gif-insert" id="image-insert-3">
+      <section class="card" style="border: none" id="image-break-womens-low-3">
+      </section>
+    </section>
     {% elsif collection.title == "Men's Low Cut" %}
-    <section class="col gif-insert">
+    <section class="col gif-insert" id="image-insert-1">
       <section class="card" style="border: none" id="image-break-mens-low">
       </section>
 
     </section>
+       <section class="col gif-insert" id="image-insert-2">
+      <section class="card" style="border: none" id="image-break-mens-low-2">
+      </section>
+
+    </section>
+       <section class="col gif-insert" id="image-insert-3">
+      <section class="card" style="border: none" id="image-break-mens-low-3">
+      </section>
+
+    </section>
     {% elsif collection.title == "Men's Crew" %}
-      <section class="col gif-insert">
+      <section class="col gif-insert" id="image-insert-1">
       <section class="card" style="border: none" id="image-break-mens-crew">
       </section>
 
     </section>
+          <section class="col gif-insert" id="image-insert-2">
+      <section class="card" style="border: none" id="image-break-mens-crew-2">
+      </section>
+
+    </section>
+          <section class="col gif-insert" id="image-insert-3">
+      <section class="card" style="border: none" id="image-break-mens-crew-3">
+      </section>
+
+    </section>
     {% elsif collection.title == "Women's Crew" %}
-        <section class="col gif-insert">
+        <section class="col gif-insert" id="image-insert-1">
       <section class="card" style="border: none" id="image-break-womens-crew">
       </section>
     </section>
+          <section class="col gif-insert" id="image-insert-2">
+      <section class="card" style="border: none" id="image-break-womens-crew-2">
+      </section>
+    </section>
+          <section class="col gif-insert" id="image-insert-3">
+      <section class="card" style="border: none" id="image-break-womens-crew-3">
+      </section>
+    </section>
     {% elsif collection.title == "Youth Crew" %}
-      <section class="col gif-insert">
+      <section class="col gif-insert" id="image-insert-1">
       <section class="card" style="border: none" id="image-break-youth-crew">
       </section>
 
     </section>
+        <section class="col gif-insert" id="image-insert-2">
+      <section class="card" style="border: none" id="image-break-youth-crew-2">
+      </section>
+
+    </section>
+        <section class="col gif-insert" id="image-insert-3">
+      <section class="card" style="border: none" id="image-break-youth-crew-3">
+      </section>
+
+    </section>
     {% elsif collection.title == "Youth Low Cut" %}
-       <section class="col gif-insert">
+       <section class="col gif-insert" id="image-insert-1">
       <section class="card" style="border: none" id="image-break-youth-low">
     </section>
 
     </section>
+           <section class="col gif-insert" id="image-insert-2">
+      <section class="card" style="border: none" id="image-break-youth-low-2">
+    </section>
+
+    </section>
+           <section class="col gif-insert" id="image-insert-3">
+      <section class="card" style="border: none" id="image-break-youth-low-3">
+    </section>
+
+    </section>
     {% elsif collection.title == "Toddler" %}
-      <section class="col gif-insert">
+      <section class="col gif-insert" id="image-insert-1">
       <section class="card" style="border: none" id="image-break-toddler">
+      </section>
+    </section>
+    <section class="col gif-insert" id="image-insert-2">
+      <section class="card" style="border: none" id="image-break-toddler-2">
+      </section>
+    </section>
+    <section class="col gif-insert" id="image-insert-3">
+      <section class="card" style="border: none" id="image-break-toddler-3">
       </section>
     </section>
     {% endif %}
@@ -133,27 +197,77 @@
 
 <style>
   #image-break-youth-low {
-    background-image: url("{{'youth-low-tile.jpg' | asset_url}}");
+    background-image: url("{{'NewCollectionsImages20_YouthLow.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+    #image-break-youth-low-2 {
+    background-image: url("{{'NewCollectionsImages11_YouthLow.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+    #image-break-youth-low-3 {
+    background-image: url("{{'NewCollectionsImages9_YouthLow.jpg' | asset_url}}");
     background-size: cover;
     background-position: center;
   }
     #image-break-toddler {
-    background-image: url("{{'toddler-tile.jpg' | asset_url}}");
+    background-image: url("{{'NewCollectionsImages5_Toddler.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+      #image-break-toddler-2 {
+    background-image: url("{{'NewCollectionsImages10_Toddler.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+      #image-break-toddler-3 {
+    background-image: url("{{'NewCollectionsImages15_Toddler.jpg' | asset_url}}");
     background-size: cover;
     background-position: center;
   }
   #image-break-youth-crew {
-    background-image: url("{{'youth-crew-tile.jpg' | asset_url}}");
+    background-image: url("{{'NewCollectionsImages1_YouthCrew.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+    #image-break-youth-crew-2 {
+    background-image: url("{{'NewCollectionsImages2_YouthCrew.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+    #image-break-youth-crew-3 {
+    background-image: url("{{'NewCollectionsImages4_YouthCrew.jpg' | asset_url}}");
     background-size: cover;
     background-position: center;
   }
     #image-break-mens-crew {
-    background-image: url("{{'mens-crew-tile.jpg' | asset_url}}");
+    background-image: url("{{'NewCollectionsImages13_MenCrew.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+  #image-break-mens-crew-2 {
+    background-image: url("{{'NewCollectionsImages7_MenCrew.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+   #image-break-mens-crew-3 {
+    background-image: url("{{'NewCollectionsImages19_MenCrew.jpg' | asset_url}}");
     background-size: cover;
     background-position: center;
   }
       #image-break-mens-low {
-    background-image: url("{{'mens-low-tile.jpg' | asset_url}}");
+    background-image: url("{{'NewCollectionsImages14_MenLow.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+        #image-break-mens-low-2 {
+    background-image: url("{{'NewCollectionsImages16_MenLow.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+        #image-break-mens-low-3 {
+    background-image: url("{{'NewCollectionsImages17_MenLow.jpg' | asset_url}}");
     background-size: cover;
     background-position: center;
   }
@@ -162,8 +276,28 @@
     background-size: cover;
     background-position: center;
   }
+      #image-break-womens-crew-2 {
+    background-image: url("{{'NewCollectionsImages3_WomenCrew.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+      #image-break-womens-crew-3 {
+    background-image: url("{{'NewCollectionsImages6_WomenCrew.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
       #image-break-womens-low {
-    background-image: url("{{'womens-low-tile.jpg' | asset_url}}");
+    background-image: url("{{'NewCollectionsImages8_WomenLow.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+        #image-break-womens-low-2 {
+    background-image: url("{{'NewCollectionsImages12_WomenLow.jpg' | asset_url}}");
+    background-size: cover;
+    background-position: center;
+  }
+        #image-break-womens-low-3 {
+    background-image: url("{{'NewCollectionsImages18_WomenLow.jpg' | asset_url}}");
     background-size: cover;
     background-position: center;
   }
@@ -172,79 +306,7 @@
 
 
 
-    {% for product in products | offset: 2 %}
-     {% assign variantCount = 0 %}
-      {% for variant in product.variants  %}
-        {% if variant.available %}
-          {% if variantCount <= 2 %}
-            {% assign variantCount = variantCount | plus: 1 %}
-    <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="{{product.title | handleize}}-{{variantCount}}">
-      <section class="card">
-        <a href="{{product.url}}" onclick="ga('send', 'event', 'Collections Page', '{{collection.title}}', '{{product.title | handleize}}-{{variantCount}}')">
-          <div class="product-collection-wrapper">
-            <div class="accent-padding">
-                 <div class="slvr-col-img-wrapper">
-         
-           <img src="{{ variant.featured_image.src | product_img_url: '2000x2000' }}" alt="{{product.title}}"/> 
-               
-              </div>  
-              <h3 class=" nmb">{{product.title}}</h3>
-              <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
-              {% if product.price > 4500 %}
-              <p class="subscript">Qualifies for Free Shipping!</p>
-              {% else %}
-              <p class="subscript vis-hid">Qualifies for Free Shipping!</p>
-
-              {% endif %}
-              <div class="acfe">
-                <!--            store variant as data attr on circle  -->
-
- {% capture limit_color %}
-                {% if product.tags contains "Kids" %}
-                {{ product.variants.size | divided_by: 1}}
-                {% else %}
-                {{ product.variants.size | divided_by: 2}}
-                {% endif %}
-                {% endcapture %}
-                {% if product.tags contains 'Men' or product.tags contains 'Women' %}
-                {% for variant in product.variants  | limit: limit_color%}
-                {% if variant.available %}
-                  {% if variant.option2 %} 
-                  {% for option in variant.option2 %}
-                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle" style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;" ></div>
-                  {% endfor %}
-                  {% else %}
-                  {% for option in variant.option1 %}
-                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle"style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;"></div>
-                  {% endfor %}
-                  {% endif %} 
-                {% endif %}
-                {% endfor %}
-               {% else %}
-                {% for variant in product.variants | limit: limit_color%}
-                {% if variant.available %}
-                  {% if variant.option2 %} 
-                  {% for option in variant.option2 %}
-                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle" style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;" ></div>
-                  {% endfor %}
-                  {% else %}
-                  {% for option in variant.option1 %}
-                  <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle"style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;"></div>
-                  {% endfor %}
-                  {% endif %} 
-                {% endif %}
-                {% endfor %}
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </a>
-      </section>
-    </section>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-    {% endfor%}
+   
     <script>
       $('.color-preview-circle').click(function() {
         event.preventDefault(); 
@@ -254,6 +316,12 @@
 
       }); 
 
+      var displayedProducts = ["3-1", "8-1", "6-1", "image-insert-1", "4-1", "2-1", "12-1", "3-2", "image-insert-2", "6-2", "12-2", "2-2", "2-3", "4-2", "3-3", "6-3","image-insert-3", "8-2", "4-3", "12-3", "8-3"]
+
+      $(displayedProducts).each(function(index, element){
+        let cardPlacement = "#" + element 
+          $('.row').append($(cardPlacement)); 
+      })
     </script> 
     {% if collection.title == "Women's Low Cut" %}
     <section class="col placeholder" style="flex: 1 1 25% !important;" >
