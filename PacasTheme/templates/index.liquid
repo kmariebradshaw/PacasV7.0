@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <section class="flex-container accent-padding aifs">
+{% comment %}  <section class="flex-container accent-padding aifs">
     <div class="half">
       <h2 class="accent nm">Help us save alpaca herders.</h2>
       <p>90% of the world’s Alpacas are raised in the Peruvian sierra, in harsh conditions at altitudes 13,000 feet above sea level, by thousands of low-income rural families as has been custom for centuries.</p>
@@ -42,9 +42,9 @@
     <div class="half tac" >
       <img src="{{'HutPictureFaded.png' | asset_url}}" style="width: 80%;"/> 
     </div>
-  </section>
+  </section>{% endcomment %}
 
-  {% comment %}increases the amount raised span{% endcomment %}
+  {% comment %}increases the amount raised span
   <script>
         setInterval(function(){ 
           if($("#amount-raised").is(":visible")){
@@ -54,15 +54,51 @@
           }
      }, 10000);
   </script>
-
+{% endcomment %}
 <section class="tac accent-padding background-green">
   <p class="large">Warmer than wool, softer than cashmere,<br class="mo"> the greenest fiber on earth</p>
 </section>
 
 <section id="index-grid-wrapper">
+  <section class="flex-container-no">
+  <div class="two-thirds index-grid" id="index-photo-break">
+               <video autoplay muted loop playsinline style="width: 99%; height: 100%;">
+<source src="{{'AlpacaVideo_Desktop.mov' | asset_url}}" type="video/mp4">
+</video>
+  </div>
+  <div class="third index-grid flex-container-no jcc clickable" style="background-color:#ECF7EA; " id="greener-than">
+    <h2 class="large accent nm tac text-white">The<br> Greenest <br>Fiber</h2>
+    <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
+         Alpacas are incredibly gentle on the land.
+        They feed on only the tops of grasses
+        and other plants, and have soft padded
+        feet causing less pasture damage.<br><br>
+        Alpacas also have over 20 natural coat colors
+        versus only 3 shades for sheep and goats resulting in less chemicals in the finishing process.
+    </p>
+  </div>
+</section>
+
+<section class="flex-container-no">
+   <div class="third background-beige index-grid flex-container-no jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
+    <h2 class="large accent nm tac text-white">Softer<br> than <br>Cashmere</h2>
+    <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
+
+         Alpaca fleece has a similar micron count to cashmere, making it as soft to the touch.  However, cashmere breaks easily whereas alpaca fleece is very strong, making it the perfect fiber for comfort and athletic gear. 
+
+
+    </p>
+  </div>
+  <div class="two-thirds index-grid" id="index-photo-break">
+               <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
+<source src="{{'GoatVideo_Desktop.mov' | asset_url}}" type="video/mp4">
+</video>
+  </div>
+</section>
+
 <section class="flex-container-no">
   <div class="two-thirds index-grid" id="index-photo-break">
-         <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
+         <video autoplay muted loop playsinline style="width: 99%; height: 100%;">
 <source src="{{'SheepVideo_Desktop.mov' | asset_url}}" type="video/mp4">
 </video>
   </div>
@@ -80,40 +116,7 @@
     </p>
   </div>
 </section>
-<section class="flex-container-no">
-   <div class="third background-beige index-grid flex-container-no jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
-    <h2 class="large accent nm tac text-white">Softer<br> than <br>Cashmere</h2>
-    <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
 
-         Alpaca fleece has a similar micron count to cashmere, making it as soft to the touch.  However, cashmere breaks easily whereas alpaca fleece is very strong, making it the perfect fiber for comfort and athletic gear. 
-
-
-    </p>
-  </div>
-  <div class="two-thirds index-grid" id="index-photo-break">
-               <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
-<source src="{{'GoatVideo_Desktop.mov' | asset_url}}" type="video/mp4">
-</video>
-  </div>
-</section>
-<section class="flex-container-no">
-  <div class="two-thirds index-grid" id="index-photo-break">
-               <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
-<source src="{{'AlpacaVideo_Desktop.mov' | asset_url}}" type="video/mp4">
-</video>
-  </div>
-  <div class="third index-grid flex-container-no jcc clickable" style="background-color:#ECF7EA; " id="greener-than">
-    <h2 class="large accent nm tac text-white">The<br> Greenest <br>Fiber</h2>
-    <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
-         Alpacas are incredibly gentle on the land.
-        They feed on only the tops of grasses
-        and other plants, and have soft padded
-        feet causing less pasture damage.<br><br>
-        Alpacas also have over 20 natural coat colors
-        versus only 3 shades for sheep and goats resulting in less chemicals in the finishing process.
-    </p>
-  </div>
-</section>
 </section>
 <script>
 
