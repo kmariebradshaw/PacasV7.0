@@ -66,7 +66,7 @@
 <source src="{{'AlpacaVideo_Desktop.mov' | asset_url}}" type="video/mp4">
 </video>
   </div>
-  <div class="third index-grid flex-container-no jcc clickable" style="background-color:#ECF7EA; " id="greener-than">
+  <div class="third index-grid flex-container-no jcc clickable" style="background-color:#E2FAFB; " id="greener-than">
     <h2 class="large accent nm tac text-white">The<br> Greenest <br>Fiber</h2>
     <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
          Alpacas are incredibly gentle on the land.
@@ -121,9 +121,9 @@
 <script>
 
 $(window).scroll(function() {
-var greenerFlip = $('#greener-than').offset().top - 300;
-var softerFlip = $('#softer-than').offset().top - 300;
-var warmerFlip = $('#warmer-than').offset().top - 300;
+var greenerFlip = $('#greener-than').offset().top - 100;
+var softerFlip = $('#softer-than').offset().top - 100;
+var warmerFlip = $('#warmer-than').offset().top - 100;
 if ($(window).scrollTop() > greenerFlip) {
 $('#greener-than').children('h2').hide()
 $('#greener-than').children('p').fadeIn()
