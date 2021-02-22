@@ -2,56 +2,62 @@
 
 
  <main id="page"> 
-  <section class="accent-padding fleece-background">
-    <h5 class="tac">Alpacas' unique molecular compostion combines the advantages of Merino Wool and Cashmere, leading to distinct advantages in outdoor performance, while maintaining luxurious comfort at a similar price to Merino Wool.</h5>
+  <section class="accent-padding background-fleece">
+    <h3 class="tac">Alpacas' unique molecular compostion combines the advantages of Merino Wool and Cashmere, leading to distinct advantages in outdoor performance, while maintaining luxurious comfort at a similar price to Merino Wool.</h3>
   </section>
-  <section id="alpaca-grid">
+  <section id="alpaca-grid" class="accent-padding">
 {% comment %}    <div class="ib"><p><b>moisture-wicking</b></p><p> unlike wool, alpaca fleece does not absorb moisture</p></div> 
     <div class="ib"><p><b>hypoallergenic</b></p><p> unlike wool, alpaca fleece does not contain lanolin, a natural poil that many people are allergic to</p></div> 
     <div class="ib"><p><b>warmer than wool</b></p><p> alpaca fleece is 5x warmer than merino wool</p></div> 
     <div class="ib"><p><b>thermoregulating</b></p><p> alpaca fleece has a hollow core which keeps you warm in the winter and cool in the summer</p></div> 
-    <div class="ib"><p><b>softer than cashmere</b></p><p> alpaca fleece is softer and smoother than cashmere</p></div> {% endcomment %}
+    <div class="ib"><p><b>softer than cashmere</b></p><p> alpaca fleece is softer and smoother than cashmere</p></div> {% endcomment  %}
     <img src="{{'alpaca-grid.png' | asset_url}}" class="fw"/>
   </section>
 
-  <section class="accent-padding">
-    <h5 class="tac">Alpacas live in the Andes Mountains, where temperatures can range from freezing to burning in one day. Alpacas have adapted to these harsh climates by having versatile fleece that protects them from all of the natural elements they are exposed to.</h5>
+  <section class="accent-padding" id="softness-grid">
+  
   </section>
 
-  <section id="greenest-faqs">
-    <h1 class="tac shadow-text"><span class="text-white">Alpaca Fleece is considered the </span><span class="text-green">Greenest Fiber on Earth</span></h1>
-    
-    <div class="border-side ib">
-      <p class="text-white">Gentle on the Land<br>alpacas nibble on only the tops of grasses and other plants, and have soft padded feet resulting in less pature damage</p>
-    </div>
 
-    <div class="border-top ib">
-      <p class="text-white">Less Food Intake<br>alpacas are highly efficient requiring much less food instake than cashmere goats or sheep</p></div>
-    </div>
+  <section class="background-kr-blue double-padding" id="greenest-faqs">
+    <h2 class="tac nmt"><span class="text-white">Alpaca Fleece is considered the </span><span class="text-green">Greenest Fiber on Earth</span></h2>
+    <section class="flex-container aifs">
+      <div class="greenest-faqs-icons quarter accent-padding tac">
+        <img src="{{'Altitude-27.png' | asset_url}}"  />
+        <p class="tac">Because alpacas lives at high alittudes, their water supply doesn't take away water destined for food production. Whereas it takes 20,000 liters of competitive water to produce 1kg of cotton.</p>
+      </div> 
+      <div class="greenest-faqs-icons quarter accent-padding tac">
+        <img src="{{'Food-31.png' | asset_url}}"  />
+        <p class="tac">Alpacas are highly efficient requiring much less food intake than cashmere goats or sheep.</p>
+      </div>
+      <div class="greenest-faqs-icons quarter accent-padding tac">
+        <img src="{{'Gentle-29.png' | asset_url}}" />
+        <p class="tac">Alpacas nibble only the tops of grasses and other plants, and have soft padded toes resulting in less pasture damage.</p>
+      </div>
+      <div class="greenest-faqs-icons quarter accent-padding tac">
+        <img src="{{'ColorWheel-32.png' | asset_url}}" />
+        <p class="tac">Alpacas come in 22 shades vs only 3 shades for sheep and goats. The result is less chemicals are required during the dying and washing process.</p>
+      </div>
 
-    <div class="border-top ib">
-      <p class="text-white">High Altitude Living<br>because alpacas live at high altitudes, their water supply doesn't take away water destined for food production, whereas it takes 20,000 liters of cempetitive water to produce 1kg of cotton.</p>
-    </div>
+    </section>  
+  </section>
+  
 
-    <div class="border-side ib">
-      <p class="text-white">Less Chemicals<br>alpacas naturally come in 22 different shades vs. only 3 shades for goats and sheep. The result is less chemicals are used during the washing and drying process.</p>
-    </div>
-
-  </section>  
-    
-
-    <section id="softness-faqs" class="flex-container">
-     <div class="half" id="softness-example">
+    <section id="softness-faqs" class="flex-container accent-padding">
+     <div class="half accent-padding" id="softness-example">
+        <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="">
+        <source src="{{'AboutPageVideo.mov' | asset_url}}" type="video/mp4">
+      </video>
      </div>
-     <div class="half">
-      <h2 class="tac nm">Softness with a Soul</h2>
+     <div class="half accent-padding">
+      <h2 class="nm">Softness with a Soul</h2>
       <p>Pacas is committed to maintaining and improving the time-honored tradition between animal and farmer through:</p>
       <ul>
-        <li>humane and technological shearing</li>
-        <li>genetic improvement</li>
-        <li>fiber tracing and sustainability</li>
-        <li>improving living conditions for herders and their families</li>
-        <li>increasing incomes for herders</li>
+        <li><span>humane and technological shearing</span></li>
+        <li><span>genetic improvement</span></li>
+        <li><span>fiber tracing and sustainability</span></li>
+        <li><span>improving living conditions for herders and their families</span></li>
+        <li><span>increasing incomes for herders</span></li>
       </ul>
     </section>
  </main>
@@ -60,20 +66,36 @@
 
 
 <style>
-  .text-green {}
-  .shadow-text {}
-  #greenest-faqs { 
-    background-image: url("{{'' | asset_url}}");
-    background-size: cover;
-  }
-  .border-side {}
-  .border-top {}
+  .text-green {color: darkgreen;}
   #softness-examples { 
     background-image: url("{{'' | asset_url}}");
     background-size: cover;
   }
-  #softness-faqs ul {}
-  #softness-faqs ul li {}
+  .greenest-faqs-icons img { width: 150px; }
+  #softness-faqs ul { 
+    list-style-image: url("{{'star.png' | asset_url}}");
+  }
+  #softness-faqs ul li span{ top: -5px; position: relative; }
+#softness-grid {
+  height: 30vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("{{'Softnessdesktop.png' | asset_url}}");
+}
+@media only screen and (max-width: 799px) {
+  .quarter { width: auto !important; }
+    #alpaca-grid img {
+    margin: 20px auto 0;
+    display: block;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #alpaca-grid img {
+    margin: 50px auto 0;
+    display: block;
+  }
+}
 </style>
 
 
