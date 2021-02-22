@@ -2,18 +2,44 @@
 
 
  <main id="page"> 
-  <h5 class="tac">Alpacas' unique molecular compostion combines the advantages of Merino Wool and Cashmere, leading to distinct advantages in outdoor performance, while maintaining luxurious comfort at a similar price to Merino Wool.</h5>
+  <section class="accent-padding fleece-background">
+    <h5 class="tac">Alpacas' unique molecular compostion combines the advantages of Merino Wool and Cashmere, leading to distinct advantages in outdoor performance, while maintaining luxurious comfort at a similar price to Merino Wool.</h5>
+  </section>
   <section id="alpaca-grid">
-    <div class="ib"><p><b>moisture-wicking</b></p><p> unlike wool, alpaca fleece does not absorb moisture</p></div> 
+{% comment %}    <div class="ib"><p><b>moisture-wicking</b></p><p> unlike wool, alpaca fleece does not absorb moisture</p></div> 
     <div class="ib"><p><b>hypoallergenic</b></p><p> unlike wool, alpaca fleece does not contain lanolin, a natural poil that many people are allergic to</p></div> 
     <div class="ib"><p><b>warmer than wool</b></p><p> alpaca fleece is 5x warmer than merino wool</p></div> 
     <div class="ib"><p><b>thermoregulating</b></p><p> alpaca fleece has a hollow core which keeps you warm in the winter and cool in the summer</p></div> 
-    <div class="ib"><p><b>softer than cashmere</b></p><p> alpaca fleece is softer and smoother than cashmere</p></div> 
+    <div class="ib"><p><b>softer than cashmere</b></p><p> alpaca fleece is softer and smoother than cashmere</p></div> {% endcomment %}
+    <img src="{{'alpaca-grid.png' | asset_url}}" class="fw"/>
   </section>
-    <h5 class="tac">Alpacas live in the Andes Mountains, where temperatures can range from freezing to burning in one day. Alpacas have adapted to these harsh climates by having versatile fleece that protects them from all of the natural elements they are exposed to.</h5>
-    <section id="greenest-faqs">
 
-    </section>  
+  <section class="accent-padding">
+    <h5 class="tac">Alpacas live in the Andes Mountains, where temperatures can range from freezing to burning in one day. Alpacas have adapted to these harsh climates by having versatile fleece that protects them from all of the natural elements they are exposed to.</h5>
+  </section>
+
+  <section id="greenest-faqs">
+    <h1 class="tac shadow-text"><span class="text-white">Alpaca Fleece is considered the </span><span class="text-green">Greenest Fiber on Earth</span></h1>
+    
+    <div class="border-side ib">
+      <p class="text-white">Gentle on the Land<br>alpacas nibble on only the tops of grasses and other plants, and have soft padded feet resulting in less pature damage</p>
+    </div>
+
+    <div class="border-top ib">
+      <p class="text-white">Less Food Intake<br>alpacas are highly efficient requiring much less food instake than cashmere goats or sheep</p></div>
+    </div>
+
+    <div class="border-top ib">
+      <p class="text-white">High Altitude Living<br>because alpacas live at high altitudes, their water supply doesn't take away water destined for food production, whereas it takes 20,000 liters of cempetitive water to produce 1kg of cotton.</p>
+    </div>
+
+    <div class="border-side ib">
+      <p class="text-white">Less Chemicals<br>alpacas naturally come in 22 different shades vs. only 3 shades for goats and sheep. The result is less chemicals are used during the washing and drying process.</p>
+    </div>
+
+  </section>  
+    
+
     <section id="softness-faqs" class="flex-container">
      <div class="half" id="softness-example">
      </div>
@@ -33,7 +59,22 @@
 
 
 
-
+<style>
+  .text-green {}
+  .shadow-text {}
+  #greenest-faqs { 
+    background-image: url("{{'' | asset_url}}");
+    background-size: cover;
+  }
+  .border-side {}
+  .border-top {}
+  #softness-examples { 
+    background-image: url("{{'' | asset_url}}");
+    background-size: cover;
+  }
+  #softness-faqs ul {}
+  #softness-faqs ul li {}
+</style>
 
 
 
