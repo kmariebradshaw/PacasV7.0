@@ -1,10 +1,12 @@
 <main id="index">
 
   <video autoplay muted loop playsinline class="atf-video do">
-    <source src="{{'AlpacaVideo1.mov' | asset_url}}" type="video/mp4">
+{% comment %}    <source src="{{'AlpacaVideo1.mov' | asset_url}}" type="video/mp4">
+{% endcomment %}    <source src="{{'ATFv3_Desktop.mov' | asset_url}}" type="video/mp4">
   </video>
   <video autoplay muted loop playsinline class="atf-video mo-plus"> 
-    <source src="{{'VideoATF_MobileExported.mov' | asset_url}}" type="video/mp4">
+{% comment %}    <source src="{{'VideoATF_MobileExported.mov' | asset_url}}" type="video/mp4">
+{% endcomment %}    <source src="{{'ATFv2_mobile.mov' | asset_url}}" type="video/mp4">
   </video>
 
   <div id="atf-text-buttons-overlay">
@@ -55,99 +57,172 @@
      }, 10000);
   </script>
 {% endcomment %}
-<section class="tac accent-padding background-green">
-  <p class="large">Alpacas are raised in the Peruvian Sierra, at altitudes 13,000 feet above sea level, by thousands of rural families as has been the custom for centuries.</p>
+<section class="tac accent-padding background-fleece">
+  <p class="large" style="font-size: 22pt;">Insanely soft, high performance socks and apparel knit with Alpaca, the greenest fiber on earth,  to improve the livelihood of this sacred animal and its poverty-stricken caretakers.</p>
 </section>
+
 
 <section id="index-grid-wrapper">
-  <section class="flex-container-no">
-  <div class="half-no index-grid" id="index-photo-break">
-               <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
-<source src="{{'AlpacaVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
-</video>
-  </div>
-  <div class="half-no index-grid flex-container-no jcc clickable" style="background-color:#E2FAFB; " id="greener-than">
-    <h2 class="large accent nm tac text-white">The<br> Greenest <br>Fiber</h2>
-    <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
-         Alpacas are incredibly gentle on the land.
+  <section class="flex-container-no alpaca-fleece-highlights">
+    <div class="fw index-grid jcc clickable comparison"  id="greener-than" style="background-color: #CEEAED;">
+      <h2 class="large accent tac text-white">The Greenest Fiber On Earth</h2>
+    </div>
+
+    <div class="half-no index-grid" id="index-photo-break" style="display: none">
+      <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+        <source src="{{'AlpacaVideo_Desktop.mov' | asset_url}}" type="video/mp4">
+      </video>
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+        <source src="{{'AlpacaVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
+      </video>
+
+    </div>
+    <div class="half-no index-grid flex-container-no jcc clickable index-text-break" style="background-color:#CEEAED; display: none;">
+      <div>
+      <p class="tac flip-x" style="width: 90%; margin: 0 auto;">
+         Alpacas are gentle on the land.
         They feed on only the tops of grasses
-        and other plants, and have soft padded
-        feet causing less pasture damage.<br><br>
-        Alpacas also have over 20 natural coat colors
-        versus only 3 shades for sheep and goats resulting in less chemicals in the finishing process.
-    </p>
+        and other plants.{% comment %}, and have soft padded
+        feet causing less pasture damage.{% endcomment %}
+       {% comment %} Alpacas also have over 20 natural coat colors
+        versus only 3 shades for sheep and goats resulting in less chemicals in the finishing process.{% endcomment %}
+      </p>
+            <p class="tac clickable nmb" style="text-decoration: underline;"><i>Learn more</i></p>
+</div>
+    </div>
+</section>
+
+<section class="flex-container-no alpaca-fleece-highlights">
+   <div class=" fw background-beige index-grid comparison jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
+    <h2 class="large accent tac text-white">Softer than Cashmere</h2>
+  </div>
+    <div class="half-no background-beige index-grid flex-container-no jcc clickable index-text-break"  style="background-color: #F8E7FF; display: none;" >
+      <div>
+    <p class="tac flip-x" style=" width: 90%; margin: 0 auto;">
+
+         Alpaca fleece has a similar micron count to cashmere, making it as soft to the touch.  
+
+{% comment %}         However, cashmere breaks easily whereas alpaca fleece is very strong, making it the perfect fiber for comfort and athletic gear. {% endcomment %}
+  
+      </p>
+      <p class="tac clickable nmb" style="text-decoration: underline;"><i>Learn more</i></p>
+    </div>
+  </div>
+  <div class="half-no index-grid" id="index-photo-break" style="display: none;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+      <source src="{{'GoatVideo_Desktop.mov' | asset_url}}" type="video/mp4">
+    </video>
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+      <source src="{{'GoatVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
+    </video>
   </div>
 </section>
 
-<section class="flex-container-no">
-   <div class="half-no background-beige index-grid flex-container-no jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
-    <h2 class="large accent nm tac text-white">Softer<br> than <br>Cashmere</h2>
-    <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
-
-         Alpaca fleece has a similar micron count to cashmere, making it as soft to the touch.  However, cashmere breaks easily whereas alpaca fleece is very strong, making it the perfect fiber for comfort and athletic gear. 
-
-
-    </p>
+<section class="flex-container-no alpaca-fleece-highlights">
+    <div class="fw background-beige index-grid comparison jcc clickable" style="background-color: #FFDBCF;" id="warmer-than">
+    <h2 class="large accent tac text-white">Warmer than Wool</h2>
   </div>
-  <div class="half-no index-grid" id="index-photo-break">
-               <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
-<source src="{{'GoatVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
-</video>
+  <div class="half-no index-grid" id="index-photo-break" style="display: none;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+      <source src="{{'SheepVideo_Desktop.mov' | asset_url}}" type="video/mp4">
+    </video>
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+      <source src="{{'SheepVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
+    </video>
   </div>
-</section>
-
-<section class="flex-container-no">
-  <div class="half-no index-grid" id="index-photo-break">
-         <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
-<source src="{{'SheepVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
-</video>
-  </div>
-  <div class="half-no background-beige index-grid flex-container-no jcc clickable" style="background-color: #FFDBCF;" id="warmer-than">
-    <h2 class="large accent nm tac text-white">Warmer<br> than <br>Wool</h2>
-    <p class="tac" style="display: none; width: 90%; margin: 0 auto;">
-      Alpacas have adapted to their living
+  <div class="half-no background-beige index-grid flex-container-no jcc clickable index-text-break" style="background-color: #FFDBCF; display: none;">
+    <div>
+   <p class="tac flip-x" style=" width: 90%; margin: 0 auto;">
+{% comment %}      Alpacas have adapted to their living
       conditions by having microscopic pockets
       in the core of their fiber that retain heat,
-      allowing their fleece to be light, yet warmer than merino wool.<br><br>
-      While wool tends to absorb water,
+      allowing their fleece to be light, yet warmer than merino wool.<br><br>{% endcomment %}
+{% comment %}      While wool tends to absorb water,
       alpaca fleece is moisture wicking,
       which will keep you cool in the summer
-      and warm in the winter.
+      and warm in the winter.{% endcomment %}
+      Alpaca fleece is warm in the winter and cool in the summer, unlike Merino wool.
     </p>
+          <p class="tac clickable nmb" style="text-decoration: underline;"><i>Learn more</i></p>
+</div>
   </div>
 </section>
 
 </section>
 <script>
-
-$(window).scroll(function() {
-var greenerFlip = $('#greener-than').offset().top - 100;
-var softerFlip = $('#softer-than').offset().top - 100;
-var warmerFlip = $('#warmer-than').offset().top - 100;
-if ($(window).scrollTop() > greenerFlip) {
-$('#greener-than').children('h2').hide()
-$('#greener-than').children('p').fadeIn()
-}
-if ($(window).scrollTop() > softerFlip) {
-$('#softer-than').children('h2').hide()
-$('#softer-than').children('p').fadeIn()
-}
-if ($(window).scrollTop() > warmerFlip) {
-$('#warmer-than').children('h2').hide()
-$('#warmer-than').children('p').fadeIn()
-}
- 
+$('.alpaca-fleece-highlights').click(function() {
+  $(this).children().toggle()
 })
+$(window).scroll(function() {
+  var greenerFlip = $('#greener-than').offset().top - 250;
+  var softerFlip = $('#softer-than').offset().top - 250;
+  var warmerFlip = $('#warmer-than').offset().top - 250;
+  var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+  var top_of_screen = $(window).scrollTop();
 
+  if ($(window).scrollTop() > greenerFlip) {
+    $('#greener-than').hide()
+    $('#greener-than').siblings().fadeIn()
+  }
+  else{
+    let top_of_element = $("#greener-than").offset().top;
+    let bottom_of_element = $("#greener-than").offset().top + $("#element").outerHeight();
+    
+    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+      let titleSlide = $('#greener-than').children('h2')
+      if ($(titleSlide).css("margin-top") >= "150px") {
+        $(titleSlide).css("margin-top",  "14vw")
+      }
+    }
+  }
+
+
+  if ($(window).scrollTop() > softerFlip) {
+    $('#softer-than').hide()
+    $('#softer-than').siblings().fadeIn()
+  }
+  else{
+    let top_of_element = $("#softer-than").offset().top ;
+    let bottom_of_element = $("#softer-than").offset().top + $("#element").outerHeight();
+    
+    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+      let titleSlide = $('#softer-than').children('h2')
+      if ($(titleSlide).css("margin-top") >= "150px") {
+        $(titleSlide).css("margin-top",  "14vw")
+      }
+    }
+  }
+
+if ($(window).scrollTop() > warmerFlip) {
+$('#warmer-than').hide()
+$('#warmer-than').siblings().fadeIn()
+
+}
+   else{
+    let top_of_element = $("#warmer-than").offset().top;
+    let bottom_of_element = $("#warmer-than").offset().top + $("#element").outerHeight();
+    
+    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+      let titleSlide = $('#warmer-than').children('h2')
+      if ($(titleSlide).css("margin-top") >= "150px") {
+        $(titleSlide).css("margin-top",  "14vw")
+      }
+    }
+  }
+})
+// $('.comparison').hover(function() {
+//   $(this).children('h2').addClass('fixed-title')
+// })
 </script>
 <section class="accent-padding tac">
 <h4 class="tac nmt">View our Products:</h4>
 <section class="flex-container-no jcc" id="product-highlight-wrapper">
-  <img src="{{'Index-KidsSocks.png' | asset_url}}" />
-  <img src="{{'Index-PinkSocks.png' | asset_url}}" />
-  <img src="{{'Index-PurpleSocks.png' | asset_url}}" />
-  <img src="{{'Index-Scarf.png' | asset_url}}" />
-  <img src="{{'Index-Throw.png' | asset_url}}" />
+  <div><a href="/collections/youth-crew"><img src="{{'Index-KidsSocks.png' | asset_url}}" /></a></div>
+  <div><a href="/collections/womens-crew"><img src="{{'Index-PinkSocks.png' | asset_url}}" /></a></div>
+  <div><a href="/products/pacas-super-soft-throw-blanket"><img src="{{'WrapLandingPage.png' | asset_url}}" /></a></div>
+  <div><a href="/products/pacas-super-soft-scarf"><img src="{{'Index-Scarf.png' | asset_url}}" /></a></div>
+  <div><a href="/collections/womens-low-cut"><img src="{{'CloseupSocks.jpg' | asset_url}}" /></a></div>
+
 </section>
 </section>
 
@@ -174,40 +249,108 @@ $('#warmer-than').children('p').fadeIn()
      
 </section>
 <style>
+  #index-guarantee { margin-bottom: 25px; }
+#product-highlight-wrapper div { width: 100%; }
+
   #atf-text-overlay h1 { margin-top: 20px; }
   @media only screen and (max-width: 799px) {
     .index-grid {
-    height: calc(50vw - 10px);
-          margin: 2.5px;
+    height: calc(50vw - 15px);
+          margin: 5px;
     }
-    #shop-all-cta { background-size: 200px !important; }
+    #cta-tagline { margin-bottom: 25px;  }
+    h2.large { margin: auto !important; }
+    #index-photo-break { width: 50% !important; }
+    .comparison { display: flex; align-items: center;}
+    #shop-all-cta { background-size: 150px !important; }
     #index-grid-wrapper { margin: 5px; }
     .background-green { margin-top: 1px; }
     #product-highlight-wrapper img { 
-      width: 18%; 
+      width: 95%; 
       margin: 2.5px; 
     }
+    #shop-all-cta-button-wrapper { margin-left: -40px; }
   } 
+    @media only screen and (max-width: 799px) {
+  .background-fleece p {
+    width: 532px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 14pt !important;
+}
+.background-fleece { margin: 5px 10px; }
+
+  .background-fleece { 
+    background-image: url("{{'AlpacaFleeceBackground_MobileLight.jpg' | asset_url}}");background-size: cover; 
+
+  }
+
+}
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+      .flip-x  {font-size: 22pt !important;}
+
+}
+@media only screen and (min-width: 1101px) and (max-width: 1300px) {
+      .flip-x  {font-size: 28pt !important;}
+
+}
+@media only screen and (min-width: 1301px) {
+        .flip-x  {font-size: 38pt !important;}
+
+}
   @media only screen and (min-width: 800px) {
     #atf-text-overlay h1 { font-size: 50pt; }
+
     .background-green { margin-top: 16px; }
     .index-grid {
-    height: calc(52vw - 60px);
+    height: calc(41vw - 60px);
      margin: 10px;
     }
+        #index-photo-break { width: 66.666% !important; }
+        .index-text-break { width: 33.3333% !important; }
+
+.comparison h2{
+ -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    transition: all 2s ease;
+   align-items: center;
+  }
+
+/*.fixed-title {
+  position: fixed;
+      top: 50%;
+    left: 25%;
+}*/
+
+      .background-fleece { 
+    background-image: url("{{'FleeceBackground.png' | asset_url}}");background-size: cover; 
+
+  }
+#index-photo-break video { object-fit: cover; }
+
+  .background-fleece p { width: 1200px; max-width: 100%; margin: 0 auto; padding: 100px 0;}
+
+    .background-fleece { margin: 15px 20px 0 20px;  }
     #index-grid-wrapper { margin: 10px; }
-    #product-highlight-wrapper img { width: 18%; margin: 10px; }
+    #product-highlight-wrapper img { width: 95%; margin: 10px; }
     #cta-tagline {position: absolute; }
   } 
+}
   /*itty bitty text on the new index page masonry grid*/
   @media only screen and (max-width: 370px) {
-    #warmer-than p, #greener-than p, #softer-than p {font-size: 8pt !important;}
+    .flip-x {font-size: 12pt !important;}
   }
   @media only screen and (min-width: 371px) and (max-width: 450px) {
-    #warmer-than p, #greener-than p, #softer-than p {font-size: 9pt !important;}
+   .flip-x {font-size: 14pt !important;}
   }
   @media only screen and (min-width: 451px) and (max-width: 588px) {
-    #warmer-than p, #greener-than p, #softer-than p {font-size: 10pt !important;}
+    .flip-x  {font-size: 18pt !important;}
+  }
+    }
+  @media only screen and (min-width: 589px) and (max-width: 799px) {
+    .flip-x  {font-size: 20pt !important;}
   }
 </style>
 {% include 'live-feed' %}
