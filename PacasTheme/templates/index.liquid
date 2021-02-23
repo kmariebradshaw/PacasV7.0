@@ -1,263 +1,229 @@
 <main id="index">
-     <video autoplay muted loop playsinline class="atf-video do">
-  <source src="{{'AlpacaVideo1.mov' | asset_url}}" type="video/mp4">
-</video>
-  <video autoplay muted loop playsinline class="atf-video mo-plus">
-  <source src="{{'VideoATF_MobileExported.mov' | asset_url}}" type="video/mp4">
-</video>
 
-    <div id="atf-text-buttons-overlay">
-      <div>
-    <div class="tac" id="atf-text-overlay">
-      <h2 class="accent text-white nm">Warmer than Wool, <br>Softer than Cashmere.</h2>
-      <h4 class="text-white">Buttery soft products made from luxurious, all natural alpaca fleece.</h4>
-      <section class="fw" id="cta-buttons-wrap">
-      <div class="connect button ib cta-women cta-bandaid" id="cta">
-        <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Women</h4></div>
-      </div>
-      <div class="connect button ib cta-men cta-bandaid" id="cta">
-        <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Men</h4></div>
-      </div>
-      <div class="connect button ib cta-kids cta-bandaid" id="cta">
-        <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Kids</h4></div>
-      </div>
-    </section>
-    </div> 
-  </div>
-</div>
-  <section class="background-blue accent-padding">
-    <style>
-      .atf-video {
-        width: 100%;
-      }
-      #atf-text-overlay {
-      
-        width:100%;
-      }
-      @media only screen and (min-width: 800px) {
-        #cta-buttons-wrap {
-          top: calc(100vw * .4 - 122px);
-        }
-      }
-      @media only screen and (min-width: 589px) {
-              #cta-buttons-wrap {position: absolute;}
-            #atf-text-overlay {
-        position: absolute;
-        top: 132px;
-        width:100%;
-      }
+  <video autoplay muted loop playsinline class="atf-video do">
+   <source src="{{'ATFv3_Desktop.mov' | asset_url}}" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline class="atf-video mo-plus"> 
+   <source src="{{'ATFv2_mobile.mov' | asset_url}}" type="video/mp4">
+  </video>
 
-      }
-      @media only screen and (max-width: 588px) {
-        #atf-text-buttons-overlay {
-        position: absolute;
-        top: 79.02px;
-        width:100%;
-        height: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center
-        }
-      }
-
-      @media screen and (max-width: 799px) {
-        /* CREW SOCK ATF */
-/*                       #atf-b { 
-        height: 88vw; 
-        background-size: contain;
-        background-position: bottom !important;
-        background-image: url("{{'mobile-crew-2.png' | asset_url}}");
-        display: flex; 
-        align-items: flex-start; 
-        justify-content: center;
-          background-repeat: no-repeat; 
-          background-color: #fdf3ed; 
-          padding: 20px; 
-
-      }   */
-        /* ALPACA IN NATURE ATF */
-             #atf-b {
-        padding: 20px 20px !important;
-        height: 88vw; 
-        background-size: cover;
-        background-position: bottom !important;
-        background-image: url("{{'UpdatedLandingPageATFMobile-C.png' | asset_url}}");
-      }  
-
-        /* 	ALL PRODUCTS  */
-/*        #atf-b { 
-          height: 71vw; 
-          background-size: cover;
-          background-position: bottom !important;
-        background-image: url("{{'all-products-mobile.png' | asset_url}}");
-            display: flex; 
-            align-items: center;
-        }  */
-
-      }
-
-
-      @media only screen and (min-width: 800px) {
-        /* CREW AND ALPACA */
-/*                     #atf-b { 
-        background-image: url("{{'UpdatedLandingPageATFDesktopV3.png' | asset_url}}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: #fdf3ed;
-        box-sizing: border-box;
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-      }   */
-        /* ALPACAS IN NATURE */
-         #atf-b { 
-          background-image: url("{{'UpdatedLandingPageATFDesktop-C.png' | asset_url}}");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            box-sizing: border-box;
-            }    
-
-        /*  ALL PRODUCTS   */
- /*               #atf-b { 
-                            background-image: url("{{'all-products.png' | asset_url}}");
-
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: #FFF4EE;
-        box-sizing: border-box;
-        display: flex; 
-        align-items: center; 
-        justify-content: center;
-      }   
-*/
-      }
-    </style>
-    <h4 class="tac">We’ve tested hundreds of Alpaca blends to curate the most luxurious and natural socks to touch your feet.</h4>
-  </section>
-
-  <section class="flex-container jcc" id="materials-grid">
-    <img data-src="{{'AlpacasHomepageImagev2.png' | asset_url}}" class="fw third lazyload" alt="Example Alpacas"/>
-    <img data-src="{{'sewing.png' | asset_url}}" class="fw third lazyload" alt="Example Yarn"/>
-    <img data-src="{{'newfleece.png' | asset_url}}"  class="fw third lazyload" alt="Example Fleece"/>
-  </section>
-  <section class="background-blue fw accent-padding" style="box-sizing: border-box;">
-    <section class="tac background-blue" id="curated">
-      <img data-src="{{'ribbon.png' | asset_url}}" class="icon third lazyload" alt="Ribbon Icon"/>
-      <h4 class="tac">A percentage of our profits go towards donating Paca gear to local children's hospitals. </h4>
-    </section>
-  </section>
-  <section id="sock-preview-benefits">
-    <div class="flex-container-do" style="align-items: flex-start;">
-      <div class="sock-preview accent-padding half-do">
-        <h4 class="tac accent">View Socks</h4>
-        <div class="flex-container-no jes sock-images">
-          <div class="left-arrow"><p class="x-large">⌃</p></div>
-          <div class="sock-prev-wrapper">
-            <img data-src="{{'ViewSocks1.jpg' | asset_url}}" id="athletic" class="lazyload" style="display:none;" alt="Sock Example"/>
-            <img data-src="{{'HomepageCrew1.png' | asset_url}}"  class="lazyload" style="display:none;" alt="Sock Example"/>
-            <img data-src="{{'ViewSocks2.jpg' | asset_url}}" id="casual" class="lazyload" alt="Sock Example"/>
-            <img data-src="{{'HomepageCrew2.png' | asset_url}}"  class="lazyload" style="display:none;" alt="Sock Example"/>
-            <img data-src="{{'ViewSocks3.jpg' | asset_url}}" id="dress" class="lazyload" style="display: none;" alt="Sock Example"/>
+  <div id="atf-text-buttons-overlay">
+    <div> 
+      <div class="tac" id="atf-text-overlay">
+        <h1 class="accent text-white nmb">Softness with a Soul</h1>
+        <h4 class="text-white nmt">Buttery soft products made from luxurious, all natural alpaca fleece.</h4>
+        <section class="fw" id="cta-buttons-wrap">
+          <div class="connect button ib cta-women cta-bandaid" id="cta">
+            <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Women</h4></div>
           </div>
-          <div class="right-arrow"><p class="x-large">⌃</p></div>
-        </div>
+          <div class="connect button ib cta-men cta-bandaid" id="cta">
+            <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Men</h4></div>
+          </div>
+          <div class="connect button ib cta-kids cta-bandaid" id="cta">
+            <div onclick="ga('send', 'event', 'CTA', 'Landing Page', 'Shop Now');" class="clickable"><h4 class="nm tac">Shop Kids</h4></div>
+          </div>
+        </section>
+      </div> 
+    </div>
+  </div>
+
+{% comment %}  <section class="flex-container accent-padding aifs">
+    <div class="half-no">
+      <h2 class="accent nm">Help us save alpaca herders.</h2>
+      <p>90% of the world’s Alpacas are raised in the Peruvian sierra, in harsh conditions at altitudes 13,000 feet above sea level, by thousands of low-income rural families as has been custom for centuries.</p>
+      <p>Infectious respiratory diseases caused by the cold and smokey dwelling conditions is the main cause of death of the alpaca herders. </p><p>Your Pacas purchase helps us ensure the herders have a safe and comfortable place to call home to maintain and cultivate the time-honored relationship between animal and farmer.</p>
+      <div class="tac flex-container-no ">
+        <h3 class="nm accent ib" style="margin-right: 20px !important;">$7,<span class="accent" id="amount-raised">123</span></h3>
+        <h5 class="ib"> raised towards goal of </h5>
+        <h3 class="nm accent ib" style="margin: 20px !important;">$16,000</h3>
       </div>
-      <div class="half-do">
-        <div class="accent-padding">
-          <h4 class="tac accent">Click to Show Benefits</h4>
-          <button class="two-thirds flex-container-no paca-flip-benefits">
-            <img data-src="{{'crown.png' | asset_url}}" class="icon lazyload" alt="Crown Icon"/>
-            <p class="subscript">
-              <b class="front tal ib">Soft as Cashmere</b>
-              <b class="back tac" style="display: none;">Alpaca fleece is luxurious and rare</b>
-            </p>
-          </button>
-          <button class="two-thirds flex-container-no paca-flip-benefits">
-            <img data-src="{{'poof.png' | asset_url}}" class="icon lazyload" alt="Fleece Icon"/>
-            <p class="subscript">
-              <b class="front tal ib">Non-itchy & Hypoallergenic</b>
-              <b class="back tac" style="display: none;">Naturally smooth, grease free</b>
-            </p>
-          </button>
-          <button class="two-thirds flex-container-no paca-flip-benefits">
-            <img data-src="{{'flame.png' | asset_url}}" loading="lazy" class="lazyload icon" alt="Flame Icon"/>
-            <p class="subscript">
-              <b class="front tal ib">Warmer than Wool</b>
-              <b class="back tac" style="display: none;">Trap more heat than sheep wool</b>
-            </p>
-          </button>
-          <button class="two-thirds flex-container-no paca-flip-benefits">
-            <img data-src="{{'leaf.png' | asset_url }}" class="lazyload icon" alt="Leaf Icon"/>
-            <p class="subscript">
-              <b class="front tal ib">Eco-friendly & Natural</b>
-              <b class="back tac" style="display: none;">Low environmental impact</b>
-            </p>
-          </button>
-          <button class="two-thirds flex-container-no paca-flip-benefits">
-            <img data-src="{{'ribbon.png' | asset_url }}" class="icon lazyload" alt="Ribbon Icon"/>
-            <p class="subscript">
-              <b class="front tal ib">Gives Back</b>
-              <b class="back tac" style="display: none;">% of profits go to kids in hospitals</b>
-            </p>
-          </button> 
-          <button class="two-thirds flex-container-no paca-flip-benefits">
-            <img data-src="{{'water.png' | asset_url}}" class="icon lazyload" alt="Water Icon"/>
-            <p class="subscript">
-              <b class="front tal ib">Thermoregulating & Waterproof</b>
-              <b class="back tac" style="display: none;">Provide insulation and moisture wicking</b>
-            </p>
-          </button>
-        </div>
-      </div>
-    </div> 
-  </section>
+      <p class="tu clickable nmt">Learn More</p>
+    </div>
+    <div class="half tac" >
+      <img src="{{'HutPictureFaded.png' | asset_url}}" style="width: 80%;"/> 
+    </div>
+  </section>{% endcomment %}
+
+  {% comment %}increases the amount raised span
   <script>
-    $('.paca-flip-benefits').click(function() {
-      var height = $(this).height() + 6
-      $(this).toggleClass('background-blue').toggleClass('jcc').css("height", height).find('img').toggle();
-      $(this).find('.front').toggle();
-      $(this).find('.back').toggle(); 
-      ga('send', 'event', 'Pacas Flip Benefits', 'Landing Page' );
-    })
+        setInterval(function(){ 
+          if($("#amount-raised").is(":visible")){
+            var amountRaised = parseInt($('#amount-raised').text(),10)
+            amountRaised += 25
+            $('#amount-raised').text(amountRaised)
+          }
+     }, 10000);
   </script>
-  <section class="flex-container-no double-padding" id="shop-all-cta">
-    <div id="press-quote-wrapper" class="half">
-      <div class=" tac" id="cta-tagline">
-        <img data-src="{{'PacasBug-03.png' | asset_url }}" class="lazyload index-guarantee" alt="Comfort Guarantee, If You Don't Love Our Products Return Them for Free"/>
-      </div>
-      <div class="tac">
-        <h3 class="accent tac mo-minus">The Most Comfortable Sock on Earth</h3>
+{% endcomment %}
+<section class="tac accent-padding background-fleece">
+  <p class="large" style="font-size: 22pt;">Insanely soft, high performance socks and apparel knit with Alpaca, the greenest fiber on earth,  to improve the livelihood of this sacred animal and its poverty-stricken caretakers.</p>
+</section>
 
-        <div class="flex-container-do jes" id="cta-wrapper">
-          <a href="/collections/mens-low-cut" onclick="ga('send', 'event', 'CTA', 'Bottom Landing Page', 'Shop Men');">
-            <div class="flex-container-no shop-wrapper">
-              <img data-src="{{'shop-mens.png' | asset_url}}" class="lazyload shop-pacas" alt="Shop Men">
-              <p>Shop Men</p>
-            </div>
-          </a>
-          <a href="/collections/womens-crew" onclick="ga('send', 'event', 'CTA', 'Bottom Landing Page', 'Shop Women');">
-            <div class="flex-container-no shop-wrapper">
-              <img data-src="{{'shop-women.png' | asset_url}}" class="lazyload shop-pacas" alt="Shop Women">
-              <p>Shop Women</p>
-            </div>
-          </a>
-          <a href="/collections/youth-crew" onclick="ga('send', 'event', 'CTA', 'Bottom Landing Page', 'Shop Kids');">
-            <div class="flex-container-no shop-wrapper">
-              <img data-src="{{'shop-kids.png' | asset_url}}" class="lazyload shop-pacas" alt="Shop Kids">
-              <p>Shop Kids</p>
-            </div>
-          </a>
-        </div>
-      </div>
+
+<section id="index-grid-wrapper">
+  <section class="flex-container-no alpaca-fleece-highlights" id="greener-than-wrapper">
+    <div class="fw index-grid jcc clickable comparison background-kr-blue"  id="greener-than" style="">
+      <h2 class="large accent tac text-white">The Greenest Fiber On Earth</h2>
+    </div>
+
+    <div class="half-no index-grid" id="index-photo-break" style="display: none">
+      <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+        <source src="{{'AlpacaVideo_Desktop.mov' | asset_url}}" type="video/mp4">
+      </video>
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+        <source src="{{'AlpacaVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
+      </video>
 
     </div>
-    <div class="half asfs do-minus">
-      <h3 class="accent tac">The Most Comfortable Sock on Earth</h3>
+    <div class="half-no index-grid flex-container-no jcc clickable index-text-break" style="background-color:#CEEAED; display: none;">
+      <div>
+      <p class="tac flip-x" style="width: 90%; margin: 0 auto;">
+         Alpacas are gentle on the land.
+        They feed on only the tops of grasses
+        and other plants.{% comment %}, and have soft padded
+        feet causing less pasture damage.{% endcomment %}
+       {% comment %} Alpacas also have over 20 natural coat colors
+        versus only 3 shades for sheep and goats resulting in less chemicals in the finishing process.{% endcomment %}
+      </p>
+            <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
+</div>
     </div>
-  </section>
-  {% include 'live-feed' %}
-  <script>on_index=true;</script>
+</section>
+
+<section class="flex-container-no alpaca-fleece-highlights" id="softer-than-wrapper">
+   <div class=" fw background-beige index-grid comparison jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
+    <h2 class="large accent tac text-white">Softer than Cashmere</h2>
+  </div>
+    <div class="half-no background-beige index-grid flex-container-no jcc clickable index-text-break"  style="background-color: #F8E7FF; display: none;" >
+      <div>
+    <p class="tac flip-x" style=" width: 90%; margin: 0 auto;">
+
+         Alpaca fleece has a similar micron count to cashmere, making it as soft to the touch.  
+
+{% comment %}         However, cashmere breaks easily whereas alpaca fleece is very strong, making it the perfect fiber for comfort and athletic gear. {% endcomment %}
+  
+      </p>
+         <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
+    </div>
+  </div>
+  <div class="half-no index-grid" id="index-photo-break" style="display: none;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+      <source src="{{'GoatVideo_Desktop.mov' | asset_url}}" type="video/mp4">
+    </video>
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+      <source src="{{'GoatVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section class="flex-container-no alpaca-fleece-highlights" id="warmer-than-wrapper">
+    <div class="fw background-beige index-grid comparison jcc clickable" style="background-color: #FFDBCF;" id="warmer-than">
+    <h2 class="large accent tac text-white">Warmer than Wool</h2>
+  </div>
+  <div class="half-no index-grid" id="index-photo-break" style="display: none;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+      <source src="{{'SheepVideo_Desktop.mov' | asset_url}}" type="video/mp4">
+    </video>
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+      <source src="{{'SheepVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
+    </video>
+  </div>
+  <div class="half-no background-beige index-grid flex-container-no jcc clickable index-text-break" style="background-color: #FFDBCF; display: none;">
+    <div>
+   <p class="tac flip-x" style=" width: 90%; margin: 0 auto;">
+{% comment %}      Alpacas have adapted to their living
+      conditions by having microscopic pockets
+      in the core of their fiber that retain heat,
+      allowing their fleece to be light, yet warmer than merino wool.<br><br>{% endcomment %}
+{% comment %}      While wool tends to absorb water,
+      alpaca fleece is moisture wicking,
+      which will keep you cool in the summer
+      and warm in the winter.{% endcomment %}
+      Alpaca fleece is warm in the winter and cool in the summer, unlike Merino wool.
+    </p>
+            <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
+</div>
+  </div>
+</section>
+
+</section>
+<script>
+$('.alpaca-fleece-highlights').click(function() {
+  if (!$(event.target).is('i')) {
+  $(this).children().toggle()
+  }
+})
+// slower transitions 
+// bottom flip up - pl 
+// load speed time
+$(window).scroll(function() {
+  inView("#greener-than-wrapper", "#greener-than")
+  inView("#softer-than-wrapper", "#softer-than")
+  inView("#warmer-than-wrapper", "#warmer-than")
+
+})
+
+function inView(elementWrapper, element) {
+    var top_of_element = $(elementWrapper).offset().top;
+    var bottom_of_element = $(elementWrapper).offset().top + $(elementWrapper).outerHeight();
+    var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+    var top_of_screen = $(window).scrollTop();
+    var flipTime =  $(element).offset().top - 250;
+    
+
+    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+      if ($(window).scrollTop() > flipTime) {
+        $(element).hide()
+        $(element).siblings().fadeIn()
+      }
+      else{ 
+        let titleSlide = $(element).children('h2')
+        if ($(titleSlide).css("margin-top") >= "150px") {
+          $(titleSlide).css("margin-top",  "14vw")
+        }
+      }
+    } 
+    else {
+        $(elementWrapper).children().hide()
+        $(elementWrapper).children(element).show()
+    }
+  }
+</script>
+<section class="accent-padding tac">
+<h4 class="tac nmt">View our Products:</h4>
+<section class="flex-container-no jcc" id="product-highlight-wrapper">
+  <div><a href="/collections/youth-crew"><img src="{{'Index-KidsSocks.png' | asset_url}}" /></a></div>
+  <div><a href="/collections/womens-crew"><img src="{{'Index-PinkSocks.png' | asset_url}}" /></a></div>
+  <div><a href="/products/pacas-super-soft-throw-blanket"><img src="{{'WrapLandingPage.png' | asset_url}}" /></a></div>
+  <div><a href="/products/pacas-super-soft-scarf"><img src="{{'Index-Scarf.png' | asset_url}}" /></a></div>
+  <div><a href="/collections/womens-low-cut"><img src="{{'CloseupSocks.jpg' | asset_url}}" /></a></div>
+
+</section>
+</section>
+
+{% comment %}  <section class="tac accent-padding background-green" style="margin-top: 16px;">
+  <p class="large">The greenest fiber on earth</p>
+</section>{% endcomment %}
+
+
+<section class="flex-container double-padding background-pink-beige" id="shop-all-cta">
+    <div class=" tac" id="cta-tagline" style="">
+      <img data-src="{{'PacasBug-03.png' | asset_url }}" class="lazyload index-guarantee" alt="Comfort Guarantee, If You Don't Love Our Products Return Them for Free" style=""/>
+    </div>
+    <div id="shop-all-cta-button-wrapper" class="ma cta">
+      <div class="connect button ib" id="cta">
+        <h4 class="nm tac">Shop Men</h4>
+      </div>
+       <div class="connect button ib" id="cta">
+        <h4 class="nm tac">Shop Women</h4>
+      </div>
+       <div class="connect button ib" id="cta">
+        <h4 class="nm tac">Shop Kids</h4>
+      </div>
+    </div>
+     
+</section>
+
+{% include 'live-feed' %}
+<script>on_index=true;</script>
 </main>

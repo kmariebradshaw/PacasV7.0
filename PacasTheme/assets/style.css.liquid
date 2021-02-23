@@ -40,6 +40,30 @@
     font-display: block;
 
 }
+@font-face {
+  font-family: 'BowlbyOne';
+  src: url('BowlbyOne-Regular.otf'); 
+  font-weight: 400; 
+  font-style: normal;
+    font-display: block;
+
+}
+@font-face {
+  font-family: 'GlacialIndifference';
+  src: url('GlacialIndifference-Regular.otf'); 
+  font-weight: 400; 
+  font-style: normal;
+    font-display: block;
+
+}
+@font-face {
+  font-family: 'GlacialIndifference';
+  src: url('GlacialIndifference-Bold.otf'); 
+  font-weight: 700; 
+  font-style: bold;
+    font-display: block;
+
+}
 .text-white { color: #fff; }
 .ttu { text-transform: uppercase; }
 .ib { display: inline-block; }
@@ -53,7 +77,7 @@
 .vam { vertical-align: middle }
 body { 
   margin: 0;
-  color:  #7b8284;
+  color:  #666562;
 }
 .asfs { align-self: flex-start; }
 button { color: #7b8284; cursor: pointer; }
@@ -68,9 +92,13 @@ a { color: #7b8284; }
 .vis-hid { visibility: hidden; }
 html { padding-bottom: 0 !important; }
 .background-pink {   background-color: #fdf3ed; }
+.background-pink-beige { background-color: #fff4ef; }
 .background-gray { background-color: #7b8284; }
 .background-purple { background-color: #dacbd8; }
-.background-blue {background-color: #f5fcfc !important;}
+.background-blue {background-color: #f0f7f7 !important;}
+.background-kr-blue {background-color: #CEEAED;}
+.background-green {background-color: #ECF7EA;}
+.background-beige {background-color: #f2eeeb;}
 .background-yellow {background-color: #fffffa;}
 .tar { text-align: right; }
 .fw { width: 100%; }
@@ -79,7 +107,7 @@ html { padding-bottom: 0 !important; }
   align-items: center;
 }
 :focus { outline: none; }
-    
+   
 .tal { text-align: left; }
 .tac { text-align: center; }
 .accent-section {
@@ -109,12 +137,15 @@ img { max-width: 100%; }
   h2 { font-size: 34pt; } 
   h3{ font-size: 24pt; }
   h4 { font-size: 16pt; }
+    p.large { font-size: 16pt }
+    h2.large { font-size: 49pt }
+#index-grid-wrapper p { font-size: 20pt; }
  .index-padding { padding: 3% 10% !important; } 
   .index-padding-so { padding: 0 10% !important; } 
   .product-benefits-wrapper { margin: 40px 0; }
   #close-cart { margin-top: 37px;}
   #go-to-cart { top: 59px;}
-  .upper-pad {padding-top: 112px;}
+  .upper-pad {padding-top: 111px;}
 
   p, table, ul li, h5{ font-size: 12pt; } 
   #comparison {
@@ -201,6 +232,10 @@ img { max-width: 100%; }
   h1 { font-size: 57pt; } 
   h2 { font-size: 32pt; } 
   h3{ font-size: 16pt; } 
+  p.large { font-size: 16pt }
+      h2.large { font-size: 29pt }
+#index-grid-wrapper p { font-size: 12pt; }
+
   h4 { font-size: 12pt; }
   .index-padding { padding: 2.5% 5% !important; } 
     .index-padding-so { padding: 0 5% !important; } 
@@ -340,7 +375,7 @@ img { max-width: 100%; }
   p, table, ul li { font-size: 10pt; } 
   .flex-container-do { display: block !important; }
   #shaver { top: 450px; }
-  .double-padding { padding: 20px; }
+  .double-padding { padding: 20px !important; }
   .double-padding-tbo { padding: 20px 0 ; }
   .prog-bar { margin-top: -25px; }
   .index-padding { padding: 20px 5% !important; }
@@ -354,6 +389,8 @@ img { max-width: 100%; }
   h1 { font-size: 43pt; } 
   h2 { font-size: 30pt; } 
   p, table, ul li { font-size: 10pt; }
+    p.large { font-size: 14pt }
+
   h4 { font-size: 14pt; }
   #go-to-cart { top: 36.5px;}
   #atf, #atf-b, #atf-c  { height: 75vw; }
@@ -365,7 +402,7 @@ img { max-width: 100%; }
     height: 200px;
     background-size: 75% !important;
 }
-    .index-guarantee { width: 150px; margin-bottom: -45px;}
+    .index-guarantee { width: 250px; }
 
   #materials-grid > div, #materials-grid > img{
     width: 33%;
@@ -419,6 +456,8 @@ img { max-width: 100%; }
     right: 85px;
     width: 40px;
 }
+      #atf-text-overlay h1 { font-size: 19pt; margin-top: 0 !important; }
+
   .cart span  {
     right: 65px !important;
     position: absolute;
@@ -426,7 +465,7 @@ img { max-width: 100%; }
   #shop-all-cta {
      height: 400px;
 }
-  .index-guarantee { width: 150px; }
+  .index-guarantee { width: 250px; }
   .do-minus { display: none; } 
     #materials-grid > div, #materials-grid > img{
     width: 100%;
@@ -462,6 +501,8 @@ img { max-width: 100%; }
   table td, table th { padding: 5px; }
   h2 { font-size: 16pt; } 
   h4 { font-size: 12pt; }
+    p.large { font-size: 10pt }
+
   #faq .faq img { max-width: 100px; }
   .product-benefits .mo p { font-size: 10pt; }
   .flex-container { display: block; }
@@ -507,9 +548,9 @@ img { max-width: 100%; }
 @media only screen and (min-width: 451px) {
   #our-story .page-header { background-position: bottom left;}
 }
-.accent { font-family: 'Handsdown', sans-serif; font-weight: 300;}
-h1,h2,h3,h4,h5,a, span, input, th, select { font-family: 'Quicksand', sans-serif; }
-p, textarea, td, ul, li, .error_message, .success_message { font-family: 'Quicksand', sans-serif; } 
+.accent { font-family: 'BowlbyOne', sans-serif; font-weight: 300;}
+h1,h2,h3,h4,h5,a, span, input, th, select { font-family: 'GlacialIndifference', sans-serif; }
+p, textarea, td, ul, li, .error_message, .success_message { font-family: 'GlacialIndifference', sans-serif; } 
 /*header*/
 .fixed-nav, .fixed-nav-collections {
   position: fixed !important;
@@ -629,6 +670,110 @@ footer form {
 }
 .social-icons img { max-width: 30px; margin: 5px; }
 /*index page*/
+
+ #index-guarantee { margin-bottom: 25px; }
+#product-highlight-wrapper div { width: 100%; }
+
+  #atf-text-overlay h1 { margin-top: 20px; }
+  @media only screen and (max-width: 799px) {
+    .index-grid {
+    height: calc(50vw - 15px);
+          margin: 5px;
+    }
+    #cta-tagline { margin-bottom: 25px;  }
+    h2.large { margin: auto !important; }
+    #index-photo-break { width: 50% !important; }
+    .comparison { display: flex; align-items: center;}
+    #shop-all-cta { background-size: 150px !important; }
+    #index-grid-wrapper { margin: 5px; }
+    .background-green { margin-top: 1px; }
+    #product-highlight-wrapper img { 
+      width: 95%; 
+      margin: 2.5px; 
+    }
+    #shop-all-cta-button-wrapper { margin-left: -40px; }
+  } 
+    @media only screen and (max-width: 799px) {
+  .background-fleece p {
+    width: 532px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 14pt !important;
+}
+#index .background-fleece { margin: 5px 10px; }
+
+  .background-fleece { 
+    background-image: url("{{'AlpacaFleeceBackground_MobileLight.jpg' | asset_url}}");background-size: cover; 
+
+  }
+
+}
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+      .flip-x  {font-size: 22pt !important;}
+
+}
+@media only screen and (min-width: 1101px) and (max-width: 1300px) {
+      .flip-x  {font-size: 28pt !important;}
+
+}
+@media only screen and (min-width: 1301px) {
+        .flip-x  {font-size: 38pt !important;}
+
+}
+  @media only screen and (min-width: 800px) {
+    #atf-text-overlay h1 { font-size: 50pt; }
+
+    .background-green { margin-top: 16px; }
+    .index-grid {
+    height: calc(41vw - 60px);
+     margin: 10px;
+    }
+        #index-photo-break { width: 66.666% !important; }
+        .index-text-break { width: 33.3333% !important; }
+
+.comparison h2{
+ -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    transition: all 2s ease;
+   align-items: center;
+  }
+
+/*.fixed-title {
+  position: fixed;
+      top: 50%;
+    left: 25%;
+}*/
+
+      .background-fleece { 
+    background-image: url("{{'FleeceBackground.png' | asset_url}}");background-size: cover; 
+
+  }
+#index-photo-break video { object-fit: cover; }
+
+  .background-fleece p { width: 1200px; max-width: 100%; margin: 0 auto; padding: 100px 0;}
+
+  #index  .background-fleece { margin: 15px 20px 0 20px;  }
+    #index-grid-wrapper { margin: 10px; }
+    #product-highlight-wrapper img { width: 95%; margin: 10px; }
+    #cta-tagline {position: absolute; }
+  } 
+}
+  /*itty bitty text on the new index page masonry grid*/
+  @media only screen and (max-width: 370px) {
+    .flip-x {font-size: 12pt !important;}
+  }
+  @media only screen and (min-width: 371px) and (max-width: 450px) {
+   .flip-x {font-size: 14pt !important;}
+  }
+  @media only screen and (min-width: 451px) and (max-width: 588px) {
+    .flip-x  {font-size: 18pt !important;}
+  }
+    }
+  @media only screen and (min-width: 589px) and (max-width: 799px) {
+    .flip-x  {font-size: 20pt !important;}
+  }
 .heart-icons { position: absolute;}
 #curated {
   min-width: 300px; 
@@ -636,7 +781,38 @@ footer form {
   margin: 0 auto; 
 }
 p.x-large { font-size: 30pt; }
+      .atf-video {
+        width: 100%;
+      }
+      #atf-text-overlay {
+      
+        width:100%;
+      }
+      @media only screen and (min-width: 800px) {
+        #cta-buttons-wrap {
+          top: calc(100vw * .4 - 122px);
+        }
+      }
+      @media only screen and (min-width: 589px) {
+              #cta-buttons-wrap {position: absolute;}
+            #atf-text-overlay {
+        position: absolute;
+        top: 132px;
+        width:100%;
+      }
 
+      }
+      @media only screen and (max-width: 588px) {
+        #atf-text-buttons-overlay {
+        position: absolute;
+        top: 79.02px;
+        width:100%;
+        height: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center
+        }
+      }
   #cta-wrapper { margin-top: 50px; }
 
 #materials-grid div, #materials-grid > img { border-radius: 20px; }
@@ -670,11 +846,10 @@ p.x-large { font-size: 30pt; }
   max-width: 500px;
 }
 #shop-all-cta {
-  background-color: #ffebda;
-  background-image: url("{{'dflow-paca.png' | asset_url}}");
+  background-image: url("{{'BottomAlpaca.png' | asset_url}}");
   background-repeat: no-repeat;
-  background-position: 60vw bottom;
-    background-size: contain;
+  background-position: bottom right;
+    background-size: 17%;
 }
 #mobile-sock { margin-bottom: 50px; }
 #mission { max-width: 650px; margin: 0 auto; }
@@ -698,7 +873,6 @@ p.x-large { font-size: 30pt; }
     padding: 10px;
     cursor: pointer;
     border: 1px solid #7b8284;
-    border-radius: 100px;
     min-width: 190px;
 }
 .paca-facts {
@@ -773,7 +947,7 @@ p.x-large { font-size: 30pt; }
 .flow-button p { font-size: 10pt; }
 .flow-button.slide2 { margin-top: 84px; }
 .flow-button.slide2.post-shave { margin-top: 250px; }
-p.large { font-size: 16pt; margin: 0 auto; }
+#flow p.large { font-size: 16pt; margin: 0 auto; }
 .paca-bod {width: 300px; z-index: 2;}
 #shaver { 
   width: 150px; 
@@ -862,7 +1036,7 @@ a {text-decoration: none;}
 .color-dye { width: 150px; margin: 20px 10px; }
 #dye { min-height: 600px; background-repeat: no-repeat; }
 #color-fluff { width: 200px; display: block; margin: 0 auto; }
-#flow h1 { font-size: 16pt; } 
+#flow h1 { font-size: 22pt; } 
 #shave-text { margin-top: 175px !important; }
 body section #shaver.rotate { transform: rotate(-10deg); } 
 /* our story*/
