@@ -61,7 +61,7 @@
 
 
 <section id="index-grid-wrapper">
-  <section class="flex-container-no alpaca-fleece-highlights">
+  <section class="flex-container-no alpaca-fleece-highlights" id="greener-than-wrapper">
     <div class="fw index-grid jcc clickable comparison background-kr-blue"  id="greener-than" style="">
       <h2 class="large accent tac text-white">The Greenest Fiber On Earth</h2>
     </div>
@@ -90,7 +90,7 @@
     </div>
 </section>
 
-<section class="flex-container-no alpaca-fleece-highlights">
+<section class="flex-container-no alpaca-fleece-highlights" id="softer-than-wrapper">
    <div class=" fw background-beige index-grid comparison jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
     <h2 class="large accent tac text-white">Softer than Cashmere</h2>
   </div>
@@ -116,7 +116,7 @@
   </div>
 </section>
 
-<section class="flex-container-no alpaca-fleece-highlights">
+<section class="flex-container-no alpaca-fleece-highlights" id="warmer-than-wrapper">
     <div class="fw background-beige index-grid comparison jcc clickable" style="background-color: #FFDBCF;" id="warmer-than">
     <h2 class="large accent tac text-white">Warmer than Wool</h2>
   </div>
@@ -149,68 +149,45 @@
 </section>
 <script>
 $('.alpaca-fleece-highlights').click(function() {
+  if (!$(event.target).is('i')) {
   $(this).children().toggle()
+  }
 })
+// slower transitions 
+// bottom flip up - pl 
+// load speed time
 $(window).scroll(function() {
-  var greenerFlip = $('#greener-than').offset().top - 250;
-  var softerFlip = $('#softer-than').offset().top - 250;
-  var warmerFlip = $('#warmer-than').offset().top - 250;
-  var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-  var top_of_screen = $(window).scrollTop();
+  inView("#greener-than-wrapper", "#greener-than")
+  inView("#softer-than-wrapper", "#softer-than")
+  inView("#warmer-than-wrapper", "#warmer-than")
 
-  if ($(window).scrollTop() > greenerFlip) {
-    $('#greener-than').hide()
-    $('#greener-than').siblings().fadeIn()
-  }
-  else{
-    let top_of_element = $("#greener-than").offset().top;
-    let bottom_of_element = $("#greener-than").offset().top + $("#element").outerHeight();
-    
-    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
-      let titleSlide = $('#greener-than').children('h2')
-      if ($(titleSlide).css("margin-top") >= "150px") {
-        $(titleSlide).css("margin-top",  "14vw")
-      }
-    }
-  }
-
-
-  if ($(window).scrollTop() > softerFlip) {
-    $('#softer-than').hide()
-    $('#softer-than').siblings().fadeIn()
-  }
-  else{
-    let top_of_element = $("#softer-than").offset().top ;
-    let bottom_of_element = $("#softer-than").offset().top + $("#element").outerHeight();
-    
-    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
-      let titleSlide = $('#softer-than').children('h2')
-      if ($(titleSlide).css("margin-top") >= "150px") {
-        $(titleSlide).css("margin-top",  "14vw")
-      }
-    }
-  }
-
-if ($(window).scrollTop() > warmerFlip) {
-$('#warmer-than').hide()
-$('#warmer-than').siblings().fadeIn()
-
-}
-   else{
-    let top_of_element = $("#warmer-than").offset().top;
-    let bottom_of_element = $("#warmer-than").offset().top + $("#element").outerHeight();
-    
-    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
-      let titleSlide = $('#warmer-than').children('h2')
-      if ($(titleSlide).css("margin-top") >= "150px") {
-        $(titleSlide).css("margin-top",  "14vw")
-      }
-    }
-  }
 })
-// $('.comparison').hover(function() {
-//   $(this).children('h2').addClass('fixed-title')
-// })
+
+function inView(elementWrapper, element) {
+    var top_of_element = $(elementWrapper).offset().top;
+    var bottom_of_element = $(elementWrapper).offset().top + $(elementWrapper).outerHeight();
+    var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+    var top_of_screen = $(window).scrollTop();
+    var flipTime =  $(element).offset().top - 250;
+    
+
+    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+      if ($(window).scrollTop() > flipTime) {
+        $(element).hide()
+        $(element).siblings().fadeIn()
+      }
+      else{ 
+        let titleSlide = $(element).children('h2')
+        if ($(titleSlide).css("margin-top") >= "150px") {
+          $(titleSlide).css("margin-top",  "14vw")
+        }
+      }
+    } 
+    else {
+        $(elementWrapper).children().hide()
+        $(elementWrapper).children(element).show()
+    }
+  }
 </script>
 <section class="accent-padding tac">
 <h4 class="tac nmt">View our Products:</h4>
