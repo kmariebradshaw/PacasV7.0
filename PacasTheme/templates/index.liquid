@@ -1,10 +1,10 @@
 <main id="index">
 
   <video autoplay muted loop playsinline class="atf-video do">
-   <source src="{{'ATFv3_Desktop.mov' | asset_url}}" type="video/mp4">
+   <source src="{{'ATFv3_Desktop-O.mov' | asset_url}}" type="video/mp4">
   </video>
   <video autoplay muted loop playsinline class="atf-video mo-plus"> 
-   <source src="{{'ATFv2_mobile.mov' | asset_url}}" type="video/mp4">
+   <source src="{{'ATFv2_mobile-O.mov' | asset_url}}" type="video/mp4">
   </video>
 
   <div id="atf-text-buttons-overlay">
@@ -24,189 +24,129 @@
           </div>
         </section>
       </div> 
-    </div>
+    </div> 
   </div>
 
-{% comment %}  <section class="flex-container accent-padding aifs">
-    <div class="half-no">
-      <h2 class="accent nm">Help us save alpaca herders.</h2>
-      <p>90% of the world’s Alpacas are raised in the Peruvian sierra, in harsh conditions at altitudes 13,000 feet above sea level, by thousands of low-income rural families as has been custom for centuries.</p>
-      <p>Infectious respiratory diseases caused by the cold and smokey dwelling conditions is the main cause of death of the alpaca herders. </p><p>Your Pacas purchase helps us ensure the herders have a safe and comfortable place to call home to maintain and cultivate the time-honored relationship between animal and farmer.</p>
-      <div class="tac flex-container-no ">
-        <h3 class="nm accent ib" style="margin-right: 20px !important;">$7,<span class="accent" id="amount-raised">123</span></h3>
-        <h5 class="ib"> raised towards goal of </h5>
-        <h3 class="nm accent ib" style="margin: 20px !important;">$16,000</h3>
+  <section class="tac accent-padding background-fleece">
+    <p class="large" style="font-size: 22pt;">Insanely soft, high performance socks and apparel knit with Alpaca, the greenest fiber on earth,  to improve the livelihood of this sacred animal and its poverty-stricken caretakers.</p>
+  </section>
+
+  <section id="index-grid-wrapper">
+    <section class="flex-container-no alpaca-fleece-highlights" id="greener-than-wrapper">
+      <div class="fw index-grid jcc clickable comparison background-kr-blue"  id="greener-than" style="">
+        <h2 class="large accent tac text-white">The Greenest Fiber On Earth</h2>
       </div>
-      <p class="tu clickable nmt">Learn More</p>
+      <div class="half-no index-grid" id="index-photo-break" style="display: none">
+        <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+          <source src="{{'AlpacaVideo_Desktop-O.mov' | asset_url}}" type="video/mp4">
+        </video>
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+          <source src="{{'AlpacaVideo_Mobile-O.mp4' | asset_url}}" type="video/mp4">
+        </video>
+      </div>
+      <div class="half-no index-grid flex-container-no jcc clickable index-text-break" style="background-color:#CEEAED; display: none;">
+        <div>
+          <p class="tac flip-x" style="width: 90%; margin: 0 auto;"> Alpacas are gentle on the land. They feed on only the tops of grasses and other plants.</p>
+          <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
+        </div>
+      </div>
+  </section>
+
+  <section class="flex-container-no alpaca-fleece-highlights" id="softer-than-wrapper">
+    <div class=" fw background-beige index-grid comparison jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
+      <h2 class="large accent tac text-white">Softer than Cashmere</h2>
     </div>
-    <div class="half tac" >
-      <img src="{{'HutPictureFaded.png' | asset_url}}" style="width: 80%;"/> 
-    </div>
-  </section>{% endcomment %}
-
-  {% comment %}increases the amount raised span
-  <script>
-        setInterval(function(){ 
-          if($("#amount-raised").is(":visible")){
-            var amountRaised = parseInt($('#amount-raised').text(),10)
-            amountRaised += 25
-            $('#amount-raised').text(amountRaised)
-          }
-     }, 10000);
-  </script>
-{% endcomment %}
-<section class="tac accent-padding background-fleece">
-  <p class="large" style="font-size: 22pt;">Insanely soft, high performance socks and apparel knit with Alpaca, the greenest fiber on earth,  to improve the livelihood of this sacred animal and its poverty-stricken caretakers.</p>
-</section>
-
-
-<section id="index-grid-wrapper">
-  <section class="flex-container-no alpaca-fleece-highlights" id="greener-than-wrapper">
-    <div class="fw index-grid jcc clickable comparison background-kr-blue"  id="greener-than" style="">
-      <h2 class="large accent tac text-white">The Greenest Fiber On Earth</h2>
-    </div>
-
-    <div class="half-no index-grid" id="index-photo-break" style="display: none">
-      <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
-        <source src="{{'AlpacaVideo_Desktop.mov' | asset_url}}" type="video/mp4">
-      </video>
-          <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
-        <source src="{{'AlpacaVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
-      </video>
-
-    </div>
-    <div class="half-no index-grid flex-container-no jcc clickable index-text-break" style="background-color:#CEEAED; display: none;">
-      <div>
-      <p class="tac flip-x" style="width: 90%; margin: 0 auto;">
-         Alpacas are gentle on the land.
-        They feed on only the tops of grasses
-        and other plants.{% comment %}, and have soft padded
-        feet causing less pasture damage.{% endcomment %}
-       {% comment %} Alpacas also have over 20 natural coat colors
-        versus only 3 shades for sheep and goats resulting in less chemicals in the finishing process.{% endcomment %}
-      </p>
-            <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
-</div>
-    </div>
-</section>
-
-<section class="flex-container-no alpaca-fleece-highlights" id="softer-than-wrapper">
-   <div class=" fw background-beige index-grid comparison jcc clickable"  style="background-color: #F8E7FF;" id="softer-than">
-    <h2 class="large accent tac text-white">Softer than Cashmere</h2>
-  </div>
     <div class="half-no background-beige index-grid flex-container-no jcc clickable index-text-break"  style="background-color: #F8E7FF; display: none;" >
       <div>
-    <p class="tac flip-x" style=" width: 90%; margin: 0 auto;">
-
-         Alpaca fleece has a similar micron count to cashmere, making it as soft to the touch.  
-
-{% comment %}         However, cashmere breaks easily whereas alpaca fleece is very strong, making it the perfect fiber for comfort and athletic gear. {% endcomment %}
-  
-      </p>
-         <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
+        <p class="tac flip-x" style=" width: 90%; margin: 0 auto;">Alpaca fleece has a similar micron count to cashmere, making it as soft to the touch.</p>
+        <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
+      </div>
     </div>
-  </div>
-  <div class="half-no index-grid" id="index-photo-break" style="display: none;">
-    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
-      <source src="{{'GoatVideo_Desktop.mov' | asset_url}}" type="video/mp4">
-    </video>
-    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
-      <source src="{{'GoatVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
-    </video>
-  </div>
-</section>
+    <div class="half-no index-grid" id="index-photo-break" style="display: none;">
+      <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+        <source src="{{'GoatVideo_Desktop-O.mov' | asset_url}}" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+        <source src="{{'GoatVideo_Mobile-O.mp4' | asset_url}}" type="video/mp4">
+      </video>
+    </div>
+  </section>
 
-<section class="flex-container-no alpaca-fleece-highlights" id="warmer-than-wrapper">
+  <section class="flex-container-no alpaca-fleece-highlights" id="warmer-than-wrapper">
     <div class="fw background-beige index-grid comparison jcc clickable" style="background-color: #FFDBCF;" id="warmer-than">
-    <h2 class="large accent tac text-white">Warmer than Wool</h2>
-  </div>
-  <div class="half-no index-grid" id="index-photo-break" style="display: none;">
-    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
-      <source src="{{'SheepVideo_Desktop.mov' | asset_url}}" type="video/mp4">
-    </video>
-    <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
-      <source src="{{'SheepVideo_Mobile.mp4' | asset_url}}" type="video/mp4">
-    </video>
-  </div>
-  <div class="half-no background-beige index-grid flex-container-no jcc clickable index-text-break" style="background-color: #FFDBCF; display: none;">
-    <div>
-   <p class="tac flip-x" style=" width: 90%; margin: 0 auto;">
-{% comment %}      Alpacas have adapted to their living
-      conditions by having microscopic pockets
-      in the core of their fiber that retain heat,
-      allowing their fleece to be light, yet warmer than merino wool.<br><br>{% endcomment %}
-{% comment %}      While wool tends to absorb water,
-      alpaca fleece is moisture wicking,
-      which will keep you cool in the summer
-      and warm in the winter.{% endcomment %}
-      Alpaca fleece is warm in the winter and cool in the summer, unlike Merino wool.
-    </p>
-            <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
-</div>
-  </div>
-</section>
+      <h2 class="large accent tac text-white">Warmer than Wool</h2>
+    </div>
+    <div class="half-no index-grid" id="index-photo-break" style="display: none;">
+      <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
+        <source src="{{'SheepVideo_Desktop-O.mov' | asset_url}}" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
+        <source src="{{'SheepVideo_Mobile-O.mp4' | asset_url}}" type="video/mp4">
+      </video>
+    </div>
+    <div class="half-no background-beige index-grid flex-container-no jcc clickable index-text-break" style="background-color: #FFDBCF; display: none;">
+      <div>
+        <p class="tac flip-x" style=" width: 90%; margin: 0 auto;">Alpaca fleece is warm in the winter and cool in the summer, unlike Merino wool.</p>
+        <p class="tac clickable nmb" style="text-decoration: underline;"><a href="/pages/pacas-facts"><i>Learn more</i></a></p>
+      </div>
+    </div>
+  </section>
 
-</section>
-<script>
-$('.alpaca-fleece-highlights').click(function() {
-  if (!$(event.target).is('i')) {
-  $(this).children().toggle()
-  }
-})
-// slower transitions 
-// bottom flip up - pl 
-// load speed time
-$(window).scroll(function() {
-  inView("#greener-than-wrapper", "#greener-than")
-  inView("#softer-than-wrapper", "#softer-than")
-  inView("#warmer-than-wrapper", "#warmer-than")
-
-})
-
-function inView(elementWrapper, element) {
-    var top_of_element = $(elementWrapper).offset().top;
-    var bottom_of_element = $(elementWrapper).offset().top + $(elementWrapper).outerHeight();
-    var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-    var top_of_screen = $(window).scrollTop();
-    var flipTime =  $(element).offset().top - 250;
-    
-
-    if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
-      if ($(window).scrollTop() > flipTime) {
-        $(element).hide()
-        $(element).siblings().fadeIn()
-      }
-      else{ 
-        let titleSlide = $(element).children('h2')
-        if ($(titleSlide).css("margin-top") >= "150px") {
-          $(titleSlide).css("margin-top",  "14vw")
-        }
-      }
-    } 
-    else {
-        $(elementWrapper).children().hide()
-        $(elementWrapper).children(element).show()
+  <script>
+  $('.alpaca-fleece-highlights').click(function() {
+    if (!$(event.target).is('i')) {
+    $(this).children().toggle()
     }
-  }
-</script>
-<section class="accent-padding tac">
-<h4 class="tac nmt">View our Products:</h4>
-<section class="flex-container-no jcc" id="product-highlight-wrapper">
-  <div><a href="/collections/youth-crew"><img src="{{'Index-KidsSocks.png' | asset_url}}" /></a></div>
-  <div><a href="/collections/womens-crew"><img src="{{'Index-PinkSocks.png' | asset_url}}" /></a></div>
-  <div><a href="/products/pacas-super-soft-throw-blanket"><img src="{{'WrapLandingPage.png' | asset_url}}" /></a></div>
-  <div><a href="/products/pacas-super-soft-scarf"><img src="{{'Index-Scarf.png' | asset_url}}" /></a></div>
-  <div><a href="/collections/womens-low-cut"><img src="{{'CloseupSocks.jpg' | asset_url}}" /></a></div>
+  })
+  // slower transitions 
+  // bottom flip up - pl 
+  // load speed time
+  $(window).scroll(function() {
+    inView("#greener-than-wrapper", "#greener-than")
+    inView("#softer-than-wrapper", "#softer-than")
+    inView("#warmer-than-wrapper", "#warmer-than")
 
-</section>
-</section>
+  })
 
-{% comment %}  <section class="tac accent-padding background-green" style="margin-top: 16px;">
-  <p class="large">The greenest fiber on earth</p>
-</section>{% endcomment %}
+  function inView(elementWrapper, element) {
+      var top_of_element = $(elementWrapper).offset().top;
+      var bottom_of_element = $(elementWrapper).offset().top + $(elementWrapper).outerHeight();
+      var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+      var top_of_screen = $(window).scrollTop();
+      var flipTime =  $(element).offset().top - 250;
+      
 
+      if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+        if ($(window).scrollTop() > flipTime) {
+          $(element).hide()
+          $(element).siblings().fadeIn(1000)
+        }
+        else{ 
+          let titleSlide = $(element).children('h2')
+          if ($(titleSlide).css("margin-top") >= "150px") {
+            $(titleSlide).css("margin-top",  "14vw")
+          }
+        } 
+      } 
+      // else {
+      //     $(elementWrapper).children().hide()
+      //     $(elementWrapper).children(element).show()
+      // }
+    }
+  </script>
 
-<section class="flex-container double-padding background-pink-beige" id="shop-all-cta">
+  <section class="accent-padding tac">
+  <h4 class="tac nmt">View our Products:</h4>
+  <section class="flex-container-no jcc" id="product-highlight-wrapper">
+    <div><a href="/collections/youth-crew"><img src="{{'Index-KidsSocks.png' | asset_url}}" /></a></div>
+    <div><a href="/collections/womens-crew"><img src="{{'Index-PinkSocks.png' | asset_url}}" /></a></div>
+    <div><a href="/products/pacas-super-soft-throw-blanket"><img src="{{'WrapLandingPage.png' | asset_url}}" /></a></div>
+    <div><a href="/products/pacas-super-soft-scarf"><img src="{{'Index-Scarf.png' | asset_url}}" /></a></div>
+    <div><a href="/collections/womens-low-cut"><img src="{{'CloseupSocks.jpg' | asset_url}}" /></a></div>
+  </section>
+  </section>
+
+  <section class="flex-container double-padding background-pink-beige" id="shop-all-cta">
     <div class=" tac" id="cta-tagline" style="">
       <img data-src="{{'PacasBug-03.png' | asset_url }}" class="lazyload index-guarantee" alt="Comfort Guarantee, If You Don't Love Our Products Return Them for Free" style=""/>
     </div>
@@ -214,16 +154,14 @@ function inView(elementWrapper, element) {
       <div class="connect button ib" id="cta">
         <h4 class="nm tac">Shop Men</h4>
       </div>
-       <div class="connect button ib" id="cta">
+      <div class="connect button ib" id="cta">
         <h4 class="nm tac">Shop Women</h4>
       </div>
-       <div class="connect button ib" id="cta">
+      <div class="connect button ib" id="cta">
         <h4 class="nm tac">Shop Kids</h4>
       </div>
-    </div>
-     
-</section>
-
-{% include 'live-feed' %}
-<script>on_index=true;</script>
+    </div>   
+  </section>
+  {% include 'live-feed' %}
+  <script>on_index=true;</script>
 </main>

@@ -10,22 +10,25 @@
     <img src="{{'SoftnessScale_Mobile.png' | asset_url}}" class="fw mo">
 
   </section>
+  <section class="accent-padding" style="background-color: #F2EEEB;">
+        <h3 class="tac accent" >Alpaca Anatomy</h3>
 
+  </section>
   <section id="alpaca-grid" class="accent-padding tac">
 {% comment %}   <div class="ib"><p><b>moisture-wicking</b></p><p> unlike wool, alpaca fleece does not absorb moisture</p></div> 
     <div class="ib"><p><b>hypoallergenic</b></p><p> unlike wool, alpaca fleece does not contain lanolin, a natural poil that many people are allergic to</p></div> 
     <div class="ib"><p><b>warmer than wool</b></p><p> alpaca fleece is 5x warmer than merino wool</p></div> 
     <div class="ib"><p><b>thermoregulating</b></p><p> alpaca fleece has a hollow core which keeps you warm in the winter and cool in the summer</p></div> 
     <div class="ib"><p><b>softer than cashmere</b></p><p> alpaca fleece is softer and smoother than cashmere</p></div> {% endcomment %}
-    <h3 class="tac nmt accent" style="font-weight: normal;">Alpaca Anatomy</h3>
-
+{% comment %}    <h3 class="tac accent" style="font-weight: normal; padding: 1px; background-color: #F2EEEB;">Alpaca Anatomy</h3>
+{% endcomment %}
         <img src="{{'BenefitsAlpaca_TextDesktop.png' | asset_url}}" class="fw do" style="max-width: 1200px; margin: 0 auto;">
     <img src="{{'BenefitsAlpacaText_Mobile.png' | asset_url}}" class="fw mo">
   </section>
 
   <style>
     #alpaca-grid .ib { 
-      max-width: 250px; 
+      max-width: 250px;  
       position: relative;
     }
     #alpaca-grid {
@@ -85,7 +88,7 @@
 
   </style>
   <section class="background-kr-blue double-padding" id="greenest-faqs">
-    <h2 class="tac"><span class="text-white">Alpaca Fleece is considered the </span><span class="text-green">Greenest Fiber on Earth</span></h2>
+    <h3 class="tac accent"><span class="text-white accent">Alpaca Fleece is considered the </span><span class="text-green accent">Greenest Fiber on Earth</span></h3>
     <section class="flex-container aifs">
       <div class="greenest-faqs-icons quarter accent-padding tac">
         <img src="{{'Altitude-27.png' | asset_url}}"  />
@@ -110,24 +113,24 @@
 
     <section id="softness-faqs" class="flex-container accent-padding">
      <div class="two-thirds accent-padding" id="softness-example">
-            <h2 class="tac mo">Softness with a Soul</h2>
+            <h3 class="tac accent mo">Softness with a Soul</h3>
 
-        <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="mo">
-        <source src="{{'AboutPageVideo.mov' | asset_url}}" type="video/mp4">
+        <video autoplay muted loop playsinline controls style="width: 100%; height: 100%;" class="mo">
+        <source src="{{'AboutPageVideo_Mobile-O.mov' | asset_url}}" type="video/mp4">
       </video>
-           <video autoplay muted loop playsinline style="width: 100%; height: 100%;" class="do">
-        <source src="{{'AboutPageVideoNew.mp4' | asset_url}}" type="video/mp4">
+           <video autoplay muted loop playsinline controls style="width: 100%; height: 100%;" class="do">
+        <source src="{{'AboutPageVideo_Compressed.mov' | asset_url}}" type="video/mp4">
       </video>
      </div>
      <div class="third accent-padding">
-      <h2 class="nm do">Softness with a Soul</h2>
+      <h3 class="nm do accent">Softness with a Soul</h3>
       <p>Pacas is committed to maintaining and improving the time-honored tradition between animal and farmer through:</p>
       <ul>
-        <li><span>humane and technological shearing</span></li>
-        <li><span>genetic improvement</span></li>
-        <li><span>fiber tracing and sustainability</span></li>
-        <li><span>improving living conditions for herders and their families</span></li>
-        <li><span>increasing incomes for herders</span></li>
+        <li><span>Humane and technological shearing</span></li>
+        <li><span>Genetic improvement</span></li>
+        <li><span>Fiber tracing and sustainability</span></li>
+        <li><span>Improving living conditions for herders</span></li>
+        <li><span>Increasing incomes for herders</span></li>
       </ul>
     </section>
  </main>
@@ -143,9 +146,9 @@
   }
   .greenest-faqs-icons img { width: 150px; }
   #softness-faqs ul { 
-    list-style-image: url("{{'star.png' | asset_url}}");
+    list-style-image: url("{{'Star-01.png' | asset_url}}");
+
   }
-  #softness-faqs ul li span{ top: -5px; position: relative; }
 /*#softness-grid {
   height: 30vw;
   background-size: contain;
@@ -153,6 +156,9 @@
   background-position: center;
   background-image: url("{{'Softnessdesktop.png' | asset_url}}");
 }*/
+#softness-faqs ul li { line-height: 3; }
+#softness-faqs ul li span{ top: -5px; position: relative;}
+
 @media only screen and (max-width: 799px) {
   .quarter { width: auto !important; }
 
