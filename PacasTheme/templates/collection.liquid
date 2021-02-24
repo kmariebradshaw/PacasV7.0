@@ -16,14 +16,16 @@
         {% if variant.available %}
           {% if variantCount <= 2 %}
             {% assign variantCount = variantCount | plus: 1 %}
+
     <section class="col {% for tag in product.tags %}{{tag | handleize}} {%endfor%}" id="{{product.title | truncatewords: 1,''}}-{{variantCount}}">
       <section class="card">
         <a href="{{product.url}}" onclick="ga('send', 'event', 'Collections Page', '{{collection.title | handleize}}', '{{product.title | handleize}}-{{variantCount}}');">
           <div class="product-collection-wrapper">
             <div class="accent-padding">
               <div class="slvr-col-img-wrapper">
-       
-           <img src="{{ variant.featured_image.src | product_img_url: '2000x2000' }}" alt="{{product.title}}"/> 
+          {%assign variantPhoto = variantCount | minus: 1 %}
+           <img src="{{ product.images[variantPhoto] | product_img_url: '2000x2000' }}" alt="{{product.title}}"/> 
+
               </div> 
               <h3 class=" nmb">{{product.title}}</h3>
               <h4 class="nm">{{ product.price | money }} <span class="strikethrough">{{product.compare_at_price | money}}</span></h4>
@@ -33,7 +35,10 @@
               <p class="subscript vis-hid">Qualifies for Free Shipping!</p>
 
               {% endif %}
-
+                 {% if product.tags contains 'Kids' or product.tags contains "Men's" %}
+                {% assign variantCount = variantCount | plus: 3 %}
+          
+            {% endif %}
               <div class="acfe">
                 <!--            store variant as data attr on circle  -->
 
@@ -70,6 +75,7 @@
                   {% for option in variant.option1 %}
                   <div data-image-src="{{ variant.image.src | product_img_url: '2000x2000'  }}" class="clickable {{option | handleize}} color-preview-circle"style="background-image: url({{ option | handle | append: '.png' | asset_url }});background-size: contain;"></div>
                   {% endfor %}
+
                   {% endif %} 
                 {% endif %}
                 {% endfor %}
@@ -106,7 +112,7 @@
       <section class="card" style="border: none" id="image-break-mens-low">
       </section>
 
-    </section>
+{% comment %}    </section>
        <section class="col gif-insert" id="image-insert-2">
       <section class="card" style="border: none" id="image-break-mens-low-2">
       </section>
@@ -114,7 +120,7 @@
     </section>
        <section class="col gif-insert" id="image-insert-3">
       <section class="card" style="border: none" id="image-break-mens-low-3">
-      </section>
+      </section>{% endcomment %}
 
     </section>
     {% elsif collection.title == "Men's Crew" %}
@@ -123,14 +129,14 @@
       </section>
 
     </section>
-          <section class="col gif-insert" id="image-insert-2">
+{% comment %}          <section class="col gif-insert" id="image-insert-2">
       <section class="card" style="border: none" id="image-break-mens-crew-2">
       </section>
 
     </section>
           <section class="col gif-insert" id="image-insert-3">
       <section class="card" style="border: none" id="image-break-mens-crew-3">
-      </section>
+      </section>{% endcomment %}
 
     </section>
     {% elsif collection.title == "Women's Crew" %}
@@ -152,7 +158,7 @@
       </section>
 
     </section>
-        <section class="col gif-insert" id="image-insert-2">
+{% comment %}        <section class="col gif-insert" id="image-insert-2">
       <section class="card" style="border: none" id="image-break-youth-crew-2">
       </section>
 
@@ -161,21 +167,21 @@
       <section class="card" style="border: none" id="image-break-youth-crew-3">
       </section>
 
-    </section>
+    </section>{% endcomment %}
     {% elsif collection.title == "Youth Low Cut" %}
        <section class="col gif-insert" id="image-insert-1">
       <section class="card" style="border: none" id="image-break-youth-low">
     </section>
 
     </section>
-           <section class="col gif-insert" id="image-insert-2">
+{% comment %}           <section class="col gif-insert" id="image-insert-2">
       <section class="card" style="border: none" id="image-break-youth-low-2">
     </section>
 
     </section>
            <section class="col gif-insert" id="image-insert-3">
       <section class="card" style="border: none" id="image-break-youth-low-3">
-    </section>
+    </section>{% endcomment %}
 
     </section>
     {% elsif collection.title == "Toddler" %}
@@ -183,13 +189,13 @@
       <section class="card" style="border: none" id="image-break-toddler">
       </section>
     </section>
-    <section class="col gif-insert" id="image-insert-2">
+{% comment %}    <section class="col gif-insert" id="image-insert-2">
       <section class="card" style="border: none" id="image-break-toddler-2">
       </section>
     </section>
     <section class="col gif-insert" id="image-insert-3">
       <section class="card" style="border: none" id="image-break-toddler-3">
-      </section>
+      </section>{% endcomment %}
     </section>
     {% endif %}
 
@@ -316,7 +322,7 @@
 
       }); 
 
-      var displayedProducts = ["3-1", "8-1", "6-1", "image-insert-1", "4-3", "2-1 ", "12-3", "3-2", "6-2", "image-insert-2", "12-2", "2-1", "2-3", "4-2", "3-3", "6-3","image-insert-3", "8-2", "4-1", "12-1", "8-3"]
+      var displayedProducts = ["3-1", "8-1", "6-1", "image-insert-1", "4-1", "2-1 ", "12-1", "3-2", "6-2", "image-insert-2", "12-2", "2-2", "2-3", "4-2", "3-3", "6-3","image-insert-3", "8-2", "4-3", "12-3", "8-3"]
 
       $(displayedProducts).each(function(index, element){
         let cardPlacement = "#" + element 
