@@ -1,4 +1,4 @@
-<div class="modal" id="newsletter_popup2" style="display:none;">
+{% comment %}<div class="modal" id="newsletter_popup2" style="display:none;">
   <div class="background-pink tac">
     <div class="klaviyo-padding" id="welcome-padding-wrapper">
     <p class=" klaviyo_header_close tar clickable" style="font-size: 13pt;"><span>✕</span></p>
@@ -15,7 +15,7 @@
 
     <img src="{{'Alpaca_Fuller.png' | asset_url}}" class="vis-hid" id="welcome-paca-modal" style="max-width: 250px;"/>
   </div>
-</div> 
+</div> {% endcomment %}
  <style>
   #newsletter_popup2 > .background-pink{
     background-image: url("{{'Alpaca_Fuller.png' | asset_url}}");
@@ -28,10 +28,10 @@
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
-    height: 80%;
+    height: 95%;
   }
  </style>
-<script>
+{% comment %}<script>
 $(document).ready(function(){ 
   // var flowFinish = readCookie('flowFinish')
   // var pacasVisit = readCookie('pacasVisit')
@@ -59,7 +59,7 @@ $(document).ready(function(){
     }, 5000); 
   }
 }); 
-</script>
+</script>{% endcomment %}
 
 {% comment %} Exit Intent {% endcomment %}
 <div class="modal" id="exit_offer" style="display:none;">
