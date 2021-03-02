@@ -23,146 +23,61 @@
       <div class="flow-button border-gray continue clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Flow Start');"><p class="tac nm">Cool, let's get started!</p></div>
     </div>
   </section>
-<!--   <section style="display:none;" id="shave-me">
-    <div class="tac prog-bar">
-      <div class="prog filled"></div>
-      <div class="prog filled"></div>
-      <div class="prog"></div>
-      <div class="prog"></div>
-      <div class="prog"></div>
-      <div class="prog"></div>
-    </div>
-   <h1 class="close-flow tar" onclick="ga('send', 'event', 'Flow Progress', 'X', 'Slide 2');"><a href="/">✕</a></h1>
-    <div class="flex-container-no dc">
-    <p class="slide2 accent large" style="display: none; position: absolute;margin-left:-70px;">Unlike merino<br>wool and cotton...</p>
-      <img src="{{'clothed-paca.png' | asset_url}}" id="clothed-paca" class="paca-bod" />
-      <img src="{{'fluff.png' | asset_url}}" class="non-ed" id="fluff1" style="display: none;"/>
-      <div class="ed-fluff flex-container-no jcc" id="ed-fluff1" style="display: none;">
-        <p class="tac text-white subscript">I'm soft as cashmere <br>warmer than wool <br> & rarer than both.</p>
-      </div>
-      <div class="ed-fluff flex-container-no jcc" id="ed-fluff2" style="display: none;">
-        <p class="tac text-white subscript">I'm itch free<br>& hypoallergenic.</p>
-      </div>
-      <div class="ed-fluff flex-container-no jcc" id="ed-fluff3" style="display:none;" >
-        <p class="tac text-white subscript">I'll keep you<br>warm in the<br>winter & cool<br>in the summer</p>
-      </div>
-      <img src="{{'fluff.png' | asset_url}}" class="non-ed" id="fluff2" style="display:none"/>
-        <img src="{{'shaver.png' | asset_url}}" id="shaver" class="clickable jiggle" />
-      <p class="slide1 large" id="shave-text">Tap to shave me.</p>
-      <div class="flow-button border-gray continue clickable slide2 vis-hid" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 2');"><p class="tac nm">alpaca vs. sheep</p></div>
-      <p class="slide2 tac back clickable">← Back</p>
-    </div>
-  </section> -->
-    <section style="display:none;" id="wool-vs-fleece">
+    <section style="display:none; background-color:#FEE7D8;" id="wool-vs-fleece">
     <div class="tac prog-bar nmb">
       <div class="prog filled"></div>
       <div class="prog filled"></div>
       <div class="prog"></div>
-<!--        <div class="prog"></div>
-      <div class="prog"></div>
-      <div class="prog"></div> -->
     </div>
    <h1 class="close-flow tar mo nmb" onclick="ga('send', 'event', 'Flow Progress', 'X', 'Slide 3');"><a href="/">✕</a></h1>
-    <div class="flex-container-no dc">
-      <h2 class="tac accent" style="font-size: 16pt;">Shh... Don't Tell Wool<br>
-        There's a New Fleece in Town</h1>
-      <div class="flex-container-no">
-      <div class="half-no">
-      <div class="flex-container-no jcc fw accent-padding" id="fleece-highlight">
-      	<h1 class="tac text-white">Alpaca Fleece</h1>
-      </div>
-      <div class="ma" style="width: fit-content;">
+    <div class="flex-container-no jcc">
+      <div>
+        <h1 class="tac nmb"><span class="vis-hid text-fade-in accent">Don't.</span><span class="vis-hid text-fade-in accent"> Tell. </span><span class="vis-hid text-fade-in accent">Wool.</span></h1>
+        <h4 class="tac nmt">There's a new fleece in town.</h4>
         <div class="flex-container-no">
-        <img src="{{'check-01.png' | asset_url}}"  class="icon"/>
-        <span class="subscript">smooth & soft</span>
-        </div>
-        <div class="flex-container-no">
-          <img src="{{'check-01.png' | asset_url}}" class="icon"/>
-          <span class="subscript">wicks moisture</span> 
-        </div>
-        <div class="flex-container-no">
-          <img src="{{'check-01.png' | asset_url}}" class="icon"/>
-          <span class="subscript">hypoallergenic</span>
-        </div>
-       </div>
-        </div>
-        <div class="half-no">
-          <div class="flex-container-no jcc fw accent-padding" id="wool-highlight">
-            <h1 class="tac text-white">Sheep Wool</h1>
+          <div class="half-no">
+      	    <h4 class=" nmt tac accent" style="font-size: 12pt;">Alpaca Fleece</h4>
+            <div class="ma" style="width: fit-content;">
+              <div class="flex-container-no">
+                <img src="{{'check-01.png' | asset_url}}"  class="icon"/>
+                <span class="subscript">smooth & soft</span>
+              </div>
+              <div class="flex-container-no">
+                <img src="{{'check-01.png' | asset_url}}" class="icon"/>
+                <span class="subscript">wicks moisture</span> 
+              </div>
+              <div class="flex-container-no">
+                <img src="{{'check-01.png' | asset_url}}" class="icon"/>
+                <span class="subscript">hypoallergenic</span>
+              </div>
+            </div>
+            <img src="{{'AlpacaIllustration-02.png' | asset_url}}" class="sheep-alpaca-icon" />
           </div>
-      <div class="ma" style="width: fit-content;">
-            <div class="flex-container-no">
-
-              <img src="{{'exes.png' | asset_url}}"  class="icon"/>
-              <span class="subscript">coarse</span>
+          <div class="half-no">
+            <h4 class="nmt tac accent" style="font-size: 12pt;">Sheep's Wool</h4>      
+            <div class="ma" style="width: fit-content;">
+              <div class="flex-container-no">
+                <img src="{{'exes.png' | asset_url}}"  class="icon"/>
+                <span class="subscript">coarse</span>
+              </div>
+              <div class="flex-container-no">
+                <img src="{{'exes.png' | asset_url}}" class="icon"/>
+                <span class="subscript">absorbs moisture</span> 
+              </div>
+              <div class="flex-container-no">
+                <img src="{{'exes.png' | asset_url}}" class="icon"/>
+                <span class="subscript">irritates skin</span>
+              </div>
             </div>
-            <div class="flex-container-no">
-
-              <img src="{{'exes.png' | asset_url}}" class="icon"/>
-              <span class="subscript">absorbs moisture</span> 
-            </div>
-            <div class="flex-container-no">
-
-              <img src="{{'exes.png' | asset_url}}" class="icon"/>
-              <span class="subscript">irritates skin</span>
-            </div>
+            <img src="{{'SheepIllustration-03.png' | asset_url}}" class="sheep-alpaca-icon" />
           </div>
         </div>
-      </div>
 
      <div class="flow-button border-gray continue clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 3');"><p class="tac nm">Show Me How It Works</p></div>
       <p class=" tac back clickable">← Back</p>
+            </div>
+
   </section>
-
-<!--   <section style="display:none;" id="color-style">
-    <div class="tac prog-bar">
-      <div class="prog filled"></div>
-      <div class="prog filled"></div>
-      <div class="prog filled"></div>
-      <div class="prog filled"></div>
-      <div class="prog" id="slide-prog"></div>
-      <div class="prog"></div>
-    </div>
-    <h1 class="close-flow tar text-white" onclick="ga('send', 'event', 'Flow Progress', 'X', 'Slide 4');"><a href="/">✕</a></h1>
-    <div id="choose">
-      <div id="choose-intro">
-      <img src="{{'fluff.png' | asset_url}}" id="color-fluff" />
-      <p class="accent large tac">Pick a color to dye your fleece.</p>
-      <p class="tac">Alpaca fibers have no natural grease and <br class="do"> are known as the world's most sustainable fibers.</p>
-      </div>
-      <div id="choose-options">
-      <div class="flex-container-no jcc">
-        <img src="{{'Black-03.png' | asset_url}}" class="color-dye clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 4');" id="black"/>
-      </div>
-      <div class="flex-container-no jcc">
-        <img src="{{'White-03.png' | asset_url}}"  class="color-dye clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 4');" id="white"/>
-        <img src="{{'Gray-03.png' | asset_url}}"  class="color-dye clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 4');" id="gray"/>
-
-      </div>
-      <div class="flex-container-no jcc">
-        <img src="{{'Purple-03.png' | asset_url}}" class="color-dye clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 4');" id="purple"/>
-        <img src="{{'Teal-03.png' | asset_url}}" class="color-dye clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 4');" id="Teal"/>
-      </div>
-       <div class="flex-container-no jcc">
-        <img src="{{'Beige-03.png' | asset_url}}" class="color-dye clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 4');" id="brown"/>
-        <img src="{{'Orange-03.png' | asset_url}}" class="color-dye clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 4');" id="coral"/>
-
-      </div>
-     
-    </div> 
-    </div>
-    <div id="dye" style="display: none">
-      
-       <div class="flex-container-no jcc" style="min-height: 650px">
-        <div class="third"></div>
-        <div class="two-thirds">
-          <p class="tac large">We’ve tested hundreds of Alpaca blends to curate the most luxurious and natural socks to touch your feet.</p>
-          <div class="flow-button border-gray continue clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Slide 5');"><p class="tac nm">Cool, Let's Go</p></div>
-        </div>
-      </div>
-    </div>
-        <p class="tac back clickable">← Back</p>
-  </section>  -->
   <section style="display:none;" id="charity-slide">
 
       <a href="/" onclick="ga('send', 'event', 'Flow Progress', 'X', 'Slide 5');" class="mo"><h1 class="close-flow tar text-white nmb">✕</h1></a>
@@ -171,60 +86,6 @@
        <video width="300" muted autoplay playsinline>
            <source src="{{'FinalFlowGifCrew_Updated.mov' | asset_url}}" type="video/mp4">
        </video>
-<!--         <h2 class="accent tac">Buttery soft socks made from luxurious, all natural, alpaca fleece.</h2>
-        <img src="{{'AllSocksCrew.png' | asset_url}}" class="fw"/>
-        <img src="{{'AllSocksHomepage.png' | asset_url}}" class="fw"/>
-        <div class="flex-container-no aifs">
-        <div class="half-no">
-          <div class="flex-container-no flow-ed">
-            <img src="{{'crown.png' | asset_url}}" class="icon" />
-            <p class="subscript">
-              <b class="front">Soft as Cashmere</b>
-              <b class="back tac" style="display: none;">Alpaca fleece is luxurious and rare</b>
-            </p>
-          </div>
-          <div class="flex-container-no flow-ed">
-            <img src="{{'poof.png' | asset_url}}" class="icon" />
-            <p class="subscript">
-              <b class="front">Non-itchy & Hypoallergenic</b>
-              <b class="back tac" style="display: none;">Naturally smooth, grease free</b>
-            </p>
-          </div>
-          <div class="flex-container-no flow-ed">
-            <img src="{{'flame.png' | asset_url}}" class="icon" />
-            <p class="subscript">
-              <b class="front">Warmer than Wool</b>
-              <b class="back tac" style="display: none;">Trap more heat than sheep wool</b>
-            </p>
-          </div>
-   	 	</div>
-        <div class="half-no">
-          <div class="flex-container-no flow-ed">
-            <img src="{{'leaf.png' | asset_url }}" class="icon" />
-            <p class="subscript">
-              <b class="front">Eco-friendly & Natural</b>
-              <b class="back tac" style="display: none;">Low environmental impact</b>
-            </p>
-          </div>
-          <div class="flex-container-no flow-ed">
-            <img src="{{'water.png' | asset_url}}" class="icon" />
-            <p class="subscript">
-              <b class="front">Thermoregulating & Waterproof</b>
-              <b class="back tac" style="display: none;">Provide insulation and moisture wicking</b>
-            </p>
-          </div>
-          <div class="flex-container-no flow-ed">
-            <img src="{{'ribbon.png' | asset_url }}" class="icon" />
-            <p class="subscript">
-              <b class="front">Gives Back</b>
-              <b class="back tac" style="display: none;">% of proceeds go to kids in hospitals</b>
-            </p>
-          </div> 
-          <img src="{{'arrow-flow.png' | asset_url}}" style="margin: -20px; width: 100px;" />
-    	</div>
-        </div>
-        
-        <p class="tac">A percentage of our profits go towards donating Paca gear to local children’s hospitals</p> -->
         <a href="/"><div class="flow-button border-gray clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Flow End');"><p class="tac nm">Take me to Pacas!</p></div></a>
         <p class="slide2 tac back clickable">← Back</ps>
 
@@ -234,7 +95,22 @@
 </main>
 <script>
   $('.continue').click(function() {
-    $(this).closest('section').hide().next('section').fadeIn();
+    let currentPage = $(this).closest('section').hide().next('section'); 
+    if ($(currentPage).attr("id") == "wool-vs-fleece" ) {
+      $(currentPage).fadeIn();
+setTimeout(function(){
+    $('.vis-hid:first-of-type').removeClass('vis-hid')
+ }, 250);
+setTimeout(function(){
+    $('.vis-hid:nth-of-type(2n)').removeClass('vis-hid')
+ }, 750);
+setTimeout(function(){
+    $('.vis-hid:nth-of-type(3n)').removeClass('vis-hid')
+ }, 1250);
+    }
+    else { 
+      $(currentPage).fadeIn();
+    }
   })
   $('.back').click(function() {
     if ($('#dye').is(":visible")) {
@@ -247,86 +123,7 @@
   }
   })
 </script>
-<script>
-$(document).ready(function() {
-  setInterval(function() {
-    $('.jiggle').toggleClass('rotate')
-  }, 500)
-})
-$( "#shaver, #shave-text" ).click(function() {
-  $("#shaver").removeClass('jiggle')
-  $('#shave-me').addClass('slide2')
-  $('.flow-button.slide2').addClass('post-shave')
-  $('.slide1').hide();
-  $('.slide2.large').fadeIn();
-  $( "#shaver" ).animate({
-    top: "-=200",
-    left: "-=70px",
-  }, 1000, function() {
-    $(this).css('-webkit-transform','rotate(0deg)'); 
-    $( "#shaver" ).animate({
-      top: "+=100",
-    }, 1000, function() {
-      fluffIn('#fluff1');
-      $('#clothed-paca').attr("src", "{{'naked-paca1.png' | asset_url }}");
-      edFluffIn('#ed-fluff1')
-      $( "#shaver" ).animate({
-        left: "+=70px",
-        top: "-=130",
-      }, 500, function() {
-        $( "#shaver" ).animate({
-          top: "+=120",
-        }, 1100, function() {
-          $('#clothed-paca').attr("src", "{{'naked-paca2.png' | asset_url }}");
-          edFluffIn2('#ed-fluff2')
-          $('#shaver').animate({
-            left: "+=60px",
-            top: "-=150px",
-          }, 600, function() {
-            $('#shaver').animate({
-              top: "+=150px",
-            }, 1000, function() {
 
-                  $('#clothed-paca').attr("src", "{{'naked-paca.png' | asset_url }}");
-                  edFluffIn3('#ed-fluff3')
-                  fluffIn('#fluff2')
-                  $('#shaver').hide();
-                  $('.flow-button.slide2').removeClass('vis-hid').hide().fadeIn();
-                })
-              })
-            });
-           });
-        });
-      });
-    });
-
-fluffIn = function(fluff) {
-  $(fluff).show().animate({
-    top: "+=80",
-  }, 800)
-}
-edFluffIn = function(fluff) {
-  $(fluff).show().animate({
-    top: "+=157",
-  }, 800)
-}
-edFluffIn2 = function(fluff) {
-  $(fluff).show().animate({
-    top: "+=280",
-  }, 1100)
-}
-edFluffIn3 = function(fluff) {
-  $(fluff).show().animate({
-    top: "+=170",
-  }, 800) 
-}
-$('.color-dye').click(function() {
-  $('#color-style').addClass('secondary-background')
-  $('#slide-prog').addClass('filled')
-  var color = $(this).attr("id")
-  var url = "url('//cdn.shopify.com/s/files/1/0117/0597/4884/t/9/assets/" + color + ".gif?v=13009750198657512004'"
-  $('#choose').hide(); 
-  $('#dye').fadeIn().css("background-image", url)
-})
-
-</script>
+<style>
+  .sheep-alpaca-icon { width: 150px; display: block; margin: 0 auto; }
+</style>
