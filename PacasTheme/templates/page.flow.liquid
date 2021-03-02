@@ -23,7 +23,7 @@
       <div class="flow-button border-gray continue clickable" onclick="ga('send', 'event', 'Flow Progress', 'Next', 'Flow Start');"><p class="tac nm">Cool, let's get started!</p></div>
     </div>
   </section>
-    <section style="display:none;background-color: #ffebda;" id="wool-vs-fleece">
+    <section style="display:none; background-color:#FEE7D8;" id="wool-vs-fleece">
     <div class="tac prog-bar nmb">
       <div class="prog filled"></div>
       <div class="prog filled"></div>
@@ -36,7 +36,7 @@
         <h4 class="tac nmt">There's a new fleece in town.</h4>
         <div class="flex-container-no">
           <div class="half-no">
-      	    <h5 class=" nmt tac accent">Alpaca Fleece</h5>
+      	    <h4 class=" nmt tac accent">Alpaca Fleece</h4>
             <div class="ma" style="width: fit-content;">
               <div class="flex-container-no">
                 <img src="{{'check-01.png' | asset_url}}"  class="icon"/>
@@ -51,10 +51,10 @@
                 <span class="subscript">hypoallergenic</span>
               </div>
             </div>
-            <img src="{{'' | asset_url}}" class="sheep-alpaca-icon" />
+            <img src="{{'AlpacaIllustration-02.png' | asset_url}}" class="sheep-alpaca-icon" />
           </div>
           <div class="half-no">
-            <h5 class="nmt tac accent">Sheep's Wool</h5>      
+            <h4 class="nmt tac accent">Sheep's Wool</h4>      
             <div class="ma" style="width: fit-content;">
               <div class="flex-container-no">
                 <img src="{{'exes.png' | asset_url}}"  class="icon"/>
@@ -69,7 +69,7 @@
                 <span class="subscript">irritates skin</span>
               </div>
             </div>
-            <img src="{{'' | asset_url}}" class="sheep-alpaca-icon" />
+            <img src="{{'SheepIllustration-03.png' | asset_url}}" class="sheep-alpaca-icon" />
           </div>
         </div>
 
@@ -124,3 +124,6 @@ setTimeout(function(){
   })
 </script>
 
+<style>
+  .sheep-alpaca-icon { width: 150px; display: block; margin: 0 auto; }
+</style>
