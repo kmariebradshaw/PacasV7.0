@@ -19,7 +19,7 @@ nav {
       <div class="tac">
         {% for variant in product.variants %}
         {% if variant.available %}
-        <img src="{{ variant.featured_image.src | img_url: '2000x2000' }}" class="fw" id="featured_image">
+        <img src="{{ variant.featured_image.src | img_url: '2000x2000' }}" class="fw" id="featured_image" alt="{{variant.name}}">
         {% break %}
         {% endif %}
         {% endfor %}
@@ -38,7 +38,7 @@ nav {
     </div>
     <p class="tac do">{{ product.description }}</p>
     {% if product.tags contains "Socks" %}
-    <img src="{{'PacasBug-03.png' | asset_url }}" class="index-guarantee do block ma"/>
+    <img src="{{'PacasBug-03.png' | asset_url }}" alt="Comfort Guaranteed" class="index-guarantee do block ma"/>
     {% endif %}
   </div>
   <div class="half-do tac accent-padding" id="form-wrapper">
@@ -98,11 +98,7 @@ nav {
           {% if product.available %}
 
           <button type="submit" name="add" id="add-to-cart-{{ product.id }}" class="background-gray text-white add-to-cart clickable"><span>Add to Cart</span></button>
-          <!--          <div class="quick-pay-options flex-container-no jcc">
-<img src="{{'1280px-Amazon_Pay_logo.svg.png' | asset_url }}" alt="Amazon Pay" class="accent-padding" />
-<img src="{{'PayPal-Logo.png' | asset_url }}" alt="Amazon Pay" class="accent-padding"/>
 
-</div> -->
           <style>
             .quick-pay-options img { margin: 2.5px; max-width: 50%; width: 100px; }
           </style>
@@ -116,7 +112,7 @@ nav {
 <style>
 [data-option="option2"] { display: none;  }
 </style>
-          <img src="{{'PacasBug-03.png' | asset_url }}" class="product-guarantee mo-plus block ma"/>
+          <img src="{{'PacasBug-03.png' | asset_url }}" class="product-guarantee mo-plus block ma" alt="Comfort Guaranteed"/>
           {% endif %}
           <p class="tac mo">{{ product.description }}</p>
 
@@ -131,28 +127,7 @@ nav {
       {% endif %}
       </div>
     </section>
-  {% comment %} LEARN MORE MODAL 
-  <div  id="donation-modal" class="background-pink  border-lightgray modal" style="display: none; width: 80%; min-width: 320px; max-width: 700px; box-sizing: border-box;">
-    <div class="accent-padding tac">
-      <p class="nm klaviyo_header_close tar clickable" style="font-size: 20px;">✕</p>
-      <h3 class="tac accent">Give the Gift of Comfort and Warmth</h3>
-      <p>Our <b>mission</b> is to outfit every child staying at a children's hospital with Pacas gear to make their stay as comfy as possible.</p>
-      <div class="flex-container jcc">
-        <div class="half asfe do">
-          <img src="{{'GivingAlpaca.png' | asset_url}}" style="max-width: 100%; width: 500px;" alt="" id="giving-paca" />
-
-        </div>
-        <div class=" accent-padding half">
-          <p>Each month, a percentage of our profits goes toward donating Pacas socks to local children's hospitals. This month we are donating to Lurie Children's Hospital in Chicago, IL, which has a special place in our hearts.</p>
-          <img src="{{'Lurie_Childrens_Logo.png' | asset_url}}" style="max-width: 100%; width: 500px;" alt="The Brooks Strong Foundation" />
-        </div>
-
-      </div>
-      <img src="{{'GivingAlpaca.png' | asset_url}}" style="max-width: 100%; width: 500px;" alt="" class="mo-plus ma" id="giving-paca" />
-
-    </div>
-  </div>
-  {% endcomment %}
+  
   {% comment %} SIZING CHART MODAL {% endcomment %}
 
   {% if product.tags contains "Women's" %}
@@ -253,22 +228,22 @@ nav {
   <section class="product-benefits background-blue flex-container double-padding-tbo">
     <div class="mo fw">
       <div class="tac accent-padding">
-        <img src="{{'crown.png' | asset_url}}" class="icon" />
+        <img src="{{'crown.png' | asset_url}}" class="icon" alt="Crown"/>
         <h4 class="nm">Soft as Cashmere</h4>
         <p>Our luxurious and rare alpaca fleece comes<br> straight from their native Incan lands of Peru.</p>
       </div>
       <div class="tac accent-padding">
-        <img src="{{'flame.png' | asset_url}}" class="icon" />
+        <img src="{{'flame.png' | asset_url}}" class="icon"  alt="Flame"/>
         <h4 class="nm">Warmer than Wool</h4>
         <p>Alpaca fibers are completely hollow, which<br> enable them to trap  more heat than sheep wool.</p>
       </div>
       <div class="tac accent-padding">
-        <img src="{{'water.png' | asset_url}}" class="icon" />
+        <img src="{{'water.png' | asset_url}}" class="icon" alt="Water"/>
         <h4 class="nm">Thermoregulating & Waterproof</h4>
         <p>Alpaca fibers have a hollow core, allowing their<br> fleece to provide insulation and wick moisture.</p>
       </div>
       <div class="tac accent-padding" id="no-itch">
-        <img src="{{'poof.png' | asset_url}}" class="icon" />
+        <img src="{{'poof.png' | asset_url}}" class="icon" alt="Fleece"/>
         <h4 class="nm">Non-itchy & Hypoallergenic</h4>
         <p>Alpaca fleece is naturally smooth and short, with<br> no grease, providing the ultimate comfort.</p>
       </div>
@@ -277,12 +252,12 @@ nav {
         </div>
         <div class="half-no">
           <div class="tac accent-padding">
-            <img src="{{'leaf.png' | asset_url}}" class="icon" />
+            <img src="{{'leaf.png' | asset_url}}" class="icon"  alt="Leaf"/>
             <h4 class="nm">Eco-friendly & Sustainable</h4>
             <p>Alpacas step lightly on soil and graze on native grasses, which reduces environmental impact.</p>
           </div>
           <div class="tac accent-padding">
-            <img src="{{'ribbon.png' | asset_url}}" class="icon" />
+            <img src="{{'ribbon.png' | asset_url}}" class="icon" alt="Ribbon" />
             <h4 class="nm">Gives Back</h4>
             <p>A percentage of every purchase goes towards dressing pediatric cancer patients in hospitals.</p>
           </div>
@@ -294,36 +269,36 @@ nav {
     <div class="two-thirds do">
       <div class="flex-container product-benefits-wrapper">
         <div class="tac half">
-          <img src="{{'crown.png' | asset_url}}" class="icon" />
+          <img src="{{'crown.png' | asset_url}}" class="icon" alt="Crown"/>
           <h4 class="nmt">Soft as Cashmere</h4>
           <p>Our luxurious and rare<br> alpaca fleece comes<br> straight from their native<br> Incan lands of Peru.</p>
         </div>
         <div class="tac half">
-          <img src="{{'flame.png' | asset_url}}" class="icon" />
+          <img src="{{'flame.png' | asset_url}}" class="icon"  alt="Flame"/>
           <h4 class="nmt">Warmer than Wool</h4>
           <p>Alpaca fibers are<br> completely hollow, which<br> enable them to trap  more<br> heat than sheep wool.</p>
         </div>
       </div>  
       <div class="flex-container product-benefits-wrapper">
         <div class="tac half">
-          <img src="{{'water.png' | asset_url}}" class="icon" />
+          <img src="{{'water.png' | asset_url}}" class="icon" alt="Water"/>
           <h4 class="nmt">Thermoregulating &<br class="mid-break"> Waterproof</h4>
           <p>Alpaca fibers have a hollow<br>core, allowing their fleece<br> to provide insulation and<br> wick moisture.</p>
         </div>
         <div class="tac half product-benefits-wrapper">
-          <img src="{{'poof.png' | asset_url}}" class="icon" />
+          <img src="{{'poof.png' | asset_url}}" class="icon" alt="Fleece"/>
           <h4 class="nmt">Non-itchy & <br class="mid-break"> Hypoallergenic</h4>
           <p>Alpaca fleece is naturally<br> smooth and short, with<br>no grease, providing the<br> ultimate comfort.</p>
         </div>
       </div>
       <div class="flex-container product-benefits-wrapper">
         <div class="tac half">
-          <img src="{{'leaf.png' | asset_url}}" class="icon" />
+          <img src="{{'leaf.png' | asset_url}}" class="icon" alt="Leaf"/>
           <h4 class="nmt">Eco-friendly & Sustainable</h4>
           <p>Alpacas step lightly on soil<br> and graze on native<br> grasses, which reduces<br> environmental impact.</p>
         </div>
         <div class="tac half">
-          <img src="{{'ribbon.png' | asset_url}}" class="icon" />
+          <img src="{{'ribbon.png' | asset_url}}" class="icon" alt="Ribbon"/>
           <h4 class="nmt">Gives Back</h4>
           <p>A percentage of every<br> purchase goes towards<br> dressing pediatric cancer <br>patients in hospitals.</p>
         </div>
