@@ -23,8 +23,8 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
 
-    <link rel="preload" as="video" href="{{'ATFv3_Desktop-O.mov' | asset_url}}" type="video/webm" />
-    <link rel="preload" as="video" href="{{'ATFv2_mobile-O.mov' | asset_url}}" type="video/webm" />
+    <link rel="preload" href="{{'ATFv3_Desktop-O.mov' | asset_url}}" as="video" type="video/webm" />
+    <link rel="preload" href="{{'ATFv2_mobile-O.mov' | asset_url}}" as="video" type="video/webm" />
 
     {{ 'style.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'jquery.min.js' | asset_url }}" ></script>
