@@ -54,7 +54,7 @@
               </form>
     </section>
   </div>
-    <img data-src="{{'Pacas-white.png' | asset_url}}" class="lazyload jlogo" />
+    <img data-src="{{'Pacas-white.png' | asset_url}}" class="lazyload jlogo" alt="Pacas"/>
 
   <p class="subscript tac nmt text-white">© {{ 'now' | date: "%Y" }} All Rights Reserved</p>
   <div class="jcc flex-container-no fw">
@@ -68,3 +68,9 @@
               <img data-src="{{'visa.png' | asset_url}}" class="payment-icon lazyload" alt="visa"/>
   </div>
 </footer>
+
+<style>
+  @media only screen and (max-width: 589px) {
+    footer ul li { margin: 7.5px; }
+  }
+</style>
